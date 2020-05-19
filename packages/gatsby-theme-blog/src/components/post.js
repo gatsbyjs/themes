@@ -29,7 +29,6 @@ const Post = ({
           ? post.socialImage?.childImageSharp?.fluid.src
           : post.image?.childImageSharp?.fluid.src
       }
-      keywords={post.keywords}
       imageAlt={post.imageAlt}
     />
     <main>

@@ -122,7 +122,6 @@ The following are the defined blog post fields based on the node interface in th
 | slug        | String   |
 | date        | Date     |
 | tags        | String[] |
-| keywords    | String[] |
 | excerpt     | String   |
 | image       | String   |
 | imageAlt    | String   |
