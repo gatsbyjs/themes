@@ -1,11 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css, useColorMode, Styled } from "theme-ui"
-import Switch from "./switch"
-import Bio from "../components/bio"
-import sun from "../../assets/sun.png"
-import moon from "../../assets/moon.png"
-import useBlogThemeConfig from "../hooks/configOptions"
+import { css, Styled } from "theme-ui"
+import Bio from "./bio"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -55,54 +51,7 @@ const Title = ({ children, location }) => {
   }
 }
 
-const iconCss = [{ pointerEvents: `none`, margin: 4 }]
-
-const checkedIcon = (
-  <img
-    alt="moon indicating dark mode"
-    src={moon}
-    width="16"
-    height="16"
-    role="presentation"
-    css={iconCss}
-  />
-)
-
-const uncheckedIcon = (
-  <img
-    alt="sun indicating light mode"
-    src={sun}
-    width="16"
-    height="16"
-    role="presentation"
-    css={iconCss}
-  />
-)
-
 export default ({ children, title, ...props }) => {
-  const blogThemeConfig = useBlogThemeConfig()
-
-  const { disableThemeUiStyling } = blogThemeConfig
-
-  var switchToggle
-  if (!disableThemeUiStyling) {
-    const [colorMode, setColorMode] = useColorMode()
-    const isDark = colorMode === `dark`
-    const toggleColorMode = e => {
-      setColorMode(isDark ? `light` : `dark`)
-    }
-    switchToggle = (
-      <Switch
-        aria-label={`Toggle dark mode ${isDark ? `off` : `on`}`}
-        checkedIcon={checkedIcon}
-        uncheckedIcon={uncheckedIcon}
-        checked={isDark}
-        onChange={toggleColorMode}
-      />
-    )
-  } else {
-    switchToggle = null
-  }
   return (
     <header>
       <div
@@ -123,7 +72,6 @@ export default ({ children, title, ...props }) => {
         >
           <Title {...props}>{title}</Title>
           {children}
-          {switchToggle}
         </div>
         {props.location.pathname === rootPath && <Bio />}
       </div>
