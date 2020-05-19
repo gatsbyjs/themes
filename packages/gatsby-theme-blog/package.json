@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-blog",
-  "version": "1.6.10",
+  "version": "1.6.16",
   "description": "A Gatsby theme for miscellaneous blogging with a dark/light mode",
   "main": "index.js",
   "keywords": [
