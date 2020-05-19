@@ -46,8 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       mdxPages: allMdx {
-        edges {
-          node {
+        nodes {
             id
             parent {
               ... on File {
@@ -56,7 +55,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 relativePath
                 sourceInstanceName
               }
-            }
           }
         }
       }
@@ -70,12 +68,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { mdxPages, site } = result.data
   const siteTitle = site.siteMetadata.title
-  const notes = mdxPages.edges.filter(
-    ({ node }) => node.parent.sourceInstanceName === contentPath
+  const notes = mdxPages.nodes.filter(
+    (node) => node.parent.sourceInstanceName === contentPath
   )
 
   // Create notes pages
-  notes.forEach(({ node }) => {
+  notes.forEach(( node ) => {
     createPage({
       path: toNotesPath(node),
       context: {
@@ -86,9 +84,9 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const notesUrls = notes.map(({ node }) => toNotesPath(node))
+  const notesUrls = notes.map(( node ) => toNotesPath(node))
 
-  const groupedNotes = notes.reduce((acc, { node }) => {
+  const groupedNotes = notes.reduce((acc, node) => {
     const { dir } = path.parse(node.parent.relativePath)
 
     if (!dir) {

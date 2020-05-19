@@ -3,10 +3,11 @@ import Posts from "../../components/posts"
 
 export default ({ location, data }) => {
   const { site, allBlogPost } = data
+  console.log(data)
   return (
     <Posts
       location={location}
-      posts={allBlogPost.edges}
+      posts={allBlogPost.nodes}
       siteTitle={site.siteMetadata.title}
       socialLinks={site.siteMetadata.social}
     />
