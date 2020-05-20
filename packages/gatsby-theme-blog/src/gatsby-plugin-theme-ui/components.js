@@ -41,7 +41,7 @@ const heading = Tag => props => (
         pr: `4px`,
         color: `primary`,
       })}
-      aria-label={props.id}
+      aria-label={props.children}
     >
       <LinkIcon />
     </a>
