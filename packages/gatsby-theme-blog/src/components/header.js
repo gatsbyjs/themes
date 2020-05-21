@@ -1,7 +1,9 @@
-import React from "react"
+/** @jsx jsx */
 import { Link } from "gatsby"
-import { css, Styled } from "theme-ui"
+import { jsx, css, Styled } from "theme-ui"
 import Bio from "./bio"
+import { SkipNavLink } from "@reach/skip-nav"
+
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -54,6 +56,7 @@ const Title = ({ children, location }) => {
 export default ({ children, title, ...props }) => {
   return (
     <header>
+      <SkipNavLink sx={{color: `primary`}} />
       <div
         css={css({
           maxWidth: `container`,

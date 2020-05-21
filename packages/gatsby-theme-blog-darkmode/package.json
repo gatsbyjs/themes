@@ -13,7 +13,8 @@
     "license": "MIT",
     "dependencies": {
       "gatsby-theme-blog": "^1.6.16",
-      "react-switch": "^5.0.1"
+      "react-switch": "^5.0.1",
+      "@reach/skip-nav": "^0.10.2"
     },
     "devDependencies": {
       "gatsby": "^2.21.35",

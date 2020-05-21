@@ -1,10 +1,11 @@
-import React from "react"
+/** @jsx jsx */
 import { Link } from "gatsby"
-import { css, useColorMode, Styled } from "theme-ui"
+import { jsx, css, useColorMode, Styled } from "theme-ui"
 import Switch from "../../components/switch"
 import Bio from "gatsby-theme-blog/src/components/bio"
 import sun from "../../../assets/sun.png"
 import moon from "../../../assets/moon.png"
+import { SkipNavLink } from "@reach/skip-nav"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -87,6 +88,7 @@ export default ({ children, title, ...props }) => {
 
   return (
     <header>
+      <SkipNavLink sx={{color: 'primary'}}/>
       <div
         css={css({
           maxWidth: `container`,
