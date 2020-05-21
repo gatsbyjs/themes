@@ -1,5 +1,6 @@
 module.exports = options => {
   let {disableThemeUiStyling = false} = options
+  console.log(require(`gatsby-theme-ui-preset`))
   return {
     plugins: [
       {

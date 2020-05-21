@@ -2,7 +2,7 @@
   "name": "gatsby-theme-ui-preset",
   "version": "0.0.31",
   "description": "A preset for theme-ui styles",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
@@ -20,11 +20,7 @@
     "watch": "microbundle watch --no-compress"
   },
   "dependencies": {
-    "theme-ui": "0.4.0-alpha.3",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography-theme-wordpress-2016": "^0.16.19",
-    "@theme-ui/typography": "^0.2.46"
+    "theme-ui": "0.4.0-alpha.3"
   },
   "devDependencies": {
     "prettier": "2.0.5",

@@ -1,11 +1,3 @@
-import "typeface-montserrat"
-import "typeface-merriweather"
-import { toTheme } from "@theme-ui/typography"
-import wordpress2016 from "typography-theme-wordpress-2016"
-import {merge} from "theme-ui"
-
-export const typography = toTheme(wordpress2016)
-
 const purple60 = `#663399`
 const purple30 = `#D9BAE8`
 const grey90 = `#232129`
@@ -16,7 +8,7 @@ const opaqueLightYellow = `rgba(255, 229, 100, 0.2)`
 const opaqueLightWhite = `hsla(0, 0%, 100%, 0.2)`
 const lightGray = `hsla(0, 0%, 0%, 0.2)`
 
-export const colors = {
+const colors = {
   text: grey90,
   background: white,
   primary: purple60,
@@ -52,7 +44,7 @@ export const colors = {
   },
 }
 
-export const prism = {
+const prism = {
     ".attr-name": {
       fontStyle: `italic`,
     },
@@ -91,7 +83,7 @@ export const prism = {
     },
   }
 
-  export const styles = {
+const styles = {
     root: {
       fontFamily: `body`,
     },
@@ -106,6 +98,9 @@ export const prism = {
       overflow: `auto`,
       borderRadius: 10,
       p: 3,
+      ".highlight": {
+        "background": "hsla(0, 0%, 40%, .5)"
+      },
     },
     code: {
       fontFamily: `monospace`,
@@ -149,18 +144,23 @@ export const prism = {
   }
   
   
-  export const preset = merge(typography, {
+const preset = {
     initialColorMode: `light`,
     colors,
     fonts: {
-      heading: `Montserrat, sans-serif`,
-      monospace: `Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+      body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      heading: 'Georgia, serif',
+      monospace: 'Menlo, monospace',
     },
     sizes: {
       container: 672,
     },
     styles,
     prism,
-  })
+  }
 
-  export default preset
+  module.exports = preset
+
+  // module.exports.preset = preset
+
