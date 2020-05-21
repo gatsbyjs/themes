@@ -4,13 +4,16 @@ module.exports = options => {
     plugins: [
       {
         resolve: `gatsby-theme-blog-core`,
-        options,
+        options
       },
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-twitter`,
       `gatsby-plugin-emotion`,
       !disableThemeUiStyling && {
         resolve: `gatsby-plugin-theme-ui`,
+        options: {
+          preset: `gatsby-theme-ui-preset`
+        }
       }
     ].filter(Boolean)
   }
