@@ -30,8 +30,7 @@ module.exports = themeOptions => {
             {
               resolve: `gatsby-remark-images`,
               options: {
-                // should this be configurable by the end-user?
-                maxWidth: 1380,
+                maxWidth: options.imageMaxWidth,
                 linkImagesToOriginal: false,
               },
             },

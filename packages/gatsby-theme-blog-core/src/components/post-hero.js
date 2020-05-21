@@ -5,7 +5,7 @@ const Hero = ({ post }) => (
   <>
     {post?.image?.childImageSharp && (
       <Image
-        fluid={post.image.childImageSharp.fluid}
+        fluid={post.image.childImageSharp.fluid.src}
         alt={post.imageAlt ? post.imageAlt : post.excerpt}
       />
     )}
