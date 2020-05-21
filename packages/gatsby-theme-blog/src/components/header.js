@@ -56,7 +56,7 @@ const Title = ({ children, location }) => {
 export default ({ children, title, ...props }) => {
   return (
     <header>
-      <SkipNavLink sx={{color: `primary`}} />
+      <SkipNavLink sx={{variant: `styles.a`}} />
       <div
         css={css({
           maxWidth: `container`,
