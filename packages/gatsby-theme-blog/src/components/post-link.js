@@ -3,7 +3,8 @@ import { Styled, jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 const PostLink = ({ title, slug, date, excerpt }) => (
-  <div>
+  <article>
+    <header>
     <Styled.h2
       sx={{
         mb: 1,
@@ -20,8 +21,11 @@ const PostLink = ({ title, slug, date, excerpt }) => (
       </Styled.a>
     </Styled.h2>
     <small>{date}</small>
+    </header>
+    <section>
     <Styled.p>{excerpt}</Styled.p>
-  </div>
+    </section>
+  </article>
 )
 
 export default PostLink
