@@ -66,7 +66,10 @@ module.exports = {
 | `contentPath`            | `content/posts`  | Location of blog posts                                                                                                                                             |
 | `assetPath`              | `content/assets` | Location of assets                                                                                                                                                 |
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                                                                                   |
+| `preset`  | `gatsby-theme-ui-preset`          | Install your dependency and pass in the package name. All local shadowing will deep merge with this preset. |
+| `prismPreset`  | `null`         | Install your dependency and pass in the package name. For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
 | `disableThemeUiStyling`  | `false`          | Set this flag `true` if you want to use the blog theme without `gatsby-plugin-theme-ui` styles. Note that styles within the components you can shadow still exist. |
+| `ignorePreset`  | `false`          | Set this flag `true` if you want to use the blog theme without the default `gatsby-theme-ui-preset` styles. |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                                                                                |
 | `webfontURL`             | `''`             | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                     |
 
