@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import sun from "../../assets/sun.png"
 import moon from "../../assets/moon.png"
 import useBlogThemeConfig from "../hooks/configOptions"
+import { SkipNavLink } from "@reach/skip-nav"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -105,6 +106,7 @@ export default ({ children, title, ...props }) => {
   }
   return (
     <header>
+      <SkipNavLink />
       <div
         css={css({
           maxWidth: `container`,
