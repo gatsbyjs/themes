@@ -35,8 +35,8 @@ module.exports = options => {
       },
       {
         resolve: `gatsby-plugin-theme-ui`,
-        oprtions: {
-          preset: `gatsby-theme-ui-preset`
+        options: {
+          preset: options.preset || `gatsby-theme-ui-preset`
         }
       },
     ].filter(Boolean),
