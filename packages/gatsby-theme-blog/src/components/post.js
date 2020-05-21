@@ -32,10 +32,16 @@ const Post = ({
       imageAlt={post.imageAlt}
     />
     <main>
-      <PostHero post={post} />
-      <PostTitle>{post.title}</PostTitle>
-      <PostDate>{post.date}</PostDate>
-      <MDXRenderer>{post.body}</MDXRenderer>
+      <article>
+        <header>
+          <PostHero post={post} />
+          <PostTitle>{post.title}</PostTitle>
+          <PostDate>{post.date}</PostDate>
+        </header>
+        <section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+        </section>
+      </article>
     </main>
     <PostFooter {...{ previous, next }} />
   </Layout>
