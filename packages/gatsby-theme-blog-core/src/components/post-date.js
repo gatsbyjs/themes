@@ -1,7 +1,7 @@
 import React from "react"
 
 const PostDate = props => (
-  <p
+  <p className="post-date"
     {...props}
   />
 )
