@@ -44,7 +44,7 @@
     "is-present": "^1.0.0",
     "react-feather": "^1.1.6",
     "theme-ui": "0.4.0-alpha.3",
-    "gatsby-theme-ui-preset": "0.0.31"
+    "gatsby-theme-ui-preset": "^0.0.31"
   },
   "engines": {
     "node": ">=10.13.0"
