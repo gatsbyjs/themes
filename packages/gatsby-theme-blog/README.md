@@ -154,9 +154,9 @@ You may want to use a different image for your social card than the one that app
 
 ### How Styles work
 
-The blog theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
+This theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
 
-This theme `gatsby-theme-ui-preset` as your base styles. Any local shadowed styles deep merge with that preset.
+By default, `gatsby-theme-ui-preset` operates as your base styles. Any local shadowed styles deep merge with that preset.
 
 Alternatively, you can pass a preset of your own choosing by installing the package and passing the package name as a `preset` option. Again, local styles will deep merge with this preset if they exist.
 
@@ -196,8 +196,9 @@ module.exports = {
 }
 ```
 
-As an alternative, you can install your prism package into your project and pass the package name.
+As an alternative, you can install a package with a prism theme into your project and pass the package name.
 
+This option is null by default, and in all cases local shadowed styles take precedent.
 
 ##### Highlight Line
 
