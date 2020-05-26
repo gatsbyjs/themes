@@ -15,10 +15,6 @@
     "directory": "packages/gatsby-theme-ui-preset"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-theme-ui-preset#readme",
-  "scripts": {
-    "prepare": "microbundle --no-compress",
-    "watch": "microbundle watch --no-compress"
-  },
   "dependencies": {
     "theme-ui": "0.4.0-alpha.3"
   },
