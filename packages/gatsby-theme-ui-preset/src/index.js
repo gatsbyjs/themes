@@ -162,5 +162,3 @@ const preset = {
 
   module.exports = preset
 
-  // module.exports.preset = preset
-
