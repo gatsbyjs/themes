@@ -53,7 +53,6 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       slug: String!
       date: Date! @dateformat
       tags: [String]!
-      keywords: [String]!
       excerpt: String!
       image: File
       imageAlt: String
@@ -73,7 +72,6 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
         },
         date: { type: `Date!`, extensions: { dateformat: {} } },
         tags: { type: `[String]!` },
-        keywords: { type: `[String]!` },
         excerpt: {
           type: `String!`,
           args: {
@@ -198,7 +196,6 @@ exports.onCreateNode = async (
       tags: node.frontmatter.tags || [],
       slug,
       date: node.frontmatter.date,
-      keywords: node.frontmatter.keywords || [],
       image: node.frontmatter.image,
       socialImage: node.frontmatter.socialImage
     }
@@ -257,7 +254,7 @@ const PostsTemplate = require.resolve(`./src/templates/posts-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
-  const { basePath } = withDefaults(themeOptions)
+  const { basePath, imageMaxWidth } = withDefaults(themeOptions)
 
   const result = await graphql(`
     {
@@ -279,7 +276,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // Create Posts and Post pages.
   const { allBlogPost } = result.data
   const posts = allBlogPost.edges
-
   // Create a page for each Post
   posts.forEach(({ node: post }, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1]
@@ -292,6 +288,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         id: post.id,
         previousId: previous ? previous.node.id : undefined,
         nextId: next ? next.node.id : undefined,
+        maxWidth: imageMaxWidth,
       },
     })
   })
