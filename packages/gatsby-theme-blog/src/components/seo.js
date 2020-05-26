@@ -52,14 +52,6 @@ function SEO({
           content: metaDescription,
         },
         {
-          name: `og:image`,
-          content: image,
-        },
-        {
-          name: `og:image:alt`,
-          content: imageAltText,
-        },
-        {
           property: `og:title`,
           content: title,
         },
@@ -70,18 +62,6 @@ function SEO({
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:image`,
-          content: image,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: imageAltText,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -96,6 +76,36 @@ function SEO({
           content: metaDescription,
         },
       ]
+      .concat (
+        imageSource ? [
+         {
+            name: `og:image`,
+            content: image,
+          },
+          {
+            name: `og:image:alt`,
+            content: imageAltText,
+          },
+        {
+            name: `twitter:image`,
+            content: image,
+          },
+          {
+            name: `twitter:image:alt`,
+            content: imageAltText,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary_large_image`,
+          },
+        ]
+        : [
+            {
+                name: "twitter:card",
+                content: "summary"
+            } 
+        ]
+    )
         .concat(meta)}
     />
   )
