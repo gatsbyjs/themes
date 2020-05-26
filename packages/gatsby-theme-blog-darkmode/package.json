@@ -1,0 +1,33 @@
+{
+    "name": "gatsby-theme-blog-darkmode",
+    "version": "1.0.0",
+    "description": "A Gatsby blog theme for a dark/light mode",
+    "main": "index.js",
+    "keywords": [
+      "gatsby",
+      "gatsby-theme",
+      "gatsby-plugin",
+      "react",
+      "blog"
+    ],
+    "license": "MIT",
+    "dependencies": {
+      "react-switch": "^5.0.1",
+      "@reach/skip-nav": "^0.10.2"
+    },
+    "devDependencies": {
+      "gatsby": "^2.21.35",
+      "prettier": "2.0.5",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0"
+    },
+    "peerDependencies": {
+      "gatsby": "^2.13.13",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6"
+    },
+    "engines": {
+      "node": ">=10.13.0"
+    }
+  }
+  
