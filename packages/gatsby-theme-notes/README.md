@@ -59,3 +59,28 @@ module.exports = {
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site. |
 | `homeText`               | `~`              | Root text for notes breadcrumb trail                                             |
 | `breadcrumbSeparator`    | `/`              | Separator for the breadcrumb trail                                               |
+| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
+
+### How Styles work
+
+This theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
+
+By default, `gatsby-theme-ui-preset` operates as your base styles. Any local shadowed styles deep merge with that preset.
+
+Alternatively, you can pass a preset of your own choosing by installing the package and passing the package name as a `preset` option. Again, local styles will deep merge with this preset if they exist.
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-notes`,
+      options: {
+        preset: `my-preset-name-here`,
+      },
+    },
+  ],
+}
+```
+
+If you'd rather use only local styles with no underlying preset, pass the `ignorePreset` option as `true`.
