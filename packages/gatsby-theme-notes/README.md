@@ -59,8 +59,7 @@ module.exports = {
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site. |
 | `homeText`               | `~`              | Root text for notes breadcrumb trail                                             |
 | `breadcrumbSeparator`    | `/`              | Separator for the breadcrumb trail                                               |
-| `preset`  | `gatsby-theme-ui-preset`          | Install your dependency and pass in the package name. All local shadowing will deep merge with this preset. |
-| `ignorePreset`  | `false`          | Set this flag `true` if you want to use the blog theme without the default `gatsby-theme-ui-preset` styles. |
+| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
 
 ### How Styles work
 
