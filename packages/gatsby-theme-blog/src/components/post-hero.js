@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "gatsby-image"
 
-const Hero = ({ post }) => (
+const PostHero = ({ post }) => (
   <>
     {post?.image?.childImageSharp && (
       <Image
@@ -12,4 +12,4 @@ const Hero = ({ post }) => (
   </>
 )
 
-export default Hero
+export default PostHero

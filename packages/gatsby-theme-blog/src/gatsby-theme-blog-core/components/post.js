@@ -1,7 +1,7 @@
 import React from "react"
 import Post from "../../components/post"
 
-export default ({ location, data }) => {
+const PostWrapper = ({ location, data }) => {
   const { blogPost, previous, next } = data
 
   return (
@@ -13,3 +13,5 @@ export default ({ location, data }) => {
     />
   )
 }
+
+export default PostWrapper
