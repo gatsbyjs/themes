@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { jsx, css, Styled } from "theme-ui"
-import Bio from "./bio"
+import { jsx, css, useColorMode, Styled } from "theme-ui"
+import Switch from "../../components/switch"
+import Bio from "gatsby-theme-blog/src/components/bio"
+import sun from "../../../assets/sun.png"
+import moon from "../../../assets/moon.png"
 import { SkipNavLink } from "@reach/skip-nav"
-
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -53,10 +55,40 @@ const Title = ({ children, location }) => {
   }
 }
 
+const iconCss = [{ pointerEvents: `none`, margin: 4 }]
+
+const checkedIcon = (
+  <img
+    alt="moon indicating dark mode"
+    src={moon}
+    width="16"
+    height="16"
+    role="presentation"
+    css={iconCss}
+  />
+)
+
+const uncheckedIcon = (
+  <img
+    alt="sun indicating light mode"
+    src={sun}
+    width="16"
+    height="16"
+    role="presentation"
+    css={iconCss}
+  />
+)
+
 export default ({ children, title, ...props }) => {
+    const [colorMode, setColorMode] = useColorMode()
+    const isDark = colorMode === `dark`
+    const toggleColorMode = e => {
+        setColorMode(isDark ? `light` : `dark`)
+    }
+
   return (
     <header>
-      <SkipNavLink sx={{variant: `styles.a`}} />
+      <SkipNavLink sx={{variant: 'styles.a'}}/>
       <div
         css={css({
           maxWidth: `container`,
@@ -74,7 +106,14 @@ export default ({ children, title, ...props }) => {
           })}
         >
           <Title {...props}>{title}</Title>
-          {children}
+          <Switch
+            aria-label={`Toggle dark mode ${isDark ? `off` : `on`}`}
+            checkedIcon={checkedIcon}
+            uncheckedIcon={uncheckedIcon}
+            checked={isDark}
+            onChange={toggleColorMode}
+            />
+            {children}
         </div>
         {props.location.pathname === rootPath && <Bio />}
       </div>

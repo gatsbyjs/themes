@@ -3,7 +3,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   createTypes(`
     type BlogThemeConfig implements Node {
-      disableThemeUiStyling: Boolean,
       webfontURL: String,
     }
   `)
@@ -11,12 +10,11 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions, createContentDigest },
-  { disableThemeUiStyling = false, webfontURL = '' }
+  { webfontURL = '' }
 ) => {
   const { createNode } = actions
 
   const blogThemeConfig = {
-    disableThemeUiStyling,
     webfontURL,
   }
 
