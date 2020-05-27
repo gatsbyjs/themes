@@ -66,9 +66,11 @@ module.exports = {
 | `contentPath`            | `content/posts`  | Location of blog posts                                                                                                                                             |
 | `assetPath`              | `content/assets` | Location of assets                                                                                                                                                 |
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                                                                                   |
+| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
+| `prismPreset`  | `null`         | Theme UI compatible package name that will act as the prism syntax highlighting for your project. Be sure to install the package you're referencing.
+For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                                                                                |
 | `webfontURL`             | `''`             | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                     |
-| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
 
 #### Example configuration
 
@@ -175,7 +177,7 @@ module.exports = {
 }
 ```
 
-If you'd rather use only local styles with no underlying preset, pass the `ignorePreset` option as `true`.
+If you'd rather use only local styles with no underlying preset, pass the `preset` option as `false`.
 
 #### Prism
 

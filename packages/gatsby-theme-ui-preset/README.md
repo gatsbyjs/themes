@@ -4,10 +4,10 @@
   </a>
 </p>
 <h1 align="center">
-  The Gatsby Theme UI Preset Theme
+  The Gatsby Theme UI Preset 
 </h1>
 
-A Gatsby theme that contains the Theme-UI configuration used in other official Gatsby themes, e.g. `gatsby-theme-blog`.
+A Theme UI preset that contains the configuration used in other official Gatsby themes, e.g. `gatsby-theme-blog`.
 
 ## Installation
 
@@ -26,8 +26,10 @@ npm install gatsby-theme-ui-preset
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [`gatsby-theme-ui-preset`],
+  plugins: [{
+        resolve: `gatsby-plugin-theme-ui`
+        options: {
+          preset: `gatsby-theme-ui-preset`
+        }}],
 }
 ```
-
-3. Run your site using `gatsby develop` and navigate to `http://localhost:8000/`.
