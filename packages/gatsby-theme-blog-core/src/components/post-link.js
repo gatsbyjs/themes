@@ -2,15 +2,18 @@ import React from "react"
 import { Link } from "gatsby"
 
 const PostLink = ({ title, slug, date, excerpt }) => (
-  <div>
+  <article>
+    <header>
     <h2>
       <Link to={slug}>
         {title || slug}
       </Link>
     </h2>
     <small>{date}</small>
-    <p>{excerpt}</p>
-  </div>
+    </header>
+    <section><p>{excerpt}</p>
+    </section>
+  </article>
 )
 
 export default PostLink

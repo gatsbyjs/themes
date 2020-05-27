@@ -66,7 +66,9 @@ module.exports = {
 | `contentPath`            | `content/posts`  | Location of blog posts                                                                                                                                             |
 | `assetPath`              | `content/assets` | Location of assets                                                                                                                                                 |
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                                                                                   |
-| `disableThemeUiStyling`  | `false`          | Set this flag `true` if you want to use the blog theme without `gatsby-plugin-theme-ui` styles. Note that styles within the components you can shadow still exist. |
+| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
+| `prismPreset`  | `null`         | Theme UI compatible package name that will act as the prism syntax highlighting for your project. Be sure to install the package you're referencing.
+For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                                                                                |
 | `webfontURL`             | `''`             | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                     |
 
@@ -130,7 +132,6 @@ The following are the defined blog post fields based on the node interface in th
 | slug        | String   |
 | date        | Date     |
 | tags        | String[] |
-| keywords    | String[] |
 | excerpt     | String   |
 | image       | String   |
 | imageAlt    | String   |
@@ -153,3 +154,55 @@ image: ./some-image.jpg
 When adding an `image`, `imageAlt` is available to provide alt text for the featured image within the post. If this is not included, it defaults to the post excerpt.
 
 You may want to use a different image for your social card than the one that appears in your blog post. You can do so by setting `socialImage` in frontmatter.
+
+### How Styles work
+
+This theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
+
+By default, `gatsby-theme-ui-preset` operates as your base styles. Any local shadowed styles deep merge with that preset.
+
+Alternatively, you can pass a preset of your own choosing by installing the package and passing the package name as a `preset` option. Again, local styles will deep merge with this preset if they exist.
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {
+        preset: `my-preset-name-here`,
+      },
+    },
+  ],
+}
+```
+
+If you'd rather use only local styles with no underlying preset, pass the `preset` option as `false`.
+
+#### Prism
+
+You can also configure your prism theme for syntax highlighting in code snippets by passing the `prismPreset` option.
+
+`@theme-ui/prism` is included by default, so any [available presets](https://theme-ui.com/packages/prism#syntax-themes) can be passed using only their name, e.g. `dracula`.
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {
+        prismPreset: `dracula`,
+      },
+    },
+  ],
+}
+```
+
+As an alternative, you can install a package with a prism theme into your project and pass the package name.
+
+This option is null by default, and in all cases local shadowed styles take precedent.
+
+##### Highlight Line
+
+You can highlight code snippets using `// highlight line` or a combination of `// highlight-start` and `// highlight-end`.
