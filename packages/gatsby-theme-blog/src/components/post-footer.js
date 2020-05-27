@@ -4,7 +4,7 @@ import { css, Styled, Flex } from "theme-ui"
 
 import Bio from "../components/bio"
 
-const Footer = ({ previous, next }) => (
+const PostFooter = ({ previous, next }) => (
   <footer
     css={css({
       mt: 4,
@@ -42,4 +42,4 @@ const Footer = ({ previous, next }) => (
   </footer>
 )
 
-export default Footer
+export default PostFooter

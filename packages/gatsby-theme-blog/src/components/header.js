@@ -53,7 +53,7 @@ const Title = ({ children, location }) => {
   }
 }
 
-export default ({ children, title, ...props }) => {
+const Header = ({ children, title, ...props }) => {
   return (
     <header>
       <SkipNavLink sx={{variant: `styles.a`}} />
@@ -81,3 +81,5 @@ export default ({ children, title, ...props }) => {
     </header>
   )
 }
+
+export default Header

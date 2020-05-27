@@ -79,7 +79,7 @@ const uncheckedIcon = (
   />
 )
 
-export default ({ children, title, ...props }) => {
+const Header = ({ children, title, ...props }) => {
     const [colorMode, setColorMode] = useColorMode()
     const isDark = colorMode === `dark`
     const toggleColorMode = e => {
@@ -120,3 +120,5 @@ export default ({ children, title, ...props }) => {
     </header>
   )
 }
+
+export default Header
