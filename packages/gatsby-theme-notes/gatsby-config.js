@@ -1,5 +1,5 @@
 module.exports = options => {
-  const { mdxOtherwiseConfigured = false, mdx: legacyConfigureMdxFlag = true, mdxLayouts = {} } = options
+  const { mdxOtherwiseConfigured = false, mdx: legacyConfigureMdxFlag = true, mdxLayouts = {}, preset = `gatsby-theme-ui-preset` } = options
 
   return {
     siteMetadata: {
@@ -36,7 +36,7 @@ module.exports = options => {
       {
         resolve: `gatsby-plugin-theme-ui`,
         options: {
-          preset: options.preset || `gatsby-theme-ui-preset`
+          preset: preset === false ? {} : preset, // Allow a user to use only local shadowing with no preset
         }
       },
     ].filter(Boolean),

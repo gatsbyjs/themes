@@ -1,6 +1,5 @@
 module.exports = options => {
-  const {ignorePreset = false} = options
-  const preset = options.preset || `gatsby-theme-ui-preset`
+  const {preset = `gatsby-theme-ui-preset`} = options
   return {
     plugins: [
       {
@@ -13,7 +12,7 @@ module.exports = options => {
       {
         resolve: `gatsby-plugin-theme-ui`,
         options: {
-          preset: ignorePreset ? {} : preset, // Allow a user to use only local shadowing with no preset
+          preset: preset === false ? {} : preset, // Allow a user to use only local shadowing with no preset
           prismPreset: options.prismPreset
         }
       }

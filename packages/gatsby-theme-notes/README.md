@@ -83,4 +83,4 @@ module.exports = {
 }
 ```
 
-If you'd rather use only local styles with no underlying preset, pass the `ignorePreset` option as `true`.
+If you'd rather use only local styles with no underlying preset, pass the `preset` option as `false`.
