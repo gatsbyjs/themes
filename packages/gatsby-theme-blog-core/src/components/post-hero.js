@@ -7,7 +7,7 @@ const Hero = ({ post }) => (
       <Image
         fluid={post.image.childImageSharp.fluid}
         alt={post.imageAlt ? post.imageAlt : post.excerpt}
-        className="post-image"
+        className="post-hero"
       />
     )}
   </>
