@@ -71,6 +71,7 @@ module.exports = {
 For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                                                                                |
 | `webfontURL`             | `''`             | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                     |
+| `imageMaxWidth`          | `1380`            | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well.                              |
 
 #### Example configuration
 
@@ -83,6 +84,7 @@ module.exports = {
       options: {
         // basePath defaults to `/`
         basePath: `/blog`,
+        prismPreset: `prism-okaidia`,
       },
     },
   ],
@@ -103,9 +105,9 @@ module.exports = {
     author: `My Name`,
     // Used for SEO
     description: `My site description...`,
-    // Used for social links in the root footer
-    siteUrl: `https://example.com`,
     // Used for resolving images in social cards
+    siteUrl: `https://example.com`,
+    // Used for social links in the root footer
     social: [
       {
         name: `Twitter`,
@@ -149,19 +151,19 @@ image: ./some-image.jpg
 ---
 ```
 
-`image` refers to the featured image at the top of a post and is not required. It will also appear as the preview image inside a social card. Note that this requires you to set `siteURL` in your `gatsby-config.js` file metadata to your site's domain.
+`image` refers to the featured image at the top of a post and is not required. It will also appear as the preview image inside a social card. Note that this requires you to set `siteUrl` in your `gatsby-config.js` file metadata to your site's domain.
 
 When adding an `image`, `imageAlt` is available to provide alt text for the featured image within the post. If this is not included, it defaults to the post excerpt.
 
-You may want to use a different image for your social card than the one that appears in your blog post. You can do so by setting `socialImage` in frontmatter.
+You may want to use a different image for social sharing than the one that appears in your blog post. You can do so by setting `socialImage` in frontmatter.
 
 ### How Styles work
 
 This theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
 
-By default, `gatsby-theme-ui-preset` operates as your base styles. Any local shadowed styles deep merge with that preset.
+By default, `gatsby-theme-ui-preset` operates as your base theme styles. Any local shadowed styles deep merge with that preset.
 
-Alternatively, you can pass a preset of your own choosing by installing the package and passing the package name as a `preset` option. Again, local styles will deep merge with this preset if they exist.
+Alternatively, you can pass a preset of your own choosing by installing the package and passing the package name as the `preset` in `gatsby-config.js`. Again, local shadowed styles will deep merge with this preset if they exist.
 
 ```js
 // gatsby-config.js
@@ -177,7 +179,7 @@ module.exports = {
 }
 ```
 
-If you'd rather use only local styles with no underlying preset, pass the `preset` option as `false`.
+If you'd rather use only local shadowed styles with no underlying preset, pass the `preset` option as `false`.
 
 #### Prism
 
@@ -206,3 +208,5 @@ This option is null by default, and in all cases local shadowed styles take prec
 ##### Highlight Line
 
 You can highlight code snippets using `// highlight line` or a combination of `// highlight-start` and `// highlight-end`.
+
+To update the styling for these highlights override the `.highlight` styles inside your prism theme.

@@ -24,4 +24,18 @@ module.exports = {
 }
 ```
 
+## Shadowing styles
+
+To shadow styles, create `src/gatsby-plugin-theme-ui/index.js`. Include an object with the styles you'd prefer.
+
+```javascript
+  colors: {
+      modes: {
+        dark: {
+            text: tomato,
+        },
+    },
+  },
+```
+
 
