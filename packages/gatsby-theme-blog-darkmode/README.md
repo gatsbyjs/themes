@@ -38,4 +38,23 @@ To shadow styles, create `src/gatsby-plugin-theme-ui/index.js`. Include an objec
   },
 ```
 
+If you'd like to override only some styles you'll want to deepmerge.
+
+```javascript
+import {merge} from "theme-ui"
+import darkmode from "gatsby-theme-blog-darkmode/src/gatsby-plugin-theme-ui"
+
+export default merge(darkmode, {
+    colors: {
+        modes: {
+            dark: {
+                text: `tomato`
+            }
+        }
+    }
+}
+)
+```
+
+
 
