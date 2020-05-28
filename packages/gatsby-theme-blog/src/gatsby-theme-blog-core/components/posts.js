@@ -3,7 +3,6 @@ import Posts from "../../components/posts"
 
 export default ({ location, data }) => {
   const { site, allBlogPost } = data
-  console.log(data)
   return (
     <Posts
       location={location}
