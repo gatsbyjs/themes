@@ -126,3 +126,10 @@ The following are the defined blog post fields based on the node interface in th
 | image       | String   |
 | imageAlt    | String   |
 | socialImage | String   |
+
+
+## Available components and styling
+
+There are some existing components that you can import and use. Reference the full path to do so, e.g. `gatsby-blog-theme/src/components/post`.
+
+Also note that there are classNames on elements in these components allowing you to target them with styles.
