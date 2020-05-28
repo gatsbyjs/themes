@@ -2,9 +2,9 @@ import React from "react"
 
 import PostLink from "./post-link"
 
-const PostList = ({ posts }) => (
+const PostList = ({posts}) => (
   <>
-    {posts.map(({ node }) => (
+    {posts.map(( node ) => (
       <PostLink key={node.slug} {...node} />
     ))}
   </>

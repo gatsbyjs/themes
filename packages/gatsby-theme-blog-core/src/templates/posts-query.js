@@ -15,8 +15,7 @@ export const query = graphql`
       }
     }
     allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-      edges {
-        node {
+      nodes {
           id
           excerpt
           slug
@@ -24,7 +23,6 @@ export const query = graphql`
           date(formatString: "MMMM DD, YYYY")
           tags
         }
-      }
     }
   }
 `

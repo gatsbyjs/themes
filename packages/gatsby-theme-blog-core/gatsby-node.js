@@ -259,12 +259,10 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const result = await graphql(`
     {
       allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-        edges {
-          node {
+        nodes {
             id
             slug
           }
-        }
       }
     }
   `)
@@ -275,9 +273,10 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   // Create Posts and Post pages.
   const { allBlogPost } = result.data
-  const posts = allBlogPost.edges
+  const posts = allBlogPost.nodes
+  
   // Create a page for each Post
-  posts.forEach(({ node: post }, index) => {
+  posts.forEach((post , index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1]
     const next = index === 0 ? null : posts[index - 1]
     const { slug } = post
@@ -286,8 +285,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       component: PostTemplate,
       context: {
         id: post.id,
-        previousId: previous ? previous.node.id : undefined,
-        nextId: next ? next.node.id : undefined,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
         maxWidth: imageMaxWidth,
       },
     })

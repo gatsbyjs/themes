@@ -4,7 +4,7 @@ import PostLink from "./post-link"
 
 const PostList = ({ posts }) => (
   <>
-    {posts.map(({ node }) => (
+    {posts.map(( node ) => (
       <PostLink key={node.slug} {...node} />
     ))}
   </>
