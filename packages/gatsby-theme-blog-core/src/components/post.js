@@ -10,13 +10,13 @@ const Post = ({data}) => {
     const post = data.blogPost
     return (
         <main>
-            <article>
+            <article className="post">
                 <header>
                 <PostHero post={post} />
                 <PostTitle>{post.title}</PostTitle>
                 <PostDate>{post.date}</PostDate>
                 </header>
-                <section>
+                <section className="post-body">
                     <MDXRenderer>{post.body}</MDXRenderer>
                 </section>
             </article>
