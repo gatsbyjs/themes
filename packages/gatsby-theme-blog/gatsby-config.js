@@ -16,6 +16,6 @@ module.exports = options => {
           prismPreset: options.prismPreset
         }
       }
-    ].filter(Boolean)
+    ]
   }
 }
