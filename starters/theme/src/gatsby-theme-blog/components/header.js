@@ -20,7 +20,7 @@ export default props => (
         },
       })}
     >
-      Notes
+      TEST
     </Styled.a>
   </Header>
 )
