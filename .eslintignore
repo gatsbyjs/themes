@@ -4,3 +4,4 @@ packages/*/dist/**
 packages/*/lib/**
 packages/*/scripts/**
 starters
+.github
