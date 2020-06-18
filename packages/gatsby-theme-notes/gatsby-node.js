@@ -1,10 +1,10 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const Debug = require(`debug`)
+const debug = require(`debug`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
 
-const debug = Debug(`gatsby-theme-notes`)
+const debugTheme = debug(`gatsby-theme-notes`)
 
 // These are customizable theme options we only need to check once
 let basePath
@@ -23,7 +23,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   const dirs = [path.join(program.directory, contentPath)]
 
   dirs.forEach((dir) => {
-    debug(`Initializing ${dir} directory`)
+    debugTheme(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
     }

@@ -1,14 +1,14 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const Debug = require(`debug`)
+const debug = require(`debug`)
 const {
   createFilePath,
   createRemoteFileNode,
 } = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest, slash } = require(`gatsby-core-utils`)
 
-const debug = Debug(`gatsby-theme-blog-core`)
+const debugTheme = debug(`gatsby-theme-blog-core`)
 const withDefaults = require(`./utils/default-options`)
 
 // Ensure that content directories exist at site-level
@@ -22,7 +22,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   ]
 
   dirs.forEach((dir) => {
-    debug(`Initializing ${dir} directory`)
+    debugTheme(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
     }
