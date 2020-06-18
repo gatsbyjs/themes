@@ -14,11 +14,34 @@
     "e2e:dev": "concurrently --kill-others 'yarn ssat:gatsby-starter-theme:dev'",
     "e2e:ci": "yarn gatsby-starter-theme:cy:build && yarn ssat:gatsby-starter-theme:serve"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "workspaces": [
     "packages/*",
     "starters/*"
   ],
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-flowtype": "^5.1.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
     "cypress": "^4.8.0",
     "eslint-plugin-cypress": "^2.11.1",
     "start-server-and-test": "^1.11.0"
