@@ -3,10 +3,30 @@
   "name": "gatsby-themes",
   "version": "0.0.1",
   "scripts": {
-    "start": "yarn workspace gatsby-starter-theme develop"
+    "start": "yarn workspace gatsby-starter-theme develop",
+    "cy:open": "cypress open",
+    "cy:run": "cross-env CYPRESS_baseUrl=http://localhost:9000 cypress run",
+    "gatsby-starter-theme:cy:dev": "yarn workspace gatsby-starter-theme develop:cypress",
+    "gatsby-starter-theme:cy:build": "yarn workspace gatsby-starter-theme build:cypress",
+    "gatsby-starter-theme:serve": "yarn workspace gatsby-starter-theme serve",
+    "ssat:gatsby-starter-theme:dev": "start-server-and-test gatsby-starter-theme:cy:dev http://localhost:8000 cy:open",
+    "ssat:gatsby-starter-theme:serve": "start-server-and-test gatsby-starter-theme:serve http://localhost:9000 cy:run",
+    "e2e:dev": "concurrently --kill-others 'yarn ssat:gatsby-starter-theme:dev'",
+    "e2e:ci": "yarn gatsby-starter-theme:cy:build && yarn ssat:gatsby-starter-theme:serve"
   },
   "workspaces": [
     "packages/*",
     "starters/*"
-  ]
+  ],
+  "dependencies": {
+    "cypress": "^4.8.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "start-server-and-test": "^1.11.0"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "gatsby-cypress": "^0.4.4"
+  }
 }
