@@ -11,7 +11,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions, createContentDigest },
-  { disableThemeUiStyling = false, webfontURL = '' }
+  { disableThemeUiStyling = false, webfontURL = `` }
 ) => {
   const { createNode } = actions
 

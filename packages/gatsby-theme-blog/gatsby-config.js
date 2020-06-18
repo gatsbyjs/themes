@@ -1,5 +1,5 @@
-module.exports = options => {
-  let {disableThemeUiStyling = false} = options
+module.exports = (options) => {
+  const { disableThemeUiStyling = false } = options
   return {
     plugins: [
       {
@@ -11,7 +11,7 @@ module.exports = options => {
       `gatsby-plugin-emotion`,
       !disableThemeUiStyling && {
         resolve: `gatsby-plugin-theme-ui`,
-      }
-    ].filter(Boolean)
+      },
+    ].filter(Boolean),
   }
 }

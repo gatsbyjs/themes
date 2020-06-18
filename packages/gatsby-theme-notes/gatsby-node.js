@@ -22,7 +22,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
 
   const dirs = [path.join(program.directory, contentPath)]
 
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     debug(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
@@ -33,7 +33,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const toNotesPath = node => {
+  const toNotesPath = (node) => {
     const { dir } = path.parse(node.parent.relativePath)
     return urlResolve(basePath, dir, node.parent.name)
   }
@@ -122,7 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         breadcrumbs,
         siteTitle,
-        urls: value.map(v => v.url),
+        urls: value.map((v) => v.url),
       },
       component: NotesTemplate,
     })

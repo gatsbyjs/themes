@@ -1,4 +1,4 @@
-module.exports = themeOptions => {
+module.exports = (themeOptions) => {
   const basePath = themeOptions.basePath || `/`
   const contentPath = themeOptions.contentPath || `content/posts`
   const assetPath = themeOptions.assetPath || `content/assets`
@@ -8,6 +8,6 @@ module.exports = themeOptions => {
     basePath,
     contentPath,
     assetPath,
-    excerptLength
+    excerptLength,
   }
 }

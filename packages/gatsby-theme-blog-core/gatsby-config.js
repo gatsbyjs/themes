@@ -1,15 +1,18 @@
 const withDefaults = require(`./utils/default-options`)
 
-module.exports = themeOptions => {
+module.exports = (themeOptions) => {
   const options = withDefaults(themeOptions)
-  let { mdxOtherwiseConfigured = false, mdx: legacyConfigureMdxFlag = true } = themeOptions // keep mdx flag so we don't introduce a breaking change
-  
+  const {
+    mdxOtherwiseConfigured = false,
+    mdx: legacyConfigureMdxFlag = true,
+  } = themeOptions // keep mdx flag so we don't introduce a breaking change
+
   return {
     siteMetadata: {
       title: `Blog Title Placeholder`,
       author: `Name Placeholder`,
       description: `Description placeholder`,
-      siteUrl: 'https://example.com',
+      siteUrl: `https://example.com`,
       social: [
         {
           name: `Twitter`,
@@ -22,25 +25,26 @@ module.exports = themeOptions => {
       ],
     },
     plugins: [
-      (!mdxOtherwiseConfigured && legacyConfigureMdxFlag) && {
-        resolve: `gatsby-plugin-mdx`,
-        options: {
-          extensions: [`.mdx`, `.md`],
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-images`,
-              options: {
-                // should this be configurable by the end-user?
-                maxWidth: 1380,
-                linkImagesToOriginal: false,
+      !mdxOtherwiseConfigured &&
+        legacyConfigureMdxFlag && {
+          resolve: `gatsby-plugin-mdx`,
+          options: {
+            extensions: [`.mdx`, `.md`],
+            gatsbyRemarkPlugins: [
+              {
+                resolve: `gatsby-remark-images`,
+                options: {
+                  // should this be configurable by the end-user?
+                  maxWidth: 1380,
+                  linkImagesToOriginal: false,
+                },
               },
-            },
-            { resolve: `gatsby-remark-copy-linked-files` },
-            { resolve: `gatsby-remark-smartypants` },
-          ],
-          remarkPlugins: [require(`remark-slug`)],
+              { resolve: `gatsby-remark-copy-linked-files` },
+              { resolve: `gatsby-remark-smartypants` },
+            ],
+            remarkPlugins: [require(`remark-slug`)],
+          },
         },
-      },
       {
         resolve: `gatsby-source-filesystem`,
         options: {

@@ -1,5 +1,9 @@
-module.exports = options => {
-  const { mdxOtherwiseConfigured = false, mdx: legacyConfigureMdxFlag = true, mdxLayouts = {} } = options
+module.exports = (options) => {
+  const {
+    mdxOtherwiseConfigured = false,
+    mdx: legacyConfigureMdxFlag = true,
+    mdxLayouts = {},
+  } = options
 
   return {
     siteMetadata: {
@@ -8,16 +12,17 @@ module.exports = options => {
       siteUrl: `http://example.com/`,
     },
     plugins: [
-      (!mdxOtherwiseConfigured && legacyConfigureMdxFlag) && {
-        resolve: `gatsby-plugin-mdx`,
-        options: {
-          extensions: [`.md`, `.mdx`],
-          defaultLayouts: {
-            default: require.resolve(`./src/components/layout`),
-            ...mdxLayouts,
+      !mdxOtherwiseConfigured &&
+        legacyConfigureMdxFlag && {
+          resolve: `gatsby-plugin-mdx`,
+          options: {
+            extensions: [`.md`, `.mdx`],
+            defaultLayouts: {
+              default: require.resolve(`./src/components/layout`),
+              ...mdxLayouts,
+            },
           },
         },
-      },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
