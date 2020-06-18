@@ -7,6 +7,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
+    "serve": "gatsby serve",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build"
   },
