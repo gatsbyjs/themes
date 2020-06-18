@@ -5,6 +5,22 @@
   "scripts": {
     "start": "yarn workspace gatsby-starter-theme develop"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "workspaces": [
     "packages/*",
     "starters/*"
