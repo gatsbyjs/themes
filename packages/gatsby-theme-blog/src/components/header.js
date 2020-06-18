@@ -24,7 +24,7 @@ const Title = ({ children, location }) => {
             color: `inherit`,
             boxShadow: `none`,
             textDecoration: `none`,
-          )}
+          })}
           to={`/`}
         >
           {children}
