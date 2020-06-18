@@ -2,7 +2,10 @@ const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
 const Debug = require(`debug`)
-const { createFilePath, createRemoteFileNode } = require(`gatsby-source-filesystem`)
+const {
+  createFilePath,
+  createRemoteFileNode,
+} = require(`gatsby-source-filesystem`)
 const { urlResolve, createContentDigest, slash } = require(`gatsby-core-utils`)
 
 const debug = Debug(`gatsby-theme-blog-core`)
@@ -18,7 +21,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
     path.join(program.directory, assetPath),
   ]
 
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     debug(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
@@ -26,7 +29,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   })
 }
 
-const mdxResolverPassthrough = fieldName => async (
+const mdxResolverPassthrough = (fieldName) => async (
   source,
   args,
   context,
@@ -44,7 +47,7 @@ const mdxResolverPassthrough = fieldName => async (
 }
 
 exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
-  const {excerptLength} = withDefaults(themeOptions)
+  const { excerptLength } = withDefaults(themeOptions)
   const { createTypes } = actions
   createTypes(`interface BlogPost @nodeInterface {
       id: ID!
@@ -88,7 +91,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
             if (source.image___NODE) {
               return context.nodeModel.getNodeById({ id: source.image___NODE })
             } else if (source.image) {
-              return processRelativeImage(source, context, "image")
+              return processRelativeImage(source, context, `image`)
             }
           },
         },
@@ -96,12 +99,14 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           type: `String`,
         },
         socialImage: {
-          type: 'File',
+          type: `File`,
           resolve: async (source, args, context, info) => {
             if (source.socialImage___NODE) {
-              return context.nodeModel.getNodeById({ id: source.socialImage___NODE })
+              return context.nodeModel.getNodeById({
+                id: source.socialImage___NODE,
+              })
             } else if (source.socialImage) {
-              return processRelativeImage(source, context, "socialImage")
+              return processRelativeImage(source, context, `socialImage`)
             }
           },
         },
@@ -113,30 +118,28 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       interfaces: [`Node`, `BlogPost`],
       extensions: {
         infer: false,
-      }
+      },
     })
   )
 }
 
 function processRelativeImage(source, context, type) {
-                // Image is a relative path - find a corresponding file
-                const mdxFileNode = context.nodeModel.findRootNodeAncestor(
-                  source,
-                  node => node.internal && node.internal.type === `File`
-                )
-                if (!mdxFileNode) {
-                  return
-                }
-                const imagePath = slash(
-                  path.join(mdxFileNode.dir, source[type])
-                )
+  // Image is a relative path - find a corresponding file
+  const mdxFileNode = context.nodeModel.findRootNodeAncestor(
+    source,
+    (node) => node.internal && node.internal.type === `File`
+  )
+  if (!mdxFileNode) {
+    return
+  }
+  const imagePath = slash(path.join(mdxFileNode.dir, source[type]))
 
-                const fileNodes = context.nodeModel.getAllNodes({ type: `File` })
-                for (let file of fileNodes) {
-                  if (file.absolutePath === imagePath) {
-                    return file
-                  }
-                }
+  const fileNodes = context.nodeModel.getAllNodes({ type: `File` })
+  for (const file of fileNodes) {
+    if (file.absolutePath === imagePath) {
+      return file
+    }
+  }
 }
 
 function validURL(str) {
@@ -151,9 +154,7 @@ function validURL(str) {
 // Create fields for post slugs and source
 // This will change with schema customization with work
 exports.onCreateNode = async (
-  { node, actions, getNode, createNodeId,
-    store,
-    cache},
+  { node, actions, getNode, createNodeId, store, cache },
   themeOptions
 ) => {
   const { createNode, createParentChildLink } = actions
@@ -197,38 +198,40 @@ exports.onCreateNode = async (
       slug,
       date: node.frontmatter.date,
       image: node.frontmatter.image,
-      socialImage: node.frontmatter.socialImage
+      socialImage: node.frontmatter.socialImage,
     }
 
-    if (validURL(node.frontmatter.image)) { // create a file node for image URLs
+    if (validURL(node.frontmatter.image)) {
+      // create a file node for image URLs
       const remoteFileNode = await createRemoteFileNode({
         url: node.frontmatter.image,
         parentNodeId: node.id,
         createNode,
         createNodeId,
         cache,
-        store
+        store,
       })
       // if the file was created, attach the new node to the parent node
       if (remoteFileNode) {
         fieldData.image___NODE = remoteFileNode.id
       }
-    } 
+    }
 
-    if (validURL(node.frontmatter.socialImage)) { // create a file node for image URLs
+    if (validURL(node.frontmatter.socialImage)) {
+      // create a file node for image URLs
       const remoteFileNode = await createRemoteFileNode({
         url: node.frontmatter.socialImage,
         parentNodeId: node.id,
         createNode,
         createNodeId,
         cache,
-        store
+        store,
       })
       // if the file was created, attach the new node to the parent node
       if (remoteFileNode) {
         fieldData.socialImage___NODE = remoteFileNode.id
       }
-    } 
+    }
 
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`)
     await createNode({
@@ -260,9 +263,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     {
       allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
         nodes {
-            id
-            slug
-          }
+          id
+          slug
+        }
       }
     }
   `)
@@ -274,9 +277,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   // Create Posts and Post pages.
   const { allBlogPost } = result.data
   const posts = allBlogPost.nodes
-  
+
   // Create a page for each Post
-  posts.forEach((post , index) => {
+  posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1]
     const next = index === 0 ? null : posts[index - 1]
     const { slug } = post

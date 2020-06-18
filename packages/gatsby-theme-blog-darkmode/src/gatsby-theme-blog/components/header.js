@@ -80,15 +80,15 @@ const uncheckedIcon = (
 )
 
 const Header = ({ children, title, ...props }) => {
-    const [colorMode, setColorMode] = useColorMode()
-    const isDark = colorMode === `dark`
-    const toggleColorMode = e => {
-        setColorMode(isDark ? `light` : `dark`)
-    }
+  const [colorMode, setColorMode] = useColorMode()
+  const isDark = colorMode === `dark`
+  const toggleColorMode = (e) => {
+    setColorMode(isDark ? `light` : `dark`)
+  }
 
   return (
     <header>
-      <SkipNavLink sx={{variant: 'styles.a'}}/>
+      <SkipNavLink sx={{ variant: `styles.a` }} />
       <div
         css={css({
           maxWidth: `container`,
@@ -112,8 +112,8 @@ const Header = ({ children, title, ...props }) => {
             uncheckedIcon={uncheckedIcon}
             checked={isDark}
             onChange={toggleColorMode}
-            />
-            {children}
+          />
+          {children}
         </div>
         {props.location.pathname === rootPath && <Bio />}
       </div>

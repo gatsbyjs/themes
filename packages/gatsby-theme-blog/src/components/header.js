@@ -4,7 +4,6 @@ import { jsx, css, Styled } from "theme-ui"
 import Bio from "./bio"
 import { SkipNavLink } from "@reach/skip-nav"
 
-
 const rootPath = `${__PATH_PREFIX__}/`
 
 const Title = ({ children, location }) => {
@@ -53,33 +52,31 @@ const Title = ({ children, location }) => {
   }
 }
 
-const Header = ({ children, title, ...props }) => {
-  return (
-    <header>
-      <SkipNavLink sx={{variant: `styles.a`}} />
+const Header = ({ children, title, ...props }) => (
+  <header>
+    <SkipNavLink sx={{ variant: `styles.a` }} />
+    <div
+      css={css({
+        maxWidth: `container`,
+        mx: `auto`,
+        px: 3,
+        pt: 4,
+      })}
+    >
       <div
         css={css({
-          maxWidth: `container`,
-          mx: `auto`,
-          px: 3,
-          pt: 4,
+          display: `flex`,
+          justifyContent: `space-between`,
+          alignItems: `center`,
+          mb: 4,
         })}
       >
-        <div
-          css={css({
-            display: `flex`,
-            justifyContent: `space-between`,
-            alignItems: `center`,
-            mb: 4,
-          })}
-        >
-          <Title {...props}>{title}</Title>
-          {children}
-        </div>
-        {props.location.pathname === rootPath && <Bio />}
+        <Title {...props}>{title}</Title>
+        {children}
       </div>
-    </header>
-  )
-}
+      {props.location.pathname === rootPath && <Bio />}
+    </div>
+  </header>
+)
 
 export default Header

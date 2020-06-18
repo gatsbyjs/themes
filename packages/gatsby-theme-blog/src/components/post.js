@@ -39,7 +39,7 @@ const Post = ({
           <PostDate>{post.date}</PostDate>
         </header>
         <section>
-            <MDXRenderer>{post.body}</MDXRenderer>
+          <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </article>
     </main>

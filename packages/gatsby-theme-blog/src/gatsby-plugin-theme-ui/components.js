@@ -4,7 +4,7 @@ import Prism from "@theme-ui/prism"
 import { jsx, css } from "theme-ui"
 
 // from https://octicons.github.com/icon/link/
-const LinkIcon = props => (
+const LinkIcon = (props) => (
   <svg
     {...props}
     viewBox="0 0 16 16"
@@ -20,7 +20,7 @@ const LinkIcon = props => (
   </svg>
 )
 
-const heading = Tag => props => (
+const heading = (Tag) => (props) => (
   <Tag
     {...props}
     css={css({
@@ -57,9 +57,8 @@ const headings = {
   h6: heading(`h6`),
 }
 
-
 export default {
-  pre: props => props.children,
+  pre: (props) => props.children,
   code: Prism,
   ...headings,
 }

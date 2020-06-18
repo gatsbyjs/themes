@@ -5,25 +5,25 @@ import { Link } from "gatsby"
 const PostLink = ({ title, slug, date, excerpt }) => (
   <article>
     <header>
-    <Styled.h2
-      sx={{
-        mb: 1,
-      }}
-    >
-      <Styled.a
-        as={Link}
+      <Styled.h2
         sx={{
-          textDecoration: `none`,
+          mb: 1,
         }}
-        to={slug}
       >
-        {title || slug}
-      </Styled.a>
-    </Styled.h2>
-    <small>{date}</small>
+        <Styled.a
+          as={Link}
+          sx={{
+            textDecoration: `none`,
+          }}
+          to={slug}
+        >
+          {title || slug}
+        </Styled.a>
+      </Styled.h2>
+      <small>{date}</small>
     </header>
     <section>
-    <Styled.p>{excerpt}</Styled.p>
+      <Styled.p>{excerpt}</Styled.p>
     </section>
   </article>
 )

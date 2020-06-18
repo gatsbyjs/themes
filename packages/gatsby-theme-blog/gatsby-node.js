@@ -10,7 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.sourceNodes = (
   { actions, createContentDigest },
-  { webfontURL = '' }
+  { webfontURL = `` }
 ) => {
   const { createNode } = actions
 
