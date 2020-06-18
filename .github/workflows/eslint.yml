@@ -1,2 +1,0 @@
-- name: ESlint Runner Action
-  uses: tinovyatkin/action-eslint@v1
