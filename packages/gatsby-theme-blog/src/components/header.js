@@ -16,7 +16,7 @@ const Title = ({ children, location }) => {
         css={css({
           my: 0,
           fontSize: 4,
-        )}
+        })}
       >
         <Styled.a
           as={Link}
