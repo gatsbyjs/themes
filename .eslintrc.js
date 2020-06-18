@@ -43,7 +43,6 @@ module.exports = {
         allowTaggedTemplates: true,
       },
     ],
-    "consistent-return": ["error"],
     "filenames/match-regex": ["error", "^[a-z-\\d\\.]+$", true],
     "no-console": "off",
     "no-inner-declarations": "off",
