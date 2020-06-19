@@ -69,6 +69,13 @@ module.exports = {
         ___emitter: false,
       },
     },
+    {
+      files: ["cypress/e2e/**/*", "cypress/support/**/*"],
+      globals: {
+        cy: false,
+        Cypress: false,
+      },
+    },
   ],
   settings: {
     react: {
