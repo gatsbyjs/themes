@@ -4,7 +4,6 @@ describe(`blog landing page`, () => {
   })
 
   it(`should list posts`, () => {
-    cy.visit(`/`)
     cy.findByText(/Hello World/i).click()
 
     cy.url().should(`eq`, `${Cypress.config().baseUrl}/hello-world/`)
@@ -16,8 +15,14 @@ describe(`blog landing page`, () => {
   })
 
   it(`should add notes to header`, () => {
-    cy.visit(`/`)
     cy.findByText(/Notes/i).click()
     cy.url().should(`eq`, `${Cypress.config().baseUrl}/notes`)
+  })
+
+  it('should shadow styles', () => {
+    cy.visit(`/`)
+    cy.findByText(/New Beginnings/i)
+    .should('have.css', 'color')
+    .and('eq', 'rgb(255, 99, 71)')
   })
 })
