@@ -1,27 +1,3 @@
-# name: Lint
-
-# on: pull_request
-
-# jobs:
-#   eslint:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#         with:
-#           fetch-depth: 1
-#       - uses: actions/setup-node@v1
-#         with:
-#           node-version: 12
-#       - run: rm -f .yarnclean
-#       - run: yarn --frozen-lockfile --ignore-engines --ignore-optional --no-bin-links --non-interactive --silent --ignore-scripts --production=false
-#         env:
-#           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-#           HUSKY_SKIP_INSTALL: true
-#       # Alternative: if you use npm instead of yarn
-#       # - run: npm ci --no-audit --prefer-offline
-#       - uses: tinovyatkin/action-eslint@a62d4ab3ea77b401bd40d1dfbd1ff053b3aa9307 # Using a specific commit because v2 isn't live yet
-#         with:
-#           repo-token: ${{secrets.GITHUB_TOKEN}}
 name: Lint
 
 on: pull_request
@@ -30,11 +6,20 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: hallee/eslint-action@1.0.3
-        # GITHUB_TOKEN in forked repositories is read-only
-        # https://help.github.com/en/actions/reference/events-that-trigger-workflows#pull-request-event-pull_request
-        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }} 
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: rm -f .yarnclean
+      - run: yarn --frozen-lockfile --ignore-engines --ignore-optional --no-bin-links --non-interactive --silent --ignore-scripts --production=false
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+          HUSKY_SKIP_INSTALL: true
+      # Alternative: if you use npm instead of yarn
+      # - run: npm ci --no-audit --prefer-offline
+      - uses: tinovyatkin/action-eslint@a62d4ab3ea77b401bd40d1dfbd1ff053b3aa9307 # Using a specific commit because v2 isn't live yet
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
-          source-root: optional-sub-dir
+          check-name: eslint # this is the check name from above 👆 where to post annotations
