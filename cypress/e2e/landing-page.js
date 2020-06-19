@@ -19,10 +19,10 @@ describe(`blog landing page`, () => {
     cy.url().should(`eq`, `${Cypress.config().baseUrl}/notes`)
   })
 
-  it('should shadow styles', () => {
+  it(`should shadow styles`, () => {
     cy.visit(`/`)
     cy.findByText(/New Beginnings/i)
-    .should('have.css', 'color')
-    .and('eq', 'rgb(255, 99, 71)')
+      .should(`have.css`, `color`)
+      .and(`eq`, `rgb(255, 99, 71)`)
   })
 })
