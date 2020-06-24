@@ -210,3 +210,20 @@ This option is null by default, and in all cases local shadowed styles take prec
 You can highlight code snippets using `// highlight line` or a combination of `// highlight-start` and `// highlight-end`.
 
 To update the styling for these highlights override the `.highlight` styles inside your prism theme.
+
+
+## Migration to 2.0
+
+The migration path to 2.0 should include minimal necessary changes, but there are a few breaking changes that you should be aware of.
+
+- *Change in data structure* - Instead of querying for the `node` object inside the `edges` array, all queries now look for `nodes`. If you're shadowing files and accessing data directly you may need to account for this.
+- *Removal of darkmode toggle* - This theme no longer comes with a darkmode toggle. If you'd like to use the old one it is now available as a parallel theme you can install, `gatsby-theme-blog-darkmode`.
+
+### `gatsby-plugin-theme-ui` specific migration notes
+
+- *Change in shadow structure* - When shadowing files in this directory it can no longer be nested inside the `gatsby-theme-blog` directory. It needs to be at the root level. Additionally, all content needs to be shadowed in `index.js`. You can make use of files like `colors.js` but they will not shadow unless explicitly exported from `index.js`.
+- *Default deepmerge* - Any shadowing will deepmerge automatically. If your shadowed files did not merge at all and overrode the styles you'll want to pass `preset: false` as an option for `gatsby-theme-blog`.
+- *No built in typography* - Typography is no longer part of the default styling but you can still add it in your local project by shadowing.
+
+### Other Migration notes
+- *Skipnav* - In order to facilitate accessibility [skip-nav](https://reacttraining.com/reach-ui/skip-nav/) is now built into the blog theme. If you override `header.js` you'll need to add the `SkipNavLink` component yourself.
