@@ -211,6 +211,10 @@ You can highlight code snippets using `// highlight line` or a combination of `/
 
 To update the styling for these highlights override the `.highlight` styles inside your prism theme.
 
+### Accessibility and Skip-nav
+
+This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
+
 
 ## Migration to 2.0
 
@@ -225,5 +229,3 @@ The migration path to 2.0 should include minimal necessary changes, but there ar
 - *Default deepmerge* - Any shadowing will deepmerge automatically. If your shadowed files did not merge at all and overrode the styles you'll want to pass `preset: false` as an option for `gatsby-theme-blog`.
 - *No built in typography* - Typography is no longer part of the default styling but you can still add it in your local project by shadowing.
 
-### Other Migration notes
-- *Skipnav* - In order to facilitate accessibility [skip-nav](https://reacttraining.com/reach-ui/skip-nav/) is now built into the blog theme. If you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
