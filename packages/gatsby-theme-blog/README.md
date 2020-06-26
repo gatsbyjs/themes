@@ -237,9 +237,11 @@ If your previous code look like this:
 ```javascript
 import merge from "deepmerge"
 import defaultThemeColors from "gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors"
+
 const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
 const blueGray = `#282c35`
+
 export default merge(defaultThemeColors, {
   text: blueGray,
   primary: darkBlue,
@@ -259,6 +261,7 @@ It should now look like this. Noting that the merge still occurs by default.
 const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
 const blueGray = `#282c35`
+
 export default {
   text: blueGray,
   primary: darkBlue,
