@@ -56,5 +56,9 @@ export default merge(darkmode, {
 )
 ```
 
+## Migrating to `gatsby-theme-blog` 2.0
+
+Once you install this as a parallel theme be sure to update your shadowed paths. Files inside this theme, such as the sun and moon assets, will now be referenced inside the `gatsby-theme-blog-darkmode` directory.
+
 
 
