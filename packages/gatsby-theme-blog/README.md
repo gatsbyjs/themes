@@ -277,7 +277,7 @@ module.exports = {
 }
 ```
 
-**No built in typography** - Typography is no longer part of the default styling. If you'd like to add it locally follow the [Theme UI docs](https://theme-ui.com/packages/typography/#extending-the-typographyjs-theme) or note the code snippet below. The original theme used `typography-theme-wordpress-2016` and  also imported `typeface-montserrat` and `typeface-merriweather`. 
+**No built in Typography.js** - Typography.js is no longer part of the default styling. If you'd like to add it locally follow the [Theme UI docs](https://theme-ui.com/packages/typography/#extending-the-typographyjs-theme) or note the code snippet below. The original theme used `typography-theme-wordpress-2016` and  also imported `typeface-montserrat` and `typeface-merriweather`. 
 
 Another thing to keep in mind if you're pulling in typography for local shadowing is that the order of merging is different. The most common issue is that the spacing underneath code blocks is off. To fix that, include the following code in `src/gatsby-plugin-theme-ui/index.js`.
 
@@ -294,4 +294,3 @@ export default merge(toTheme(wp2016), {
   }
 })
 ```
-
