@@ -246,13 +246,6 @@ export default merge(defaultThemeColors, {
   text: blueGray,
   primary: darkBlue,
   heading: blueGray,
-  modes: {
-    dark: {
-      background: blueGray,
-      primary: lightBlue,
-      highlight: lightBlue,
-    },
-  },
 })
 ```
 
@@ -266,13 +259,6 @@ export default {
   text: blueGray,
   primary: darkBlue,
   heading: blueGray,
-  modes: {
-    dark: {
-      background: blueGray,
-      primary: lightBlue,
-      highlight: lightBlue,
-    },
-  },
 }
 ```
 
