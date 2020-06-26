@@ -226,7 +226,9 @@ The 2.0 release includes breaking changes. Note that many of the changes are rel
 
 ### Style specific migration notes
 
-**Change in shadow structure** - When shadowing files in this directory it can no longer be nested inside the `gatsby-theme-blog` directory. It needs to be at the root level. Additionally, all content needs to be shadowed in `index.js`. You can make use of files like `colors.js` but they will not shadow unless explicitly exported from `index.js`.
+With the new version of `gatsby-plugin-theme-ui` there are a number of changes to the way styles are passed and how they compose.
+
+**Change in shadow structure** - When shadowing files in `gatsby-plugin-theme-ui` the directory can no longer be nested inside the `gatsby-theme-blog` directory. It needs to be at the root level. Additionally, all content needs to be shadowed via `index.js`. You can make use of files like `colors.js` but they will not shadow unless explicitly exported from `index.js`.
 
 
 **Default deepmerge** - Any shadowed styles will deepmerge with the `gatsby-theme-blog` built-in styles automatically. 
