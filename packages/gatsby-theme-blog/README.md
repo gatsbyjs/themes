@@ -233,7 +233,7 @@ With the new version of `gatsby-plugin-theme-ui` there are a number of changes t
 
 **Default deepmerge** - Any shadowed styles will deepmerge with the `gatsby-theme-blog` built-in styles automatically. 
 
-If your previous code lookrf like this:
+If your previous code look like this:
 ```javascript
 import merge from "deepmerge"
 import defaultThemeColors from "gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors"
