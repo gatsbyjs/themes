@@ -144,7 +144,7 @@ const styles = {
 }
 
 const preset = {
-  initialColorMode: `light`,
+  initialColorModeName: `light`,
   colors,
   fonts: {
     body: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif`,
