@@ -220,6 +220,8 @@ This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-
 
 The 2.0 release includes breaking changes. Note that many of the changes are related to the default styling in the blog theme. If you have no interest in additional flexibility with styles the 1.6 release may be sufficient as it includes new features without the breaking changes.
 
+Before upgrading to 2.0 you'll want to update your core `gatsby` version as well.
+
 **Change in data structure** - Instead of querying for the `node` object inside the `edges` array, all queries now look for `nodes`. If you're shadowing files and accessing data directly you may need to account for this.
 
 **Removal of darkmode toggle** - This theme no longer comes with a darkmode toggle. If you'd like to use the old one it is now available as a parallel theme you can install, [`gatsby-theme-blog-darkmode`](https://www.gatsbyjs.org/packages/gatsby-theme-blog-darkmode/). Please see the README for further instructions.
