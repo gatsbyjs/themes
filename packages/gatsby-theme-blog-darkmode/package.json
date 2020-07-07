@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-blog-darkmode",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Gatsby blog theme for a dark/light mode",
   "main": "index.js",
   "keywords": [
@@ -12,8 +12,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "react-switch": "^5.0.1",
-    "@reach/skip-nav": "^0.10.2"
+    "@reach/skip-nav": "^0.10.2",
+    "react-switch": "^5.0.1"
   },
   "devDependencies": {
     "gatsby": "^2.23.22",
