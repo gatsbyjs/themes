@@ -4,7 +4,12 @@ import PostPage from "../components/post"
 export default PostPage
 
 export const query = graphql`
-  query PostPageQuery($id: String!, $previousId: String, $nextId: String) {
+  query PostPageQuery(
+    $id: String!
+    $previousId: String
+    $nextId: String
+    $maxWidth: Int
+  ) {
     site {
       siteMetadata {
         title
@@ -21,12 +26,12 @@ export const query = graphql`
       slug
       title
       tags
-      keywords
       date(formatString: "MMMM DD, YYYY")
       image {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: $maxWidth) {
             ...GatsbyImageSharpFluid
+            src
           }
         }
       }
@@ -35,6 +40,7 @@ export const query = graphql`
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+            src
           }
         }
       }

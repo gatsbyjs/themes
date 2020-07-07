@@ -15,15 +15,13 @@ export const query = graphql`
       }
     }
     allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-      edges {
-        node {
-          id
-          excerpt
-          slug
-          title
-          date(formatString: "MMMM DD, YYYY")
-          tags
-        }
+      nodes {
+        id
+        excerpt
+        slug
+        title
+        date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

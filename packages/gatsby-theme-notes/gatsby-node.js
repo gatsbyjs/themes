@@ -1,10 +1,10 @@
 const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
-const Debug = require(`debug`)
+const debug = require(`debug`)
 const { urlResolve, createContentDigest } = require(`gatsby-core-utils`)
 
-const debug = Debug(`gatsby-theme-notes`)
+const debugTheme = debug(`gatsby-theme-notes`)
 
 // These are customizable theme options we only need to check once
 let basePath
@@ -22,8 +22,8 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
 
   const dirs = [path.join(program.directory, contentPath)]
 
-  dirs.forEach(dir => {
-    debug(`Initializing ${dir} directory`)
+  dirs.forEach((dir) => {
+    debugTheme(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
       mkdirp.sync(dir)
     }
@@ -33,7 +33,7 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const toNotesPath = node => {
+  const toNotesPath = (node) => {
     const { dir } = path.parse(node.parent.relativePath)
     return urlResolve(basePath, dir, node.parent.name)
   }
@@ -46,16 +46,14 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       mdxPages: allMdx {
-        edges {
-          node {
-            id
-            parent {
-              ... on File {
-                name
-                base
-                relativePath
-                sourceInstanceName
-              }
+        nodes {
+          id
+          parent {
+            ... on File {
+              name
+              base
+              relativePath
+              sourceInstanceName
             }
           }
         }
@@ -70,12 +68,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { mdxPages, site } = result.data
   const siteTitle = site.siteMetadata.title
-  const notes = mdxPages.edges.filter(
-    ({ node }) => node.parent.sourceInstanceName === contentPath
+  const notes = mdxPages.nodes.filter(
+    (node) => node.parent.sourceInstanceName === contentPath
   )
 
   // Create notes pages
-  notes.forEach(({ node }) => {
+  notes.forEach((node) => {
     createPage({
       path: toNotesPath(node),
       context: {
@@ -86,9 +84,9 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const notesUrls = notes.map(({ node }) => toNotesPath(node))
+  const notesUrls = notes.map((node) => toNotesPath(node))
 
-  const groupedNotes = notes.reduce((acc, { node }) => {
+  const groupedNotes = notes.reduce((acc, node) => {
     const { dir } = path.parse(node.parent.relativePath)
 
     if (!dir) {
@@ -122,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         breadcrumbs,
         siteTitle,
-        urls: value.map(v => v.url),
+        urls: value.map((v) => v.url),
       },
       component: NotesTemplate,
     })

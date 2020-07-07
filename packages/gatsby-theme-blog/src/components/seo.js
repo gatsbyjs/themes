@@ -10,15 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({
-  description,
-  lang,
-  meta,
-  keywords = [],
-  title,
-  imageSource,
-  imageAlt,
-}) {
+function SEO({ description, lang, meta, title, imageSource, imageAlt }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -53,14 +45,6 @@ function SEO({
           content: metaDescription,
         },
         {
-          name: `og:image`,
-          content: image,
-        },
-        {
-          name: `og:image:alt`,
-          content: imageAltText,
-        },
-        {
           property: `og:title`,
           content: title,
         },
@@ -71,18 +55,6 @@ function SEO({
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:image`,
-          content: image,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: imageAltText,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -98,12 +70,35 @@ function SEO({
         },
       ]
         .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
+          imageSource
+            ? [
+                {
+                  name: `og:image`,
+                  content: image,
+                },
+                {
+                  name: `og:image:alt`,
+                  content: imageAltText,
+                },
+                {
+                  name: `twitter:image`,
+                  content: image,
+                },
+                {
+                  name: `twitter:image:alt`,
+                  content: imageAltText,
+                },
+                {
+                  name: `twitter:card`,
+                  content: `summary_large_image`,
+                },
+              ]
+            : [
+                {
+                  name: `twitter:card`,
+                  content: `summary`,
+                },
+              ]
         )
         .concat(meta)}
     />
@@ -113,14 +108,12 @@ function SEO({
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   imageSource: PropTypes.string,
 }

@@ -43,7 +43,6 @@ module.exports = {
         allowTaggedTemplates: true,
       },
     ],
-    "consistent-return": ["error"],
     "filenames/match-regex": ["error", "^[a-z-\\d\\.]+$", true],
     "no-console": "off",
     "no-inner-declarations": "off",
@@ -68,6 +67,13 @@ module.exports = {
       globals: {
         ___loader: false,
         ___emitter: false,
+      },
+    },
+    {
+      files: ["cypress/e2e/**/*", "cypress/support/**/*"],
+      globals: {
+        cy: false,
+        Cypress: false,
       },
     },
   ],

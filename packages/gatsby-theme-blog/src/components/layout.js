@@ -3,8 +3,9 @@ import { css, Styled } from "theme-ui"
 import Header from "./header"
 import useBlogThemeConfig from "../hooks/configOptions"
 import Helmet from "react-helmet"
+import { SkipNavContent } from "@reach/skip-nav"
 
-export default ({ children, ...props }) => {
+const Layout = ({ children, ...props }) => {
   const blogThemeConfig = useBlogThemeConfig()
   const { webfontURL } = blogThemeConfig
 
@@ -14,6 +15,7 @@ export default ({ children, ...props }) => {
         <link rel="stylesheet" href={webfontURL} />
       </Helmet>
       <Header {...props} />
+      <SkipNavContent />
       <div>
         <div
           css={css({
@@ -29,3 +31,5 @@ export default ({ children, ...props }) => {
     </Styled.root>
   )
 }
+
+export default Layout

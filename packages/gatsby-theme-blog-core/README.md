@@ -61,6 +61,7 @@ module.exports = {
 | `assetPath`              | `content/assets` | Location of assets                                                               |
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site. |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                              |
+| `imageMaxWidth`          | `1380`            | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well.                              |
 
 #### Example usage
 
@@ -93,9 +94,9 @@ module.exports = {
     author: `My Name`,
     // Used for SEO
     description: `My site description...`,
-    // Used for social links in the root footer
-    siteUrl: `https://example.com`,
     // Used for resolving images in social cards
+    siteUrl: `https://example.com`,
+    // Used for social links in the root footer    
     social: [
       {
         name: `Twitter`,
@@ -122,8 +123,14 @@ The following are the defined blog post fields based on the node interface in th
 | slug        | String   |
 | date        | Date     |
 | tags        | String[] |
-| keywords    | String[] |
 | excerpt     | String   |
 | image       | String   |
 | imageAlt    | String   |
 | socialImage | String   |
+
+
+## Available components and styling
+
+There are some existing components that you can import and use. Reference the full path to do so, e.g. `gatsby-blog-theme/src/components/post`.
+
+Also note that there are classNames on elements in these components allowing you to target them with styles.

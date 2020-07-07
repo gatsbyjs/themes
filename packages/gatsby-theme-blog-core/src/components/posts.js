@@ -1,3 +1,14 @@
 import React from "react"
 
-export default props => <pre>{JSON.stringify(props.data, null, 2)}</pre>
+import PostList from "./post-list"
+
+const Posts = ({ data }) => {
+  const posts = data.allBlogPost.nodes
+  return (
+    <main>
+      <PostList posts={posts} />
+    </main>
+  )
+}
+
+export default Posts
