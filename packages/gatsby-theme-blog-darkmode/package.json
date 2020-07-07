@@ -16,13 +16,13 @@
     "@reach/skip-nav": "^0.10.2"
   },
   "devDependencies": {
-    "gatsby": "^2.21.35",
+    "gatsby": "^2.23.22",
     "prettier": "2.0.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.23.9",
+    "gatsby": "^2.23.22",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
