@@ -1,0 +1,12 @@
+{
+  "localeDir": "i18n/lingui",
+  "srcPathDirs": ["src/"],
+  "srcPathIgnorePatterns": ["__tests__"],
+  "format": "po",
+  "sorting": "origin",
+  "extractBabelOptions": {
+    "presets": [
+      "babel-preset-gatsby"
+    ]
+  }
+}

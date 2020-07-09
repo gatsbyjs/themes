@@ -1,0 +1,26 @@
+{
+  "name": "example-react-intl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "LekoArts <lekoarts@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.5",
+    "@mdx-js/react": "^1.6.5",
+    "gatsby": "^2.23.3",
+    "gatsby-plugin-mdx": "^1.2.15",
+    "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-theme-i18n": "^1.0.0",
+    "gatsby-theme-i18n-react-intl": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intl": "^4.6.9"
+  }
+}

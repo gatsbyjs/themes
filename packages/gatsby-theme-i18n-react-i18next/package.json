@@ -1,0 +1,26 @@
+{
+  "name": "gatsby-theme-i18n-react-i18next",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "LekoArts <lekoarts@gmail.com>",
+  "description": "A Gatsby theme for providing localization support via react-i18next. This theme sets up react-i18next's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
+  "license": "MIT",
+  "devDependencies": {
+    "i18next": "^19.4.5",
+    "react-i18next": "^11.6.0"
+  },
+  "peerDependencies": {
+    "gatsby": ">=2.21.26",
+    "i18next": "^19.4.5",
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1",
+    "react-i18next": "^11.6.0"
+  },
+  "keywords": [
+    "i18n",
+    "gatsby-theme",
+    "gatsby",
+    "gatsby-plugin",
+    "react-i18next"
+  ]
+}

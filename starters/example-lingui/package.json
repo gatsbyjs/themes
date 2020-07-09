@@ -1,0 +1,36 @@
+{
+  "name": "example-lingui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "LekoArts <lekoarts@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
+  },
+  "dependencies": {
+    "@lingui/react": "^2.9.1",
+    "@mdx-js/mdx": "^1.6.5",
+    "@mdx-js/react": "^1.6.5",
+    "gatsby": "^2.23.3",
+    "gatsby-plugin-mdx": "^1.2.15",
+    "gatsby-plugin-react-helmet": "^3.3.4",
+    "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-theme-i18n": "^1.0.0",
+    "gatsby-theme-i18n-lingui": "^1.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@lingui/cli": "^2.9.1",
+    "@lingui/macro": "^2.9.1",
+    "babel-preset-gatsby": "^0.4.10"
+  }
+}
