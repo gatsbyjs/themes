@@ -13,10 +13,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "url": "https://github.com/gatsbyjs/themes.git",
     "directory": "packages/gatsby-theme-blog"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-theme-blog#readme",
+  "homepage": "https://github.com/gatsbyjs/themes/blob/master/packages/gatsby-theme-blog#readme",
   "dependencies": {
     "@reach/skip-nav": "^0.10.2",
     "@theme-ui/prism": "0.4.0-alpha.3",
