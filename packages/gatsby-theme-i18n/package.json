@@ -19,5 +19,11 @@
     "gatsby-theme",
     "gatsby",
     "gatsby-plugin"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/gatsby-theme-i18n",
+    "url": "https://github.com/gatsbyjs/themes.git"
+  },
+  "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n#readme"
 }

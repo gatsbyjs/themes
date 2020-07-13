@@ -22,5 +22,11 @@
     "gatsby",
     "gatsby-plugin",
     "react-i18next"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "directory": "packages/gatsby-theme-i18n-react-i18next",
+    "url": "https://github.com/gatsbyjs/themes.git"
+  },
+  "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n-react-i18next#readme"
 }
