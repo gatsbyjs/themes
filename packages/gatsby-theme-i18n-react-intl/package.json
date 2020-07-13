@@ -6,7 +6,7 @@
   "description": "A Gatsby theme for providing localization support via react-intl. This theme sets up react-intl's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
   "license": "MIT",
   "devDependencies": {
-    "react-intl": "^4.6.9"
+    "react-intl": "^4.7.6"
   },
   "peerDependencies": {
     "gatsby": ">=2.21.26",
