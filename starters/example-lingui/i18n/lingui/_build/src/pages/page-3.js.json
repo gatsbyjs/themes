@@ -1,0 +1,14 @@
+{
+  "Third page": {
+    "origin": [["src/pages/page-3.js", 11]]
+  },
+  "This is the third page": {
+    "origin": [["src/pages/page-3.js", 12]]
+  },
+  "Link to second page": {
+    "origin": [["src/pages/page-3.js", 14]]
+  },
+  "Link to index page": {
+    "origin": [["src/pages/page-3.js", 17]]
+  }
+}

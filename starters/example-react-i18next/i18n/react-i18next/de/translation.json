@@ -1,0 +1,13 @@
+{
+  "helloWorld": "Hallo Welt",
+  "indexNote": "Dies ist die Index Seite.",
+  "secondPageLink": "Link zur zweiten Seite",
+  "thirdPageLink": "Link zur dritten Seite",
+  "indexPageLink": "Link zur Index Seite",
+  "secondPageGermanLink": "Link zur zweiten Seite (Deutsch)",
+  "indexPageEnglishLink": "Link zur Index Seite (Englisch)",
+  "overviewLang": "Übersicht der Sprachen",
+  "thirdPage": "Dritte Seite",
+  "thirdNote": "Dies ist die dritte Seite",
+  "home": "Startseite"
+}
