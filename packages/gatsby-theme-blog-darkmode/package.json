@@ -11,6 +11,12 @@
     "blog"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/themes.git",
+    "directory": "packages/gatsby-theme-blog-darkmode"
+  },
+  "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-blog-darkmode#readme",
   "dependencies": {
     "@reach/skip-nav": "^0.10.2",
     "react-switch": "^5.0.1"
