@@ -6,7 +6,7 @@
   "description": "A Gatsby theme for providing localization support via react-i18next. This theme sets up react-i18next's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
   "license": "MIT",
   "devDependencies": {
-    "i18next": "^19.6.0",
+    "i18next": "^19.6.2",
     "react-i18next": "^11.7.0"
   },
   "peerDependencies": {
