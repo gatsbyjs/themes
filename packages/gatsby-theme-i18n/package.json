@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "description": "A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language.",
