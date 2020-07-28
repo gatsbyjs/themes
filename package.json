@@ -3,6 +3,7 @@
   "name": "gatsby-themes",
   "version": "0.0.1",
   "scripts": {
+    "lerna": "lerna",
     "start": "yarn workspace gatsby-starter-theme develop",
     "cy:open": "cypress open",
     "cy:run": "cross-env CYPRESS_baseUrl=http://localhost:9000 cypress run",
