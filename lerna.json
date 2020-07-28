@@ -1,5 +1,14 @@
 {
   "packages": ["packages/*"],
   "version": "independent",
-  "workspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "bump": "patch",
+      "conventionalCommits": true,
+      "message": "chore(release): Publish"
+    }
+  },
+  "loglevel": "success"
 }

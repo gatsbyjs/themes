@@ -93,14 +93,12 @@ import { useLocalization } from "gatsby-theme-i18n"
 
 const Example = () => {
   const { locale, config, defaultLang } = useLocalization()
-  
+
   return (
     <div>
-        <div>Current locale: {locale}</div>
-        <div>Current defaultLang: {defaultLang}</div>
-        <pre>
-          {JSON.stringify(config, null, 2)}
-        </pre>
+      <div>Current locale: {locale}</div>
+      <div>Current defaultLang: {defaultLang}</div>
+      <pre>{JSON.stringify(config, null, 2)}</pre>
     </div>
   )
 }
@@ -121,7 +119,7 @@ import { LocalesList } from "gatsby-theme-i18n"
 const Example = () => {
   return (
     <div>
-        <LocalesList />
+      <LocalesList />
     </div>
   )
 }
@@ -142,7 +140,7 @@ import { LocalizedLink as Link } from "gatsby-theme-i18n"
 const Example = () => {
   return (
     <div>
-        <Link to="/page-2/">Link to second page</Link>
+      <Link to="/page-2/">Link to second page</Link>
     </div>
   )
 }
@@ -191,11 +189,7 @@ import { LocaleContext } from "gatsby-theme-i18n"
 const Example = () => {
   const locale = React.useContext(LocaleContext)
 
-  return (
-    <div>
-        Locale: {locale}
-    </div>
-  )
+  return <div>Locale: {locale}</div>
 }
 
 export default Example
