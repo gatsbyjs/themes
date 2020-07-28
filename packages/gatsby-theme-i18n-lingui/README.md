@@ -1,13 +1,13 @@
 # gatsby-theme-i18n-lingui
 
-A Gatsby theme for providing localization support via [LinguiJS](https://lingui.js.org/). This theme sets up Lingui's context provider so that you can access your translations on every page.
+A Gatsby theme for providing localization support via [Lingui](https://lingui.js.org/). This theme sets up Lingui's context provider so that you can access your translations on every page.
 
 ## Installation
 
-1. Install the theme
+1. Install the theme and its peerDependencies.
 
 ```shell
-npm install gatsby-theme-i18n-lingui
+npm install gatsby-theme-i18n-lingui @lingui/react
 ```
 
 2. Add the configuration to your `gatsby-config.js` file:
@@ -59,8 +59,10 @@ Make sure that the `localeDir` is identical with the same option in the theme.
 
 Use Lingui's scripts to add locales, extract messages and compile those to `messages.js` files. The theme will leverage those compiled files, so make sure that you did those steps before using the theme.
 
+You can also see an [official example](https://github.com/gatsbyjs/themes/tree/master/starters/example-lingui) to learn more.
+
 ### Theme options
 
 | Key         | Default Value | Description                                       |
 | ----------- | ------------- | ------------------------------------------------- |
-| `localeDir` | none          | The directory where you'll store the lingui files |
+| `localeDir` | none          | The directory where you'll store the Lingui files |

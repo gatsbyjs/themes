@@ -4,10 +4,10 @@ A Gatsby theme for providing localization support via [react-intl](https://forma
 
 ## Installation
 
-1. Install the theme
+1. Install the theme and its peerDependencies.
 
 ```shell
-npm install gatsby-theme-i18n-react-intl
+npm install gatsby-theme-i18n-react-intl react-intl
 ```
 
 2. Add the configuration to your `gatsby-config.js` file:
@@ -28,6 +28,8 @@ module.exports = {
 ## Usage
 
 Place your `<locale>.json` files inside the directory you pointed to with `defaultLocale`.
+
+You can also see an [official example](https://github.com/gatsbyjs/themes/tree/master/starters/example-react-intl) to learn more.
 
 ### Theme options
 

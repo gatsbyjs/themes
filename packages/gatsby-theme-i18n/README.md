@@ -1,6 +1,6 @@
 # gatsby-theme-i18n
 
-A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language.
+A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language. Also adds `<link rel="alternate" />` tags to your `<head>`, exposes useful React components and hooks.
 
 ## Installation
 
@@ -66,6 +66,8 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
 
 By adding a suffix/postfix in your filenames you can define the locale that the document is in.
 
+You can also see an [official example](https://github.com/gatsbyjs/themes/tree/master/starters/example-i18n) to learn more.
+
 ### Theme options
 
 | Key           | Default Value | Description                                                                                     |
@@ -74,3 +76,127 @@ By adding a suffix/postfix in your filenames you can define the locale that the 
 | `configPath`  | none          | Path to the config file                                                                         |
 
 You can pass additional options in as they'll be forwarded to the plugin. You can query all options in GraphQL on the `themeI18N` type.
+
+### Available React components/hooks
+
+The theme also exports a couple of components and hooks that you could use in your project.
+
+#### useLocalization
+
+The theme saves its information into a custom `themeI18N` graphql type which you can access via the `useLocalization` hook. Furthermore, you're able to ask for the current locale via React context.
+
+Example:
+
+```js
+import React from "react"
+import { useLocalization } from "gatsby-theme-i18n"
+
+const Example = () => {
+  const { locale, config, defaultLang } = useLocalization()
+  
+  return (
+    <div>
+        <div>Current locale: {locale}</div>
+        <div>Current defaultLang: {defaultLang}</div>
+        <pre>
+          {JSON.stringify(config, null, 2)}
+        </pre>
+    </div>
+  )
+}
+
+export default Example
+```
+
+#### LocalesList
+
+You can display all available locales via the `localesList` component.
+
+Example:
+
+```js
+import React from "react"
+import { LocalesList } from "gatsby-theme-i18n"
+
+const Example = () => {
+  return (
+    <div>
+        <LocalesList />
+    </div>
+  )
+}
+
+export default Example
+```
+
+#### LocalizedLink
+
+This is a wrapper around the `Link` component from `gatsby` and is transforming links to the correct path by accessing the current locale via React context.
+
+Example:
+
+```js
+import React from "react"
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
+
+const Example = () => {
+  return (
+    <div>
+        <Link to="/page-2/">Link to second page</Link>
+    </div>
+  )
+}
+
+export default Example
+```
+
+#### MdxLink
+
+This is a component specifically for MDX to replace the normal anchor tag. This way local links to other files are automatically localized (as it uses `LocalizedLink` behind the scenes).
+
+Example:
+
+```js
+import React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import { MdxLink } from "gatsby-theme-i18n"
+
+const components = {
+  a: MdxLink,
+}
+
+const Layout = ({ children }) => {
+  return (
+    <React.Fragment>
+      <main>
+        <MDXProvider components={components}>{children}</MDXProvider>
+      </main>
+    </React.Fragment>
+  )
+}
+
+export default Layout
+```
+
+#### LocaleContext / LocaleProvider
+
+You can also directly access the `LocaleContext` and `LocaleProvider` from the theme.
+
+Example:
+
+```js
+import React from "react"
+import { LocaleContext } from "gatsby-theme-i18n"
+
+const Example = () => {
+  const locale = React.useContext(LocaleContext)
+
+  return (
+    <div>
+        Locale: {locale}
+    </div>
+  )
+}
+
+export default Example
+```
