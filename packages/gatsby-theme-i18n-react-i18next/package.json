@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-i18n-react-i18next",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "description": "A Gatsby theme for providing localization support via react-i18next. This theme sets up react-i18next's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
