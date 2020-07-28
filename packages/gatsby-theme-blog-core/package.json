@@ -9,7 +9,7 @@
     "url": "https://github.com/gatsbyjs/gatsby.git",
     "directory": "packages/gatsby-theme-blog-core"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-theme-blog-core#readme",
+  "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-blog-core#readme",
   "peerDependencies": {
     "@mdx-js/react": "^1.0.27",
     "gatsby": "^2.23.22",
