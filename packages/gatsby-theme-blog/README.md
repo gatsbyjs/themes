@@ -60,17 +60,17 @@ module.exports = {
 
 ### Theme options
 
-| Key                      | Default value    | Description                                                                                                                                                        |
-| ------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `basePath`               | `/`              | Root url for all blog posts                                                                                                                                        |
-| `contentPath`            | `content/posts`  | Location of blog posts                                                                                                                                             |
-| `assetPath`              | `content/assets` | Location of assets                                                                                                                                                 |
-| `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                                                                                   |
-| `preset`  | `gatsby-theme-ui-preset`          | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
-| `prismPreset`  | `null`         | Theme UI compatible package name that will act as the prism syntax highlighting for your project. Be sure to install the package you're referencing. For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
-| `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                                                                                |
-| `webfontURL`             | `''`             | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                     |
-| `imageMaxWidth`          | `1380`            | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well.                              |
+| Key                      | Default value            | Description                                                                                                                                                                                                                       |
+| ------------------------ | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `basePath`               | `/`                      | Root url for all blog posts                                                                                                                                                                                                       |
+| `contentPath`            | `content/posts`          | Location of blog posts                                                                                                                                                                                                            |
+| `assetPath`              | `content/assets`         | Location of assets                                                                                                                                                                                                                |
+| `mdxOtherwiseConfigured` | `false`                  | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                                                                                                                                                  |
+| `preset`                 | `gatsby-theme-ui-preset` | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles.                            |
+| `prismPreset`            | `null`                   | Theme UI compatible package name that will act as the prism syntax highlighting for your project. Be sure to install the package you're referencing. For themes in `@theme-ui/prism` the name will suffice, e.g. `prism-okaidia`. |
+| `excerptLength`          | `140`                    | Length of the auto-generated excerpt of a blog post                                                                                                                                                                               |
+| `webfontURL`             | `''`                     | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                                                                                    |
+| `imageMaxWidth`          | `1380`                   | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well.                                                                                                                       |
 
 #### Example configuration
 
@@ -214,7 +214,6 @@ To update the styling for these highlights override the `.highlight` styles insi
 
 This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
 
-
 ## Migration to 2.0
 
 The 2.0 release includes breaking changes. Note that many of the changes are related to the default styling in the blog theme. If you have no interest in additional flexibility with styles the 1.6 release may be sufficient as it includes new features without the breaking changes.
@@ -231,10 +230,10 @@ With the new version of `gatsby-plugin-theme-ui` there are a number of changes t
 
 **Change in shadow structure** - When shadowing files in `gatsby-plugin-theme-ui` the directory can no longer be nested inside the `gatsby-theme-blog` directory. It needs to be at the root level. Additionally, all content needs to be shadowed via `index.js`. You can make use of files like `colors.js` but they will not shadow unless explicitly exported from `index.js`.
 
-
-**Default deepmerge** - Any shadowed styles will deepmerge with the `gatsby-theme-blog` built-in styles automatically. 
+**Default deepmerge** - Any shadowed styles will deepmerge with the `gatsby-theme-blog` built-in styles automatically.
 
 If your previous code look like this:
+
 ```javascript
 import merge from "deepmerge"
 import defaultThemeColors from "gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors"
@@ -251,6 +250,7 @@ export default merge(defaultThemeColors, {
 ```
 
 It should now look like this. Noting that the merge still occurs by default.
+
 ```javascript
 const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
@@ -267,31 +267,31 @@ If you did not merge in the official theme styles and instead overrode them you 
 
 ```javascript
 module.exports = {
-    plugins: [
-      {
-        resolve: `gatsby-theme-blog`,
-        options: {
-          preset: false
-        }
-      }
-    ]
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {
+        preset: false,
+      },
+    },
+  ],
 }
 ```
 
-**No built in Typography.js** - Typography.js is no longer part of the default styling. If you'd like to add it locally follow the [Theme UI docs](https://theme-ui.com/packages/typography/#extending-the-typographyjs-theme) or note the code snippet below. The original theme used `typography-theme-wordpress-2016` and  also imported `typeface-montserrat` and `typeface-merriweather`. 
+**No built in Typography.js** - Typography.js is no longer part of the default styling. If you'd like to add it locally follow the [Theme UI docs](https://theme-ui.com/packages/typography/#extending-the-typographyjs-theme) or note the code snippet below. The original theme used `typography-theme-wordpress-2016` and also imported `typeface-montserrat` and `typeface-merriweather`.
 
 Another thing to keep in mind if you're pulling in typography for local shadowing is that the order of merging is different. The most common issue is that the spacing underneath code blocks is off. To fix that, include the following code in `src/gatsby-plugin-theme-ui/index.js`.
 
 ```javascript
-import { toTheme } from '@theme-ui/typography'
-import wp2016 from 'typography-theme-wordpress-2016'
-import {merge} from 'theme-ui'
+import { toTheme } from "@theme-ui/typography"
+import wp2016 from "typography-theme-wordpress-2016"
+import { merge } from "theme-ui"
 
 export default merge(toTheme(wp2016), {
   styles: {
     pre: {
-      margin: `0 0 2 0`
-    }
-  }
+      margin: `0 0 2 0`,
+    },
+  },
 })
 ```

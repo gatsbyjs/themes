@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "lerna": "lerna",
+    "lint": "prettier \"**/*.{md,yaml,yml}\" --write",
     "start": "yarn workspace gatsby-starter-theme develop",
     "cy:open": "cypress open",
     "cy:run": "cross-env CYPRESS_baseUrl=http://localhost:9000 cypress run",
@@ -26,6 +27,9 @@
       "eslint --fix"
     ],
     "*.{html,css,less,ejs,json}": [
+      "prettier --write"
+    ],
+    "*.{md,yaml,yml}": [
       "prettier --write"
     ]
   },
@@ -52,6 +56,7 @@
     "gatsby-cypress": "^0.4.4",
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
-    "lint-staged": "^10.2.11"
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   }
 }

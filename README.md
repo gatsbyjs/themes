@@ -1,7 +1,6 @@
 # Gatsby Themes
 
-This is a repo for Gatsby's official
-themes. 
+This is a repo for Gatsby's official themes.
 
 - `gatsby-theme-blog`
 - `gatsby-theme-blog-core`
@@ -41,11 +40,13 @@ yarn start
 This repository is set up with Cypress tests that run automatically in GitHub. If you'd like to run them locally you can do so in develop mode or build mode.
 
 For develop mode:
+
 ```sh
 yarn e2e:dev
 ```
 
 For build mode:
+
 ```sh
 yarn e2e:ci
 ```
