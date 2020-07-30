@@ -1,6 +1,6 @@
 # Gatsby Themes
 
-This is a repo for Gatsby's official themes.
+This is a repo for [Gatsby's official themes](https://www.gatsbyjs.org/docs/theme-api/).
 
 - `gatsby-theme-blog`
 - `gatsby-theme-blog-core`
@@ -8,9 +8,7 @@ This is a repo for Gatsby's official themes.
 - `gatsby-theme-blog-darkmode`
 - `gatsby-theme-ui-preset`
 
-## Filing Issues and PRs
-
-Please follow the [Gatsby contributing guidelines](https://www.gatsbyjs.org/contributing/how-to-contribute/).
+These themes are Gatsby sites packaged as plugins, which you can configure for your own use.
 
 ## Installation
 
@@ -29,11 +27,13 @@ yarn
 
 ## Development
 
-Run the `gatsby-starter-theme` workspace
+Before getting started, make sure that you have [set up your local dev environment](https://www.gatsbyjs.org/contributing/setting-up-your-local-dev-environment/) and that you’re on the latest version of `gatsby-dev-cli`.
 
-```sh
-yarn start
-```
+You can start the `gatsby-starter-theme` workspace using `yarn start`. To work on the themes themselves, you can edit files in the `themes/packages` directory. For example, to change the blog theme's basic post template, you would open `themes/packages/gatsby-theme-blog-core/src/components/post.js`. These themes are then loaded via the Gatsby instance located in `starters`.
+
+## Filing Issues and PRs
+
+Please follow the [Gatsby contributing guidelines](https://www.gatsbyjs.org/contributing/how-to-contribute/).
 
 ## Testing
 
