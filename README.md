@@ -7,6 +7,10 @@ This is a repo for Gatsby's official themes.
 - `gatsby-theme-notes`
 - `gatsby-theme-blog-darkmode`
 - `gatsby-theme-ui-preset`
+- `gatsby-theme-i18n`
+- `gatsby-theme-i18n-lingui`
+- `gatsby-theme-i18n-react-i18next`
+- `gatsby-theme-i18n-react-intl`
 
 ## Filing Issues and PRs
 
