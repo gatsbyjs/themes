@@ -1,6 +1,7 @@
 # Gatsby Themes
 
-This is a repo for Gatsby's official themes.
+This is a repo for Gatsby's official themes. It's where development for `gatsby-theme-blog`
+and `gatsby-theme-notes` 2.0 will live.
 
 - `gatsby-theme-blog`
 - `gatsby-theme-blog-core`
