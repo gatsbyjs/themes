@@ -145,8 +145,8 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
 
   const languages = getLanguages(defaultLang, configLocales, locales)
 
-  languages.forEach((locale) =>
-    createPage({
+  languages.forEach((locale) => {
+    const newPage = {
       ...page,
       path: localizedPath(defaultLang, locale.code, page.path),
       context: {
@@ -156,6 +156,13 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
         originalPath,
         dateFormat: locale.dateFormat,
       },
-    })
-  )
+    }
+
+    // Check if the page is a localized 404
+    if (newPage.path.match(/^\/[a-z]{2}\/404\/$/)) {
+      newPage.matchPath = `/${locale.code}/*`
+    }
+
+    createPage(newPage)
+  })
 }
