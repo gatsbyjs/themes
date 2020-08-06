@@ -37,7 +37,7 @@ yarn start
 
 ## Testing
 
-This repository is set up with Cypress tests that run automatically in GitHub. If you'd like to run them locally you can do so in develop mode or build mode.
+This repository is set up with [Cypress tests](https://docs.cypress.io/guides/overview/why-cypress.html#Setting-up-tests) that run automatically in GitHub. If you'd like to run them locally you can do so in develop mode or build mode.
 
 For develop mode:
 
