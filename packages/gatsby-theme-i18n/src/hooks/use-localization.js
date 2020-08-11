@@ -7,7 +7,7 @@ const useLocalization = () => {
   const {
     themeI18N: { defaultLang, config },
   } = useStaticQuery(graphql`
-    {
+    query LocalizationConfigQuery {
       themeI18N {
         defaultLang
         config {
