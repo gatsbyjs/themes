@@ -149,7 +149,9 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
     const newPage = {
       ...page,
       path: localizedPath(defaultLang, locale.code, page.path),
-      matchPath: page.matchPath ? localizedPath(defaultLang, locale.code, page.matchPath) : page.matchPath,
+      matchPath: page.matchPath
+        ? localizedPath(defaultLang, locale.code, page.matchPath)
+        : page.matchPath,
       context: {
         ...page.context,
         locale: locale.code,
