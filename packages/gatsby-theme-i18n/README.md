@@ -70,10 +70,11 @@ You can also see an [official example](https://github.com/gatsbyjs/themes/tree/m
 
 ### Theme options
 
-| Key           | Default Value | Description                                                                                     |
-| ------------- | ------------- | ----------------------------------------------------------------------------------------------- |
-| `defaultLang` | `en`          | The locale that is your default language. For this language no prefixed routes will be created. |
-| `configPath`  | none          | Path to the config file                                                                         |
+| Key           | Default Value | Description                                                                                                         |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `defaultLang` | `en`          | The locale that is your default language. For this language no prefixed routes will be created.                     |
+| `configPath`  | none          | Path to the config file                                                                                             |
+| `locales`     | `null`        | A string of locales (divided by spaces) to only build a subset of the locales defined in `configPath`, e.g. `en de` |
 
 You can pass additional options in as they'll be forwarded to the plugin. You can query all options in GraphQL on the `themeI18N` type.
 
