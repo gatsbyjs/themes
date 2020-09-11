@@ -149,6 +149,28 @@ const Example = () => {
 export default Example
 ```
 
+#### LocalizedRouter
+
+Provides a `<Router />` from `@reach/router` that prefixes the `basePath` prop with the current locale.
+
+Example:
+
+```js
+import React from "react"
+import { LocalizedRouter } from "gatsby-theme-i18n"
+import Detail from "../components/detail"
+
+const App = () => {
+  return (
+    <LocalizedRouter basePath="/app">
+      <Detail path="/:id" />
+    </LocalizedRouter>
+  )
+}
+
+export default App
+```
+
 #### MdxLink
 
 This is a component specifically for MDX to replace the normal anchor tag. This way local links to other files are automatically localized (as it uses `LocalizedLink` behind the scenes).
