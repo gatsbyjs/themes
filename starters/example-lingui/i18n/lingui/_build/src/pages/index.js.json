@@ -1,23 +1,23 @@
 {
   "Hello World": {
-    "origin": [["src/pages/index.js", 12]]
-  },
-  "This is in the Index page": {
     "origin": [["src/pages/index.js", 13]]
   },
+  "This is in the Index page": {
+    "origin": [["src/pages/index.js", 16]]
+  },
   "Link to second page": {
-    "origin": [["src/pages/index.js", 15]]
+    "origin": [["src/pages/index.js", 20]]
   },
   "Link to third page": {
-    "origin": [["src/pages/index.js", 18]]
+    "origin": [["src/pages/index.js", 25]]
   },
   "Link to second page (german version)": {
-    "origin": [["src/pages/index.js", 21]]
+    "origin": [["src/pages/index.js", 30]]
   },
   "Link to index page (english version)": {
-    "origin": [["src/pages/index.js", 24]]
+    "origin": [["src/pages/index.js", 35]]
   },
   "Overview of languages": {
-    "origin": [["src/pages/index.js", 35]]
+    "origin": [["src/pages/index.js", 48]]
   }
 }

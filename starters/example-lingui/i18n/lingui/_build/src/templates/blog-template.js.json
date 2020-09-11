@@ -1,11 +1,11 @@
 {
   "Data": {
-    "origin": [["src/templates/blog-template.js", 12]]
+    "origin": [["src/templates/blog-template.js", 13]]
   },
   "This page hasn't been translated yet": {
-    "origin": [["src/templates/blog-template.js", 17]]
+    "origin": [["src/templates/blog-template.js", 20]]
   },
   "Context": {
-    "origin": [["src/templates/blog-template.js", 20]]
+    "origin": [["src/templates/blog-template.js", 25]]
   }
 }

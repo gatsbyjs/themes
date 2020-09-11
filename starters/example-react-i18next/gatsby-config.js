@@ -33,7 +33,7 @@ module.exports = {
       options: {
         locales: `./i18n/react-i18next`,
         i18nextOptions: {
-          ns: ["translation", "blog"],
+          ns: ["translation", "blog", "404"],
         },
       },
     },

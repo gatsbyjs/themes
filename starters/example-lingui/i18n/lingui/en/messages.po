@@ -13,59 +13,63 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/layout.js:14
+#: src/components/layout.js:15
 msgid "Home"
 msgstr "Home"
 
-#: src/pages/index.js:12
+#: src/pages/404.js:11
+msgid "Not Found"
+msgstr "Page not found"
+
+#: src/pages/index.js:13
 msgid "Hello World"
 msgstr "Hello World"
 
-#: src/pages/index.js:13
+#: src/pages/index.js:16
 msgid "This is in the Index page"
 msgstr "This is in the Index page"
 
-#: src/pages/index.js:15
-#: src/pages/page-3.js:14
+#: src/pages/index.js:20
+#: src/pages/page-3.js:19
 msgid "Link to second page"
 msgstr "Link to second page"
 
-#: src/pages/index.js:18
+#: src/pages/index.js:25
 msgid "Link to third page"
 msgstr "Link to third page"
 
-#: src/pages/index.js:21
+#: src/pages/index.js:30
 msgid "Link to second page (german version)"
 msgstr "Link to second page (german version)"
 
-#: src/pages/index.js:24
+#: src/pages/index.js:35
 msgid "Link to index page (english version)"
 msgstr "Link to index page (english version)"
 
-#: src/pages/index.js:35
+#: src/pages/index.js:48
 msgid "Overview of languages"
 msgstr "Overview of languages"
 
-#: src/pages/page-3.js:11
+#: src/pages/page-3.js:12
 msgid "Third page"
 msgstr "Third page"
 
-#: src/pages/page-3.js:12
+#: src/pages/page-3.js:15
 msgid "This is the third page"
 msgstr "This is the third page"
 
-#: src/pages/page-3.js:17
+#: src/pages/page-3.js:24
 msgid "Link to index page"
 msgstr "Link to index page"
 
-#: src/templates/blog-template.js:12
+#: src/templates/blog-template.js:13
 msgid "Data"
 msgstr "Data"
 
-#: src/templates/blog-template.js:17
+#: src/templates/blog-template.js:20
 msgid "This page hasn't been translated yet"
 msgstr "This page hasn't been translated yet"
 
-#: src/templates/blog-template.js:20
+#: src/templates/blog-template.js:25
 msgid "Context"
 msgstr "Context"

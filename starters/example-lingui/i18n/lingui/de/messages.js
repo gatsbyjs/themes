@@ -9,6 +9,7 @@
   },
   messages: {
     Home: "Startseite",
+    "Not Found": "Seite nicht gefunden",
     "Hello World": "Hallo Welt",
     "This is in the Index page": "Dies ist die Index Seite",
     "Link to second page": "Link zur zweiten Seite",
