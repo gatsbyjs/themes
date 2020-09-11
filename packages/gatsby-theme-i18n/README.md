@@ -1,6 +1,6 @@
 # gatsby-theme-i18n
 
-A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language. Also adds `<link rel="alternate" />` tags to your `<head>`, exposes useful React components and hooks.
+A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language (including client-only pages that have a matchPath). Also adds `<link rel="alternate" />` tags to your `<head>`, exposes useful React components and hooks.
 
 ## Installation
 
