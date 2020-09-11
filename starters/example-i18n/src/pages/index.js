@@ -26,6 +26,9 @@ const Index = ({ data }) => {
           Link to index page (english version)
         </LocalizedLink>
       </p>
+      <p>
+        <LocalizedLink to="/app/gatsby">Link to client-only page</LocalizedLink>
+      </p>
       <ul>
         {data.allFile.nodes.map(({ childMdx: node }) => (
           <li key={node.frontmatter.slug}>
