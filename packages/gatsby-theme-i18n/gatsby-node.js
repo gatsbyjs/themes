@@ -160,6 +160,7 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
 
     // Check if the page is a localized 404
     if (newPage.path.match(/^\/[a-z]{2}\/404\/$/)) {
+      // Match all paths starting with this code (apart from other valid paths)
       newPage.matchPath = `/${locale.code}/*`
     }
 

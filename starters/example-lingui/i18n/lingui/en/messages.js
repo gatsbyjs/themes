@@ -19,6 +19,7 @@
   },
   messages: {
     Home: "Home",
+    "Not Found": "Page not found",
     "Hello World": "Hello World",
     "This is in the Index page": "This is in the Index page",
     "Link to second page": "Link to second page",
