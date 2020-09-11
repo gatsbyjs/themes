@@ -24,6 +24,10 @@ module.exports = {
         name: `blog`,
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
