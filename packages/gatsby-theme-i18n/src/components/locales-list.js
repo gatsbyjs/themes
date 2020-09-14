@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useLocalization } from "../hooks/use-localization"
 
-const LocalesList = () => {
+export const LocalesList = () => {
   const { config } = useLocalization()
 
   return (
@@ -14,5 +14,3 @@ const LocalesList = () => {
     </ul>
   )
 }
-
-export { LocalesList }

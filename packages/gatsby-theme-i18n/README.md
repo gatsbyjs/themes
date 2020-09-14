@@ -1,6 +1,6 @@
 # gatsby-theme-i18n
 
-A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language. Also adds `<link rel="alternate" />` tags to your `<head>`, exposes useful React components and hooks.
+A Gatsby theme for providing internationalization support to your Gatsby site by taking in a configuration file and creating prefixed, enriched pages for each language (including client-only pages that have a matchPath). Also adds `<link rel="alternate" />` tags to your `<head>`, exposes useful React components and hooks.
 
 ## Installation
 
@@ -70,10 +70,11 @@ You can also see an [official example](https://github.com/gatsbyjs/themes/tree/m
 
 ### Theme options
 
-| Key           | Default Value | Description                                                                                     |
-| ------------- | ------------- | ----------------------------------------------------------------------------------------------- |
-| `defaultLang` | `en`          | The locale that is your default language. For this language no prefixed routes will be created. |
-| `configPath`  | none          | Path to the config file                                                                         |
+| Key           | Default Value | Description                                                                                                         |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `defaultLang` | `en`          | The locale that is your default language. For this language no prefixed routes will be created.                     |
+| `configPath`  | none          | Path to the config file                                                                                             |
+| `locales`     | `null`        | A string of locales (divided by spaces) to only build a subset of the locales defined in `configPath`, e.g. `en de` |
 
 You can pass additional options in as they'll be forwarded to the plugin. You can query all options in GraphQL on the `themeI18N` type.
 
@@ -146,6 +147,28 @@ const Example = () => {
 }
 
 export default Example
+```
+
+#### LocalizedRouter
+
+Provides a `<Router />` from `@reach/router` that prefixes the `basePath` prop with the current locale.
+
+Example:
+
+```js
+import React from "react"
+import { LocalizedRouter } from "gatsby-theme-i18n"
+import Detail from "../components/detail"
+
+const App = () => {
+  return (
+    <LocalizedRouter basePath="/app">
+      <Detail path="/:id" />
+    </LocalizedRouter>
+  )
+}
+
+export default App
 ```
 
 #### MdxLink

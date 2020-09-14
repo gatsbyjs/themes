@@ -24,12 +24,16 @@ module.exports = {
         name: `blog`,
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: `en`,
-        locales: process.env.LOCALES,
+        locales: process.env.LOCALES || `en de`,
         configPath: require.resolve(`./i18n/config.json`),
       },
     },
