@@ -6,11 +6,12 @@ import { localizedPath } from "../helpers"
 const useLocalization = () => {
   const locale = React.useContext(LocaleContext)
   const {
-    themeI18N: { defaultLang, config },
+    themeI18N: { defaultLang, prefixDefault, config },
   } = useStaticQuery(graphql`
     query LocalizationConfigQuery {
       themeI18N {
         defaultLang
+        prefixDefault
         config {
           code
           hrefLang
@@ -26,6 +27,7 @@ const useLocalization = () => {
   return {
     locale,
     defaultLang,
+    prefixDefault,
     config,
     localizedPath,
   }

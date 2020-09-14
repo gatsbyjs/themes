@@ -2,7 +2,11 @@ const fs = require(`fs`)
 const path = require(`path`)
 const mkdirp = require(`mkdirp`)
 const { withDefaults } = require(`./utils/default-options`)
-const { localizedPath, getLanguages } = require(`./src/helpers`)
+const {
+  localizedPath,
+  getLanguages,
+  getDefaultLanguage,
+} = require(`./src/helpers`)
 
 function writeFile(filePath, data, reporter) {
   // Check if config file already exists
@@ -69,6 +73,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type ThemeI18n implements Node {
       defaultLang: String
+      prefixDefault: Boolean
       configPath: String
       config: [Locale]
     }
@@ -131,26 +136,43 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 
 exports.onCreatePage = ({ page, actions }, themeOptions) => {
   const { createPage, deletePage } = actions
-  const { configPath, defaultLang, locales } = withDefaults(themeOptions)
+  const { configPath, defaultLang, locales, prefixDefault } = withDefaults(
+    themeOptions
+  )
   // Check if originalPath was already set and bail early as otherwise an infinite loop could occur
   // as other plugins like gatsby-plugin-mdx could modify this
   if (page.context.originalPath) {
     return
   }
+
   const originalPath = page.path
 
   deletePage(page)
 
   const configLocales = require(configPath)
 
-  const languages = getLanguages(defaultLang, configLocales, locales)
+  const languages = getLanguages({ locales: configLocales, localeStr: locales })
+  const defaultLocale = getDefaultLanguage({
+    locales: configLocales,
+    defaultLang,
+  })
 
   languages.forEach((locale) => {
     const newPage = {
       ...page,
-      path: localizedPath(defaultLang, locale.code, page.path),
+      path: localizedPath({
+        defaultLang,
+        prefixDefault,
+        locale: locale.code,
+        path: originalPath,
+      }),
       matchPath: page.matchPath
-        ? localizedPath(defaultLang, locale.code, page.matchPath)
+        ? localizedPath({
+            defaultLang,
+            prefixDefault,
+            locale: locale.code,
+            path: page.matchPath,
+          })
         : page.matchPath,
       context: {
         ...page.context,
@@ -169,4 +191,27 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
 
     createPage(newPage)
   })
+
+  // When prefixDefault is set the default development & production 404 pages
+  // will be deleted but not re-created in the above `languages.forEach` segment
+  // Thus we'll re-create them manually here
+
+  const notFoundPages = [`/404/`, `/404.html`, `/dev-404-page/`]
+
+  if (prefixDefault) {
+    if (notFoundPages.includes(originalPath)) {
+      const newPage = {
+        ...page,
+        context: {
+          ...page.context,
+          locale: defaultLocale.code,
+          hrefLang: defaultLocale.hrefLang,
+          originalPath,
+          dateFormat: defaultLocale.dateFormat,
+        },
+      }
+
+      createPage(newPage)
+    }
+  }
 }
