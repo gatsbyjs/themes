@@ -18,7 +18,7 @@
     "gatsby-plugin-mdx": "^1.2.28",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.22",
-    "gatsby-theme-i18n": "^1.0.4",
+    "gatsby-theme-i18n": "^1.0.3",
     "gatsby-theme-i18n-react-i18next": "^1.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
