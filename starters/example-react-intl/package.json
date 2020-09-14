@@ -1,6 +1,6 @@
 {
   "name": "example-react-intl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "private": true,
@@ -17,8 +17,8 @@
     "gatsby": "^2.24.10",
     "gatsby-plugin-mdx": "^1.2.28",
     "gatsby-source-filesystem": "^2.3.22",
-    "gatsby-theme-i18n": "^1.0.3",
-    "gatsby-theme-i18n-react-intl": "^1.0.3",
+    "gatsby-theme-i18n": "^1.0.4",
+    "gatsby-theme-i18n-react-intl": "^1.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl": "^4.7.6"
