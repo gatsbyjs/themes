@@ -1,7 +1,6 @@
 import React from "react"
 import { Global } from "@emotion/core"
-import { css } from "theme-ui"
-import { Layout, Main, Container } from "theme-ui"
+import { css, Box } from "theme-ui"
 import Footer from "./footer"
 
 export default (props) => (
@@ -17,13 +16,25 @@ export default (props) => (
         },
       })}
     />
-    <Layout>
-      <Main>
-        <Container>
+    <Box
+      css={css({
+        minHeight: `100vh`,
+        display: `flex`,
+        flexDirection: `column`,
+      })}
+    >
+      <Box as="main">
+        <Box
+          p={[5]}
+          css={css({
+            display: `flex`,
+            flexDirection: `column`,
+          })}
+        >
           {props.children}
           <Footer />
-        </Container>
-      </Main>
-    </Layout>
+        </Box>
+      </Box>
+    </Box>
   </>
 )
