@@ -73,7 +73,7 @@ You can also see an [official example](https://github.com/gatsbyjs/themes/tree/m
 | Key             | Default Value | Description                                                                                                                               |
 | --------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `defaultLang`   | `en`          | The locale that is your default language. For this language no prefixed routes will be created unless you set the option `prefixDefault`. |
-| `prefixDefault` | `false`       | Prefix all routes with the default language                                                                                               |
+| `prefixDefault` | `false`       | All routes will be prefixed, including the `defaultLang`                                                                                  |
 | `configPath`    | none          | Path to the config file                                                                                                                   |
 | `locales`       | `null`        | A string of locales (divided by spaces) to only build a subset of the locales defined in `configPath`, e.g. `en de`                       |
 
