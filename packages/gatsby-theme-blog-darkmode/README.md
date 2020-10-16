@@ -2,7 +2,7 @@
 
 NOTE: This theme is designed to work as an add-on to `gatsby-theme-blog` and will not work without it!
 
-This theme enables a darkmode toggle in the header of your blog. It leverages `colors.mode.dark` in Theme UI which you can change by shadowing.
+This theme enables a darkmode toggle in the header of your blog. It leverages `colors.mode.dark` in [Theme UI](https://theme-ui.com/) which you can change by shadowing.
 
 ## Install instructions
 
