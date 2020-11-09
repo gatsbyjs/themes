@@ -198,6 +198,7 @@ exports.onCreateNode = async (
       slug,
       date: node.frontmatter.date,
       image: node.frontmatter.image,
+      imageAlt: node.frontmatter.imageAlt,
       socialImage: node.frontmatter.socialImage,
     }
 
