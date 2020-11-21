@@ -14,7 +14,7 @@ This is a repo for Gatsby's official themes.
 
 ## Filing Issues and PRs
 
-Please follow the [Gatsby contributing guidelines](https://www.gatsbyjs.org/contributing/how-to-contribute/).
+Please follow the [Gatsby contributing guidelines](https://www.gatsbyjs.com/contributing/how-to-contribute/).
 
 ## Installation
 
