@@ -59,6 +59,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt: String!
       image: File
       imageAlt: String
+      imageCaptionText: String
+      imageCaptionLink: String
       socialImage: File
   }`)
 
@@ -96,6 +98,12 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
           },
         },
         imageAlt: {
+          type: `String`,
+        },
+        imageCaptionText: {
+          type: `String`,
+        },
+        imageCaptionLink: {
           type: `String`,
         },
         socialImage: {
@@ -199,6 +207,8 @@ exports.onCreateNode = async (
       date: node.frontmatter.date,
       image: node.frontmatter.image,
       imageAlt: node.frontmatter.imageAlt,
+      imageCaptionText: node.frontmatter.imageCaptionText,
+      imageCaptionLink: node.frontmatter.imageCaptionLink,
       socialImage: node.frontmatter.socialImage,
     }
 

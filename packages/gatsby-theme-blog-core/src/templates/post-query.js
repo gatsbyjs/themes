@@ -36,6 +36,8 @@ export const query = graphql`
         }
       }
       imageAlt
+      imageCaptionText
+      imageCaptionLink
       socialImage {
         childImageSharp {
           fluid {
