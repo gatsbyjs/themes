@@ -3,13 +3,13 @@
 This is a repo for Gatsby's official themes.
 
 - `gatsby-theme-blog`
-- `gatsby-theme-blog-darkmode`      
-- `gatsby-theme-i18n-lingui`        
-- `gatsby-theme-i18n-react-intl`    
+- `gatsby-theme-blog-darkmode`
+- `gatsby-theme-i18n-lingui`
+- `gatsby-theme-i18n-react-intl`
 - `gatsby-theme-ui-preset`
-- `gatsby-theme-blog-core`          
-- `gatsby-theme-i18n`               
-- `gatsby-theme-i18n-react-i18next` 
+- `gatsby-theme-blog-core`
+- `gatsby-theme-i18n`
+- `gatsby-theme-i18n-react-i18next`
 - `gatsby-theme-notes`
 
 ## Filing Issues and PRs
