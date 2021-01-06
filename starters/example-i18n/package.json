@@ -1,6 +1,6 @@
 {
   "name": "example-i18n",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "private": true,
@@ -19,7 +19,7 @@
     "gatsby-plugin-mdx": "^1.2.28",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.22",
-    "gatsby-theme-i18n": "^1.0.4",
+    "gatsby-theme-i18n": "^1.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0"
