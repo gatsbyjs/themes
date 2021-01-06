@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://www.gatsbyjs.com">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -222,7 +222,7 @@ Before upgrading to 2.0 you'll want to update your core `gatsby` version as well
 
 **Change in data structure** - Instead of querying for the `node` object inside the `edges` array, all queries now look for `nodes`. If you're shadowing files and accessing data directly you may need to account for this.
 
-**Removal of darkmode toggle** - This theme no longer comes with a darkmode toggle. If you'd like to use the old one it is now available as a parallel theme you can install, [`gatsby-theme-blog-darkmode`](https://www.gatsbyjs.org/packages/gatsby-theme-blog-darkmode/). Please see the README for further instructions.
+**Removal of darkmode toggle** - This theme no longer comes with a darkmode toggle. If you'd like to use the old one it is now available as a parallel theme you can install, [`gatsby-theme-blog-darkmode`](https://www.gatsbyjs.com/plugins/gatsby-theme-blog-darkmode/). Please see the README for further instructions.
 
 ### Style specific migration notes
 
