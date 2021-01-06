@@ -2,9 +2,9 @@ function isDefaultLang(locale, defaultLang) {
   return locale === defaultLang
 }
 
-function localizedPath(defaultLang, locale, path) {
+function localizedPath({ defaultLang, prefixDefault, locale, path }) {
   // The default language isn't prefixed
-  if (isDefaultLang(locale, defaultLang)) {
+  if (isDefaultLang(locale, defaultLang) && !prefixDefault) {
     return path
   }
 
@@ -21,7 +21,7 @@ function localizedPath(defaultLang, locale, path) {
   return `/${locale}${path}`
 }
 
-function getLanguages(defaultLang, locales, localeStr) {
+function getLanguages({ locales, localeStr }) {
   // If "localeStr" is not defined, return the list of locales from the i18n config file
   if (!localeStr) {
     return locales
@@ -45,7 +45,12 @@ function getLanguages(defaultLang, locales, localeStr) {
   return langs
 }
 
+function getDefaultLanguage({ locales, defaultLang }) {
+  return locales.find((locale) => locale.code === defaultLang)
+}
+
 module.exports = {
   localizedPath,
   getLanguages,
+  getDefaultLanguage,
 }
