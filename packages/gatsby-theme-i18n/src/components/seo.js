@@ -19,7 +19,7 @@ const SEO = ({ location, pageContext }) => {
 
   return (
     <Helmet>
-      <html lang={locale} />
+      <html lang={pageContext.hrefLang} />
       <link rel="alternate" hrefLang="x-default" href={defaultSiteUrl} />
       <link
         rel="alternate"
