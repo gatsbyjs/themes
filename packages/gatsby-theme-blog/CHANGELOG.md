@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/gatsbyjs/themes/compare/gatsby-theme-blog@2.0.3...gatsby-theme-blog@2.0.4) (2021-01-06)
+
+### Bug Fixes
+
+- **gatsby-theme-blog:** Remove console.log ([60d8928](https://github.com/gatsbyjs/themes/commit/60d892858d100ae0b6726d30a2e75375cc2121c1))
+
 ## [2.0.3](https://github.com/gatsbyjs/themes/compare/gatsby-theme-blog@2.0.2...gatsby-theme-blog@2.0.3) (2021-01-06)
 
 **Note:** Version bump only for package gatsby-theme-blog
