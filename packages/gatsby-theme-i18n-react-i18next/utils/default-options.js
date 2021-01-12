@@ -10,7 +10,7 @@ function withDefaults(themeOptions) {
       fallbackLng,
       interpolation: {
         escapeValue: false,
-        ...themeOptions.i18nextOptions.escapeValue,
+        ...themeOptions.i18nextOptions.interpolation,
       },
       initImmediate: false,
       ...themeOptions.i18nextOptions,
