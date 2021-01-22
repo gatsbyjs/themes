@@ -268,18 +268,28 @@ const PostsTemplate = require.resolve(`./src/templates/posts-query`)
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
-  const { basePath, imageMaxWidth } = withDefaults(themeOptions)
+  const { basePath, imageMaxWidth, filter, limit } = withDefaults(themeOptions)
 
-  const result = await graphql(`
-    {
-      allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-        nodes {
-          id
-          slug
+  const result = await graphql(
+    `
+      query($limit: Int!, $filter: BlogPostFilterInput) {
+        allBlogPost(
+          sort: { fields: [date, title], order: DESC }
+          filter: $filter
+          limit: $limit
+        ) {
+          nodes {
+            id
+            slug
+          }
         }
       }
+    `,
+    {
+      filter,
+      limit,
     }
-  `)
+  )
 
   if (result.errors) {
     reporter.panic(result.errors)
@@ -310,6 +320,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   createPage({
     path: basePath,
     component: PostsTemplate,
-    context: {},
+    context: {
+      filter,
+      limit,
+    },
   })
 }
