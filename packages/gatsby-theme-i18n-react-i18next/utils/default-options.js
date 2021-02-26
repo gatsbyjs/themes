@@ -8,12 +8,12 @@ function withDefaults(themeOptions) {
       defaultNS: defaultNamespace,
       ns: [defaultNamespace],
       fallbackLng,
+      initImmediate: false,
+      ...themeOptions.i18nextOptions,
       interpolation: {
         escapeValue: false,
         ...themeOptions.i18nextOptions.interpolation,
       },
-      initImmediate: false,
-      ...themeOptions.i18nextOptions,
     },
   }
 }
