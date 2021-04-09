@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "url": "https://github.com/gatsbyjs/themes.git",
     "directory": "packages/gatsby-theme-notes"
   },
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-notes#readme",
