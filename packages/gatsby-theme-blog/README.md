@@ -52,7 +52,7 @@ module.exports = {
 
 4. Add an image with the file name `avatar` (can be jpg or png) inside the `/assets` directory to include a small image next to the footer on every post page.
 
-> Note that if you've changed the default `assetPath` in the configuration, you'll want to add your asset files in the directory specified by that path.
+   > Note that if you've changed the default `assetPath` in the configuration, you'll want to add your asset files in the directory specified by that path.
 
 5. Run your site using `gatsby develop` and navigate to your blog posts. If you used the above configuration, your URL will be `http://localhost:8000/blog`
 
@@ -215,6 +215,10 @@ To update the styling for these highlights override the `.highlight` styles insi
 ### Accessibility and Skip-nav
 
 This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
+
+## Migration to 3.0
+
+TODO
 
 ## Migration to 2.0
 
