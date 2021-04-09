@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.8](https://github.com/gatsbyjs/themes/compare/gatsby-starter-theme@0.0.7...gatsby-starter-theme@0.0.8) (2021-04-09)
+
+**Note:** Version bump only for package gatsby-starter-theme
+
 ## [0.0.7](https://github.com/gatsbyjs/themes/compare/gatsby-starter-theme@0.0.6...gatsby-starter-theme@0.0.7) (2021-01-06)
 
 **Note:** Version bump only for package gatsby-starter-theme
