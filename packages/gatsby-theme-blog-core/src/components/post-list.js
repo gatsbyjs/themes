@@ -1,5 +1,4 @@
 import React from "react"
-
 import PostLink from "./post-link"
 
 const PostList = ({ posts }) => (

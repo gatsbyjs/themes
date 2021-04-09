@@ -1,14 +1,13 @@
 import React from "react"
-import Image from "gatsby-image"
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PostHeroCaption from "./post-hero-caption"
 
 const PostHero = ({ post }) => (
   <>
     {post?.image?.childImageSharp && (
       <>
-        <Image
-          fluid={post.image.childImageSharp.fluid}
+        <GatsbyImage
+          image={getImage(post.image)}
           alt={post.imageAlt ? post.imageAlt : post.excerpt}
         />
         <PostHeroCaption

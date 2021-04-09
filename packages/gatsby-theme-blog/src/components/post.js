@@ -1,7 +1,6 @@
 import React from "react"
-
+import { getSrc } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
 import Layout from "./layout"
 import SEO from "./seo"
 import PostTitle from "./post-title"
@@ -25,9 +24,7 @@ const Post = ({
       title={post.title}
       description={post.excerpt}
       imageSource={
-        post.socialImage
-          ? post.socialImage?.childImageSharp?.fluid.src
-          : post.image?.childImageSharp?.fluid.src
+        post.socialImage ? getSrc(post.socialImage) : getSrc(post.image)
       }
       imageAlt={post.imageAlt}
     />
