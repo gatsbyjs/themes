@@ -1,6 +1,6 @@
 {
   "name": "example-lingui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "private": true,
@@ -15,22 +15,22 @@
     "compile": "lingui compile"
   },
   "dependencies": {
-    "@lingui/react": "^2.9.1",
-    "@mdx-js/mdx": "^1.6.14",
-    "@mdx-js/react": "^1.6.14",
-    "gatsby": "^2.24.10",
-    "gatsby-plugin-mdx": "^1.2.28",
-    "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-source-filesystem": "^2.3.22",
-    "gatsby-theme-i18n": "^1.0.5",
-    "gatsby-theme-i18n-lingui": "^1.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "@lingui/react": "^3.8.9",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-mdx": "^2.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-theme-i18n": "^2.0.0",
+    "gatsby-theme-i18n-lingui": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@lingui/cli": "^2.9.1",
-    "@lingui/macro": "^2.9.1",
-    "babel-preset-gatsby": "^0.4.10"
+    "@lingui/cli": "^3.8.9",
+    "@lingui/macro": "^3.8.9",
+    "babel-preset-gatsby": "^1.2.0"
   }
 }
