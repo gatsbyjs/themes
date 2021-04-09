@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css, Styled, Flex } from "theme-ui"
-
+import { css, Themed, Flex } from "theme-ui"
 import Bio from "../components/bio"
 
 const PostFooter = ({ previous, next }) => (
@@ -11,7 +10,7 @@ const PostFooter = ({ previous, next }) => (
       pt: 3,
     })}
   >
-    <Styled.hr />
+    <Themed.hr />
     <Bio />
     {(previous || next) && (
       <Flex
@@ -25,16 +24,16 @@ const PostFooter = ({ previous, next }) => (
       >
         <li>
           {previous && (
-            <Styled.a as={Link} to={previous.slug} rel="prev">
+            <Themed.a as={Link} to={previous.slug} rel="prev">
               ← {previous.title}
-            </Styled.a>
+            </Themed.a>
           )}
         </li>
         <li>
           {next && (
-            <Styled.a as={Link} to={next.slug} rel="next">
+            <Themed.a as={Link} to={next.slug} rel="next">
               {next.title} →
-            </Styled.a>
+            </Themed.a>
           )}
         </li>
       </Flex>

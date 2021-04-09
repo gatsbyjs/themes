@@ -49,7 +49,7 @@ const mdxResolverPassthrough = (fieldName) => async (
 exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   const { excerptLength } = withDefaults(themeOptions)
   const { createTypes } = actions
-  createTypes(`interface BlogPost @nodeInterface {
+  createTypes(`interface BlogPost implements Node {
       id: ID!
       title: String!
       body: String!
@@ -282,7 +282,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   `)
 
   if (result.errors) {
-    reporter.panic(result.errors)
+    reporter.panicOnBuild(result.errors)
   }
 
   // Create Posts and Post pages.

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Styled, css } from "theme-ui"
+import { Themed, css } from "theme-ui"
 
 const Footer = ({ socialLinks }) => (
   <footer
@@ -10,18 +10,18 @@ const Footer = ({ socialLinks }) => (
   >
     © {new Date().getFullYear()}, Powered by
     {` `}
-    <Styled.a href="https://www.gatsbyjs.com">Gatsby</Styled.a>
+    <Themed.a href="https://www.gatsbyjs.com">Gatsby</Themed.a>
     {` `}&bull;{` `}
     {socialLinks
       ? socialLinks.map((platform, i, arr) => (
           <Fragment key={platform.url}>
-            <Styled.a
+            <Themed.a
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
             >
               {platform.name}
-            </Styled.a>
+            </Themed.a>
             {arr.length - 1 !== i && (
               <Fragment>
                 {` `}&bull;{` `}

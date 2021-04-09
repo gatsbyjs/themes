@@ -1,16 +1,16 @@
 import React from "react"
-import { css, Styled } from "theme-ui"
+import { Helmet } from "react-helmet"
+import { css, Themed } from "theme-ui"
+import { SkipNavContent } from "@reach/skip-nav"
 import Header from "./header"
 import useBlogThemeConfig from "../hooks/configOptions"
-import Helmet from "react-helmet"
-import { SkipNavContent } from "@reach/skip-nav"
 
 const Layout = ({ children, ...props }) => {
   const blogThemeConfig = useBlogThemeConfig()
   const { webfontURL } = blogThemeConfig
 
   return (
-    <Styled.root>
+    <Themed.root>
       <Helmet>
         <link rel="stylesheet" href={webfontURL} />
       </Helmet>
@@ -28,7 +28,7 @@ const Layout = ({ children, ...props }) => {
           {children}
         </div>
       </div>
-    </Styled.root>
+    </Themed.root>
   )
 }
 

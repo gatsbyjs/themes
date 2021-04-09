@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css, Styled } from "theme-ui"
-import Header from "gatsby-theme-blog/src/components/header"
+import { css, Themed } from "theme-ui"
+import BlogHeader from "gatsby-theme-blog/src/components/header"
 
-export default props => (
-  <Header {...props}>
-    <Styled.a
+const Header = (props) => (
+  <BlogHeader {...props}>
+    <Themed.a
       as={Link}
       to="/notes"
       css={css({
@@ -21,6 +21,8 @@ export default props => (
       })}
     >
       Notes
-    </Styled.a>
-  </Header>
+    </Themed.a>
+  </BlogHeader>
 )
+
+export default Header

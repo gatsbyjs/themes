@@ -57,8 +57,10 @@ const headings = {
   h6: heading(`h6`),
 }
 
-export default {
+const components = {
   pre: (props) => props.children,
   code: Prism,
   ...headings,
 }
+
+export default components

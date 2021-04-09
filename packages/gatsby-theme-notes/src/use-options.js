@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-export default () => {
+const useOptions = () => {
   const data = useStaticQuery(graphql`
     {
       notesConfig(id: { eq: "gatsby-theme-notes-config" }) {
@@ -13,3 +13,5 @@ export default () => {
 
   return data.notesConfig
 }
+
+export default useOptions

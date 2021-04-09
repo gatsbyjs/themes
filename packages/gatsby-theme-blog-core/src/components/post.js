@@ -1,7 +1,5 @@
 import React from "react"
-
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
 import PostTitle from "./post-title"
 import PostDate from "./post-date"
 import PostHero from "./post-hero"
