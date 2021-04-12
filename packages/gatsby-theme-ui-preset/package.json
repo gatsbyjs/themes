@@ -19,7 +19,7 @@
     "theme-ui": "0.4.0-alpha.3"
   },
   "devDependencies": {
-    "prettier": "2.0.5",
+    "prettier": "2.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
