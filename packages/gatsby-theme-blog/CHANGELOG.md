@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/gatsbyjs/themes/compare/gatsby-theme-blog@2.0.6...gatsby-theme-blog@2.1.0) (2021-04-12)
+
+### Features
+
+- **gatsby-theme-blog-core:** Support filter, limit options ([#98](https://github.com/gatsbyjs/themes/issues/98)) ([8f1ba38](https://github.com/gatsbyjs/themes/commit/8f1ba38e4d55503eeae67c10176189b24397de49))
+
 ## [2.0.6](https://github.com/gatsbyjs/themes/compare/gatsby-theme-blog@2.0.5...gatsby-theme-blog@2.0.6) (2021-04-09)
 
 **Note:** Version bump only for package gatsby-theme-blog
