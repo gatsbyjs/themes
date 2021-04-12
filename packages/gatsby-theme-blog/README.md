@@ -125,18 +125,20 @@ module.exports = {
 
 The following are the defined blog post fields based on the node interface in the schema
 
-| Field       | Type     |
-| ----------- | -------- |
-| id          | String   |
-| title       | String   |
-| body        | String   |
-| slug        | String   |
-| date        | Date     |
-| tags        | String[] |
-| excerpt     | String   |
-| image       | String   |
-| imageAlt    | String   |
-| socialImage | String   |
+| Field            | Type     |
+| ---------------- | -------- |
+| id               | String   |
+| title            | String   |
+| body             | String   |
+| slug             | String   |
+| date             | Date     |
+| tags             | String[] |
+| excerpt          | String   |
+| image            | String   |
+| imageAlt         | String   |
+| imageCaptionText | String   |
+| imageCaptionLink | String   |
+| socialImage      | String   |
 
 ### Image Behavior
 
@@ -216,7 +218,9 @@ This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-
 
 ## Migration to 3.0
 
-TODO
+The 3.0 release includes breaking changes as the theme was upgraded to Gatsby v3, Theme UI v0.6, emotion v11, and migrated from `gatsby-image` to `gatsby-plugin-image`.
+
+Before upgrading to 3.0 you'll want to update your core `gatsby` version to v3 as well: [Migrating from v2 to v3 documentation](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3/)
 
 ## Migration to 2.0
 
