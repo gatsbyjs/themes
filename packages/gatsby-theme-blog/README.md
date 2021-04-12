@@ -71,6 +71,8 @@ module.exports = {
 | `excerptLength`          | `140`                    | Length of the auto-generated excerpt of a blog post                                                                                                                                                                               |
 | `webfontURL`             | `''`                     | URL for the webfont you'd like to include. Be sure that your local theme does not override it.                                                                                                                                    |
 | `imageMaxWidth`          | `1380`                   | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well.                                                                                                                       |
+| `filter`                 | `{}`                     | Set the posts filter, for example: `{ frontmatter: { draft: {ne: true} } }`                                                                                                                                                       |
+| `limit`                  | `1000`                   | Set the amount of pages that should be generated                                                                                                                                                                                  |
 
 #### Example configuration
 

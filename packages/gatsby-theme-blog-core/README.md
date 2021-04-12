@@ -62,6 +62,8 @@ module.exports = {
 | `mdxOtherwiseConfigured` | `false`          | Set this flag `true` if `gatsby-plugin-mdx` is already configured for your site.                            |
 | `excerptLength`          | `140`            | Length of the auto-generated excerpt of a blog post                                                         |
 | `imageMaxWidth`          | `1380`           | Set the max width of images in your blog posts. This applies to your featured image in frontmatter as well. |
+| `filter`                 | `{}`             | Set the posts filter, for example: `{ frontmatter: { draft: {ne: true} } }`                                 |
+| `limit`                  | `1000`           | Set the amount of pages that should be generated                                                            |
 
 #### Example usage
 

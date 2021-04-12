@@ -4,7 +4,7 @@ import PostsPage from "../components/posts"
 export default PostsPage
 
 export const query = graphql`
-  query PostsQuery {
+  query PostsQuery($limit: Int!, $filter: BlogPostFilterInput) {
     site {
       siteMetadata {
         title
@@ -14,7 +14,11 @@ export const query = graphql`
         }
       }
     }
-    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+    allBlogPost(
+      sort: { fields: [date, title], order: DESC }
+      filter: $filter
+      limit: $limit
+    ) {
       nodes {
         id
         excerpt
