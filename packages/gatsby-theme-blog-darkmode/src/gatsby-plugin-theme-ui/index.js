@@ -5,7 +5,7 @@ const white = `#fff`
 const lightWhite = `rgba(255, 255, 255, 0.86)`
 const opaqueLightWhite = `hsla(0, 0%, 100%, 0.2)`
 
-export default {
+const theme = {
   initialColorModeName: `light`,
   colors: {
     modes: {
@@ -21,3 +21,5 @@ export default {
     },
   },
 }
+
+export default theme

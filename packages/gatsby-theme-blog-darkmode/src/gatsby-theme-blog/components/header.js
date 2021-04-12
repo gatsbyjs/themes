@@ -1,24 +1,24 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
-import { jsx, css, useColorMode, Styled } from "theme-ui"
-import Switch from "../../components/switch"
+import { jsx, css, useColorMode, Themed } from "theme-ui"
 import Bio from "gatsby-theme-blog/src/components/bio"
+import { SkipNavLink } from "@reach/skip-nav"
+import Switch from "../../components/switch"
 import sun from "../../../assets/sun.png"
 import moon from "../../../assets/moon.png"
-import { SkipNavLink } from "@reach/skip-nav"
 
 const rootPath = `${__PATH_PREFIX__}/`
 
 const Title = ({ children, location }) => {
   if (location.pathname === rootPath) {
     return (
-      <Styled.h1
+      <Themed.h1
         css={css({
           my: 0,
           fontSize: 4,
         })}
       >
-        <Styled.a
+        <Themed.a
           as={Link}
           css={css({
             color: `inherit`,
@@ -28,18 +28,18 @@ const Title = ({ children, location }) => {
           to={`/`}
         >
           {children}
-        </Styled.a>
-      </Styled.h1>
+        </Themed.a>
+      </Themed.h1>
     )
   } else {
     return (
-      <Styled.h3
+      <Themed.h3
         as="p"
         css={css({
           my: 0,
         })}
       >
-        <Styled.a
+        <Themed.a
           as={Link}
           css={css({
             boxShadow: `none`,
@@ -49,8 +49,8 @@ const Title = ({ children, location }) => {
           to={`/`}
         >
           {children}
-        </Styled.a>
-      </Styled.h3>
+        </Themed.a>
+      </Themed.h3>
     )
   }
 }

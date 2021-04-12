@@ -224,6 +224,14 @@ The 3.0 release includes breaking changes as the theme was upgraded to Gatsby v3
 
 Before upgrading to 3.0 you'll want to update your core `gatsby` version to v3 as well: [Migrating from v2 to v3 documentation](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3/)
 
+**All versions updated** - All versions (Gatsby plugins, third-party packages) were updated to their latest versions.
+
+**Plugin Options** - The `mdx` option was replaced by `mdxOtherwiseConfigured`.
+
+**Images** - `gatsby-image` and its queries (fluid/fixed) were replaced with the new `gatsby-plugin-image`. See [Migrating from gatsby-image to gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/).
+
+**Theme UI** - Theme UI was updated to v0.6.2. See [Theme UI's migration guide](https://theme-ui.com/migrating).
+
 ## Migration to 2.0
 
 The 2.0 release includes breaking changes. Note that many of the changes are related to the default styling in the blog theme. If you have no interest in additional flexibility with styles the 1.6 release may be sufficient as it includes new features without the breaking changes.
@@ -252,11 +260,13 @@ const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
 const blueGray = `#282c35`
 
-export default merge(defaultThemeColors, {
+const theme = merge(defaultThemeColors, {
   text: blueGray,
   primary: darkBlue,
   heading: blueGray,
 })
+
+export default theme
 ```
 
 It should now look like this. Noting that the merge still occurs by default.
@@ -266,11 +276,13 @@ const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
 const blueGray = `#282c35`
 
-export default {
+const theme = {
   text: blueGray,
   primary: darkBlue,
   heading: blueGray,
 }
+
+export default theme
 ```
 
 If you did not merge in the official theme styles and instead overrode them you can still do so. You'll want to remove the preset by passing the option in `gatsby-config.js`
@@ -297,11 +309,13 @@ import { toTheme } from "@theme-ui/typography"
 import wp2016 from "typography-theme-wordpress-2016"
 import { merge } from "theme-ui"
 
-export default merge(toTheme(wp2016), {
+const theme = merge(toTheme(wp2016), {
   styles: {
     pre: {
       margin: `0 0 2 0`,
     },
   },
 })
+
+export default theme
 ```

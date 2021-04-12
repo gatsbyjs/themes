@@ -19,5 +19,9 @@ module.exports = {
         prismPreset: `prism-okaidia`,
       },
     },
+    {
+      resolve: `gatsby-theme-blog-darkmode`,
+      options: {},
+    },
   ],
 }
