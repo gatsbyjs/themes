@@ -4,6 +4,8 @@ A Gatsby theme for providing localization support via [react-intl](https://forma
 
 ## Installation
 
+**Note:** This theme is designed to work as an add-on to [`gatsby-theme-i18n`](https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/) and will not work without it! Please follow its setup instructions before starting with these here!
+
 1. Install the theme and its peerDependencies.
 
 ```shell

@@ -2,13 +2,13 @@ import * as React from "react"
 import { LocalizedLink } from "gatsby-theme-i18n"
 import { useIntl } from "react-intl"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Page3 = () => {
   const intl = useIntl()
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "thirdPage" })} />
+      <Seo title={intl.formatMessage({ id: "thirdPage" })} />
       <h1>{intl.formatMessage({ id: "thirdPage" })}</h1>
       <p>{intl.formatMessage({ id: "thirdNote" })}</p>
       <p>
