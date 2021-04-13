@@ -60,7 +60,6 @@ Make sure that the `localeDir` is identical with the same option in the theme.
 ```json
 {
   "scripts": {
-    "add-locale": "lingui add-locale",
     "extract": "lingui extract",
     "compile": "lingui compile"
   }
