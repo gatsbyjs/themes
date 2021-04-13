@@ -3,13 +3,13 @@ import { graphql } from "gatsby"
 import { useTranslation } from "react-i18next"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Index = ({ data }) => {
   const { t } = useTranslation()
   return (
     <Layout>
-      <SEO title={t("home")} />
+      <Seo title={t("home")} />
       <h1>{t("helloWorld")}</h1>
       <p>{t("indexNote")}</p>
       <p>
