@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import isPresent from "is-present"
 import { Themed, Box } from "theme-ui"
 import { Link } from "gatsby"

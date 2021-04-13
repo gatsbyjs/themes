@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { LocalizedRouter, useLocalization } from "gatsby-theme-i18n"
 import Name from "../components/name"
 

@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import Notes from "../components/notes"
 
 const NotesTemplate = ({

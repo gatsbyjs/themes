@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "./layout"
 

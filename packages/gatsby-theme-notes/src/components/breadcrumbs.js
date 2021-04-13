@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { Themed, css } from "theme-ui"
 import useOptions from "../use-options"

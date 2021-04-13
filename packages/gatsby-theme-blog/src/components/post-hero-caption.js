@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Themed, css, Flex } from "theme-ui"
 
 const PostHeroCaption = ({ text, url }) => (

@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import DirectoryList from "./directory-list"
 import FileList from "./file-list"
 import Breadcrumbs from "./breadcrumbs"

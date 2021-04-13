@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/static-query/
  */
 
-import React from "react"
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Themed, css, Flex } from "theme-ui"

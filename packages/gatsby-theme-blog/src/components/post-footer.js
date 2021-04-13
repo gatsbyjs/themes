@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { css, Themed, Flex } from "theme-ui"
 import Bio from "../components/bio"

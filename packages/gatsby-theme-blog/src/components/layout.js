@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Helmet } from "react-helmet"
 import { css, Themed } from "theme-ui"
 import { SkipNavContent } from "@reach/skip-nav"
