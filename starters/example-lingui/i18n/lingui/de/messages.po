@@ -1,50 +1,52 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2020-06-22 10:11+0200\n"
+"POT-Creation-Date: 2021-04-13 15:55+0200\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: de\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
 
-#: src/components/layout.js:15
-msgid "Home"
-msgstr "Startseite"
+#: src/templates/blog-template.js:25
+msgid "Context"
+msgstr "Seiten Context"
 
-#: src/pages/404.js:11
-msgid "Not Found"
-msgstr "Seite nicht gefunden"
+#: src/templates/blog-template.js:13
+msgid "Data"
+msgstr "Daten"
 
 #: src/pages/index.js:13
 msgid "Hello World"
 msgstr "Hallo Welt"
 
-#: src/pages/index.js:16
-msgid "This is in the Index page"
-msgstr "Dies ist die Index Seite"
+#: src/components/layout.js:15
+msgid "Home"
+msgstr "Startseite"
+
+#: src/pages/page-3.js:24
+msgid "Link to index page"
+msgstr "Link zur Index Seite (Deutsche Version)"
+
+#: src/pages/index.js:35
+msgid "Link to index page (english version)"
+msgstr "Link zur Index Seite (Englische Version)"
 
 #: src/pages/index.js:20
 #: src/pages/page-3.js:19
 msgid "Link to second page"
 msgstr "Link zur zweiten Seite"
 
-#: src/pages/index.js:25
-msgid "Link to third page"
-msgstr "Link zur dritten Seite"
-
 #: src/pages/index.js:30
 msgid "Link to second page (german version)"
 msgstr "Link zur zweiten Seite (Deutsche Version)"
 
-#: src/pages/index.js:35
-msgid "Link to index page (english version)"
-msgstr "Link zur Index Seite (Englische Version)"
+#: src/pages/index.js:25
+msgid "Link to third page"
+msgstr "Link zur dritten Seite"
+
+#: src/pages/404.js:11
+msgid "Not Found"
+msgstr "Seite nicht gefunden"
 
 #: src/pages/index.js:48
 msgid "Overview of languages"
@@ -54,22 +56,14 @@ msgstr "Übersicht der Sprachen"
 msgid "Third page"
 msgstr "Dritte Seite"
 
+#: src/pages/index.js:16
+msgid "This is in the Index page"
+msgstr "Dies ist die Index Seite"
+
 #: src/pages/page-3.js:15
 msgid "This is the third page"
 msgstr "Dies ist die dritte Seite"
 
-#: src/pages/page-3.js:24
-msgid "Link to index page"
-msgstr "Link zur Index Seite"
-
-#: src/templates/blog-template.js:13
-msgid "Data"
-msgstr "Daten"
-
 #: src/templates/blog-template.js:20
 msgid "This page hasn't been translated yet"
 msgstr "Diese Seite wurde noch nicht übersetzt"
-
-#: src/templates/blog-template.js:25
-msgid "Context"
-msgstr "Seiten Context"

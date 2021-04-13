@@ -7,7 +7,7 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
 1. Install `gatsby-theme-i18n`:
 
    ```shell
-   npm install gatsby-theme-i18n
+   npm install gatsby-theme-i18n gatsby-plugin-react-helmet react-helmet
    ```
 
 2. Add the configuration to your `gatsby-config.js` file:

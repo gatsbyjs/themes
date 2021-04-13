@@ -6,9 +6,11 @@
   "description": "A Gatsby theme for providing localization support via Lingui. This theme sets up Lingui's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
   "license": "MIT",
   "devDependencies": {
+    "@lingui/core": "^3.8.9",
     "@lingui/react": "^3.8.9"
   },
   "peerDependencies": {
+    "@lingui/core": "^3.8.9",
     "@lingui/react": "^3.8.9",
     "gatsby": "^3.0.0",
     "react": "^17.0.0",

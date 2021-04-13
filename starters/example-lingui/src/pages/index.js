@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 import { Trans } from "@lingui/macro"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Index = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <h1>
         <Trans>Hello World</Trans>
       </h1>

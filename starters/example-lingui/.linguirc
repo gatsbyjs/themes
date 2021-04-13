@@ -1,9 +1,11 @@
 {
-  "localeDir": "i18n/lingui",
-  "srcPathDirs": ["src/"],
-  "srcPathIgnorePatterns": ["__tests__"],
+  "locales": ["en", "de"],
+  "catalogs": [{
+    "path": "<rootDir>/i18n/lingui/{locale}/messages",
+    "include": ["<rootDir>/src"],
+    "exclude": ["**/node_modules/**", "**/__tests__/**"]
+  }],
   "format": "po",
-  "sorting": "origin",
   "extractBabelOptions": {
     "presets": [
       "babel-preset-gatsby"
