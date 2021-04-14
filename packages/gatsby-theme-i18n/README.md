@@ -28,7 +28,7 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
 
 3. Create the folder `i18n` at the root of your project and create a file called `config.json` in it.
 
-4. Add your locales to the config file and fill out these information:
+4. Add your locales to the config file and fill out this information:
 
    - `code`: The ISO 3166-1 alpha-2 code which will be used for the path prefix, as a unique identifier (e.g. for the `defaultLang` option)
    - `hrefLang`: The IETF language tag for the `<html lang="xx-XX" />` attribute. Also used for og tags

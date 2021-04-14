@@ -13,7 +13,7 @@ A Theme UI preset that contains the configuration used in other official Gatsby 
 
 ### For an existing site
 
-If you already have a site you'd like to add the theme-ui theme to, you can manually configure it.
+If you already have a site you'd like to add the `theme-ui` theme to, you can manually configure it.
 
 1. Install the theme
 
@@ -24,12 +24,14 @@ npm install gatsby-theme-ui-preset
 2. Add the configuration to your `gatsby-config.js` file
 
 ```js
-// gatsby-config.js
 module.exports = {
-  plugins: [{
-        resolve: `gatsby-plugin-theme-ui`
-        options: {
-          preset: `gatsby-theme-ui-preset`
-        }}],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: `gatsby-theme-ui-preset`,
+      },
+    },
+  ],
 }
 ```

@@ -1,6 +1,6 @@
 # gatsby-theme-i18n-lingui
 
-A Gatsby theme for providing localization support via [Lingui](https://lingui.js.org/). This theme sets up Lingui's context provider so that you can access your translations on every page.
+A Gatsby theme for providing localization support via [Lingui](https://lingui.js.org/). This theme sets up [Lingui's context provider](https://lingui.js.org/ref/react.html#i18nprovider) so that you can access your translations on every page.
 
 ## Installation
 

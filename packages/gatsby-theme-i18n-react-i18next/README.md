@@ -1,6 +1,6 @@
 # gatsby-theme-i18n-react-i18next
 
-A Gatsby theme for providing localization support via [react-i18next](https://react.i18next.com/). This theme sets up react-i18next's context provider so that you can access your translations on every page.
+A Gatsby theme for providing localization support via [react-i18next](https://react.i18next.com/). This theme sets up [react-i18next's context provider](https://react.i18next.com/latest/i18nextprovider) so that you can access your translations on every page.
 
 ## Installation
 

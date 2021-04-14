@@ -50,7 +50,7 @@ module.exports = {
 
 4. Run your site using `gatsby develop` and navigate to your notes. If you used the above configuration, your URL will be `http://localhost:8000/notes`
 
-### Options
+## Options
 
 | Key                      | Default value            | Description                                                                                                                                                                                            |
 | ------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -61,7 +61,7 @@ module.exports = {
 | `breadcrumbSeparator`    | `/`                      | Separator for the breadcrumb trail                                                                                                                                                                     |
 | `preset`                 | `gatsby-theme-ui-preset` | Theme UI compatible package name that will act as the base styles for your project. Be sure to install the package you're referencing. Set to `false` to ignore all presets and only use local styles. |
 
-### How Styles work
+## How Styles work
 
 This theme enables `gatsby-plugin-theme-ui` which allows you to leverage [Theme UI](https://theme-ui.com/) to style your project.
 
