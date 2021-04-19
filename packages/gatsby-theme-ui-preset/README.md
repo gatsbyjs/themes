@@ -7,7 +7,7 @@
   The Gatsby Theme UI Preset 
 </h1>
 
-A Theme UI preset that contains the configuration used in other official Gatsby themes, e.g. `gatsby-theme-blog`.
+A Theme UI preset that contains the configuration used in other official Gatsby themes, e.g. `gatsby-theme-blog`. Styled with Gatsby's brand colors.
 
 ## Installation
 

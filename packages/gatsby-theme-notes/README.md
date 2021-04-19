@@ -7,7 +7,7 @@
   The Gatsby notes theme
 </h1>
 
-A Gatsby theme for publishing notes to your website.
+A Gatsby theme for publishing notes to your website including support for automatically generated breadcrumbs and folder structures.
 
 ## Installation
 

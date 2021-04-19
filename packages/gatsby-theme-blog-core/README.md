@@ -7,7 +7,7 @@
   The Gatsby blog core theme
 </h1>
 
-A Gatsby theme for creating a blog child theme. It includes all the data structures you need to get up and running building a blog and includes no additional theming or style opinions.
+A Gatsby theme for creating a blog child theme. It includes all the data structures you need to get up and running building a blog and includes no additional theming or style opinions. `gatsby-theme-blog` uses this theme under the hood.
 
 ## Installation
 
