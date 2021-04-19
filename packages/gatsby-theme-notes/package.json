@@ -36,7 +36,7 @@
     "gatsby-theme-ui-preset": "^2.0.0",
     "is-present": "^1.0.0",
     "react-feather": "^2.0.9",
-    "theme-ui": "0.6.2"
+    "theme-ui": "0.7.0"
   },
   "engines": {
     "node": ">=12.13.0"
