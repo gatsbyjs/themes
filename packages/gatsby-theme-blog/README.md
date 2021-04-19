@@ -214,7 +214,7 @@ You can highlight code snippets using `// highlight line` or a combination of `/
 
 To update the styling for these highlights override the `.highlight` styles inside your prism theme.
 
-### Accessibility and Skip-nav
+### Accessibility and skip-nav
 
 This theme comes equipped with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
 

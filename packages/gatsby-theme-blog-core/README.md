@@ -134,4 +134,4 @@ The following are the defined blog post fields based on the node interface in th
 
 There are some existing components that you can import and use. Reference the full path to do so, e.g. `gatsby-blog-theme-core/src/components/post`.
 
-Also note that there are classNames on elements in these components allowing you to target them with styles.
+Also note that there are `classNames` on elements in these components allowing you to target them with styles.
