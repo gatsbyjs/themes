@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-ui-preset",
   "version": "2.0.0",
-  "description": "A preset for Theme UI styles",
+  "description": "A preset for Theme UI styles used in Gatsby projects",
   "main": "src/index.js",
   "keywords": [
     "gatsby",

@@ -31,7 +31,7 @@
     "gatsby-plugin-mdx": "^2.2.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-redirects": "^1.0.0",
-    "gatsby-plugin-theme-ui": "0.6.2",
+    "gatsby-plugin-theme-ui": "0.7.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-theme-ui-preset": "^2.0.0",
     "is-present": "^1.0.0",
