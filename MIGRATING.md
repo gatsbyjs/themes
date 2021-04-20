@@ -34,16 +34,16 @@ Before upgrading to 3.0 you'll want to update your core `gatsby` version to v3 a
 
 Before upgrading to 3.0 you'll want to update your core `gatsby` version to v3 as well: [Migrating from v2 to v3 documentation](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3/).
 
-**Update to lingui v3** - All lingui dependencies were updated from v2 to v3. See [lingui's migration guide](https://lingui.js.org/releases/migration-3.html). This also means that you have to install `@lingui/core` as a new `dependency` and change your configuration file. See the [README](https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n-lingui) for more information.
+**Update to lingui v3** - The theme now requires lingui v3. All lingui dependencies were updated from v2 to v3. See [lingui's migration guide](https://lingui.js.org/releases/migration-3.html). This also means that you have to install `@lingui/core` as a new `dependency` and change your configuration file. See the [README](https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n-lingui) for more information.
 
 ## Migrating from `gatsby-theme-i18n-react-i18next` / `gatsby-theme-i18n-react-intl` v1 to v2
 
 Before upgrading to 3.0 you'll want to update your core `gatsby` version to v3 as well: [Migrating from v2 to v3 documentation](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3/).
 
-**There shouldn't be any breaking changes**. These updates to the `devDependencies` were made:
+**Update to peerDependencies**. These updates to the `devDependencies` / `peerDependencies` were made:
 
 - Update `i18next` from 19.x to 20.x
-- Update `react-intl` from 4.x to 5.x
+- Update `react-intl` from 4.x to 5.x, so you'll have to use `react-intl` v5
 
 ## Migrating from `gatsby-theme-blog` v1 to v2
 
