@@ -1,15 +1,15 @@
-import React from "react"
+import * as React from "react"
 import isPresent from "is-present"
-import { Styled, Box } from "theme-ui"
+import { Themed, Box } from "theme-ui"
 import { Link } from "gatsby"
 import { Folder } from "react-feather"
 
-export default ({ directories }) =>
+const DirectoryList = ({ directories }) =>
   isPresent(directories) ? (
     <>
       <Box py={3} style={{ display: `flex`, flexWrap: `wrap` }}>
         {Object.entries(directories).map(([key, value]) => (
-          <Styled.a
+          <Themed.a
             as={Link}
             key={key}
             to={value[0].pagePath}
@@ -27,9 +27,11 @@ export default ({ directories }) =>
               <Folder style={{ marginRight: `5px` }} />
               <span>{key}</span>
             </Box>
-          </Styled.a>
+          </Themed.a>
         ))}
       </Box>
       <hr />
     </>
   ) : null
+
+export default DirectoryList

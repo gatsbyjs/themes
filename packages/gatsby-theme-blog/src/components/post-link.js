@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { Themed, jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 const PostLink = ({ title, slug, date, excerpt }) => (
   <article>
     <header>
-      <Styled.h2
+      <Themed.h2
         sx={{
           mb: 1,
         }}
       >
-        <Styled.a
+        <Themed.a
           as={Link}
           sx={{
             textDecoration: `none`,
@@ -18,12 +18,12 @@ const PostLink = ({ title, slug, date, excerpt }) => (
           to={slug}
         >
           {title || slug}
-        </Styled.a>
-      </Styled.h2>
+        </Themed.a>
+      </Themed.h2>
       <small>{date}</small>
     </header>
     <section>
-      <Styled.p>{excerpt}</Styled.p>
+      <Themed.p>{excerpt}</Themed.p>
     </section>
   </article>
 )

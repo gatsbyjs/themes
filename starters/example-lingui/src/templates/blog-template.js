@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 import { Trans } from "@lingui/macro"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const BlogTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
-      <SEO title={data.mdx.frontmatter.title} />
+      <Seo title={data.mdx.frontmatter.title} />
       <h1>
         <Trans>Data</Trans>
       </h1>

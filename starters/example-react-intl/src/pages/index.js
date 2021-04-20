@@ -3,13 +3,13 @@ import { graphql } from "gatsby"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 import { useIntl } from "react-intl"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Index = ({ data }) => {
   const intl = useIntl()
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "home" })} />
+      <Seo title={intl.formatMessage({ id: "home" })} />
       <h1>{intl.formatMessage({ id: "helloWorld" })}</h1>
       <p>{intl.formatMessage({ id: "indexNote" })}</p>
       <p>
@@ -18,7 +18,9 @@ const Index = ({ data }) => {
         </LocalizedLink>
       </p>
       <p>
-        <LocalizedLink to="/page-3/"></LocalizedLink>
+        <LocalizedLink to="/page-3/">
+          {intl.formatMessage({ id: "thirdPageLink" })}
+        </LocalizedLink>
       </p>
       <p>
         <LocalizedLink to="/page-2/" language="de">

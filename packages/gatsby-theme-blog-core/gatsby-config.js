@@ -2,10 +2,7 @@ const withDefaults = require(`./utils/default-options`)
 
 module.exports = (themeOptions) => {
   const options = withDefaults(themeOptions)
-  const {
-    mdxOtherwiseConfigured = false,
-    mdx: legacyConfigureMdxFlag = true,
-  } = themeOptions // keep mdx flag so we don't introduce a breaking change
+  const { mdxOtherwiseConfigured = false } = themeOptions
 
   return {
     siteMetadata: {
@@ -25,25 +22,24 @@ module.exports = (themeOptions) => {
       ],
     },
     plugins: [
-      !mdxOtherwiseConfigured &&
-        legacyConfigureMdxFlag && {
-          resolve: `gatsby-plugin-mdx`,
-          options: {
-            extensions: [`.mdx`, `.md`],
-            gatsbyRemarkPlugins: [
-              {
-                resolve: `gatsby-remark-images`,
-                options: {
-                  maxWidth: options.imageMaxWidth,
-                  linkImagesToOriginal: false,
-                },
+      !mdxOtherwiseConfigured && {
+        resolve: `gatsby-plugin-mdx`,
+        options: {
+          extensions: [`.mdx`, `.md`],
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: options.imageMaxWidth,
+                linkImagesToOriginal: false,
               },
-              { resolve: `gatsby-remark-copy-linked-files` },
-              { resolve: `gatsby-remark-smartypants` },
-            ],
-            remarkPlugins: [require(`remark-slug`)],
-          },
+            },
+            { resolve: `gatsby-remark-copy-linked-files` },
+            { resolve: `gatsby-remark-smartypants` },
+          ],
+          remarkPlugins: [require(`remark-slug`)],
         },
+      },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -58,6 +54,7 @@ module.exports = (themeOptions) => {
           name: options.assetPath || `content/assets`,
         },
       },
+      `gatsby-plugin-image`,
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
     ].filter(Boolean),

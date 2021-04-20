@@ -7,7 +7,7 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
 1. Install `gatsby-theme-i18n`:
 
    ```shell
-   npm install gatsby-theme-i18n
+   npm install gatsby-theme-i18n gatsby-plugin-react-helmet react-helmet
    ```
 
 2. Add the configuration to your `gatsby-config.js` file:
@@ -28,7 +28,7 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
 
 3. Create the folder `i18n` at the root of your project and create a file called `config.json` in it.
 
-4. Add your locales to the config file and fill out these information:
+4. Add your locales to the config file and fill out this information:
 
    - `code`: The ISO 3166-1 alpha-2 code which will be used for the path prefix, as a unique identifier (e.g. for the `defaultLang` option)
    - `hrefLang`: The IETF language tag for the `<html lang="xx-XX" />` attribute. Also used for og tags
@@ -90,7 +90,7 @@ The theme saves its information into a custom `themeI18N` graphql type which you
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { useLocalization } from "gatsby-theme-i18n"
 
 const Example = () => {
@@ -115,7 +115,7 @@ You can display all available locales via the `localesList` component.
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { LocalesList } from "gatsby-theme-i18n"
 
 const Example = () => {
@@ -136,7 +136,7 @@ This is a wrapper around the `Link` component from `gatsby` and is transforming 
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { LocalizedLink as Link } from "gatsby-theme-i18n"
 
 const Example = () => {
@@ -157,7 +157,7 @@ Provides a `<Router />` from `@reach/router` that prefixes the `basePath` prop w
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { LocalizedRouter } from "gatsby-theme-i18n"
 import Detail from "../components/detail"
 
@@ -179,7 +179,7 @@ This is a component specifically for MDX to replace the normal anchor tag. This 
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { MdxLink } from "gatsby-theme-i18n"
 
@@ -207,7 +207,7 @@ You can also directly access the `LocaleContext` and `LocaleProvider` from the t
 Example:
 
 ```js
-import React from "react"
+import * as React from "react"
 import { LocaleContext } from "gatsby-theme-i18n"
 
 const Example = () => {

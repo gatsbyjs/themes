@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { Themed, jsx } from "theme-ui"
 
 const PostDate = (props) => (
-  <Styled.p
+  <Themed.p
     sx={{
       fontSize: 1,
       mt: -3,

@@ -2,12 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Index = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <h1>Hello World</h1>
       <p>This is in the Index page.</p>
       <p>

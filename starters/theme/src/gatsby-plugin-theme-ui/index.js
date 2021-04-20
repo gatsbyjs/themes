@@ -1,5 +1,7 @@
-export default {
-    colors: {
-        primary: `tomato`
-    }
+const theme = {
+  colors: {
+    primary: `tomato`,
+  },
 }
+
+export default theme

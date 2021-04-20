@@ -3,5 +3,6 @@ node_modules
 packages/*/dist/**
 packages/*/lib/**
 packages/*/scripts/**
+packages/*/index.d.ts
 starters
 .github

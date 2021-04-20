@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/static-query/
  */
 
-import React from "react"
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { Styled, css, Flex } from "theme-ui"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Themed, css, Flex } from "theme-ui"
 import BioContent from "./bio-content"
 
 const Bio = () => {
@@ -23,8 +23,8 @@ const Bio = () => {
   return (
     <Flex css={css({ mb: 4, alignItems: `center` })}>
       {avatar ? (
-        <Image
-          fixed={avatar.childImageSharp.fixed}
+        <GatsbyImage
+          image={avatar.childImageSharp.gatsbyImageData}
           alt={author}
           css={css({
             mr: 2,
@@ -46,9 +46,9 @@ const Bio = () => {
           role="presentation"
         />
       )}
-      <Styled.div>
+      <Themed.div>
         <BioContent />
-      </Styled.div>
+      </Themed.div>
     </Flex>
   )
 }
@@ -62,9 +62,7 @@ const bioQuery = graphql`
     }
     avatar: file(absolutePath: { regex: "/avatar.(jpeg|jpg|gif|png)/" }) {
       childImageSharp {
-        fixed(width: 48, height: 48) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }
     }
   }

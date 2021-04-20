@@ -1,11 +1,10 @@
-import React from "react"
-
+import * as React from "react"
 import DirectoryList from "./directory-list"
 import FileList from "./file-list"
 import Breadcrumbs from "./breadcrumbs"
 import Layout from "./layout"
 
-export default ({
+const Notes = ({
   directories,
   files,
   breadcrumbs = [],
@@ -18,3 +17,5 @@ export default ({
     <FileList files={files} />
   </Layout>
 )
+
+export default Notes

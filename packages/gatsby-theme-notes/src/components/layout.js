@@ -1,9 +1,9 @@
-import React from "react"
-import { Global } from "@emotion/core"
+import * as React from "react"
+import { Global } from "@emotion/react"
 import { css, Box } from "theme-ui"
 import Footer from "./footer"
 
-export default (props) => (
+const Layout = (props) => (
   <>
     <Global
       styles={css({
@@ -38,3 +38,5 @@ export default (props) => (
     </Box>
   </>
 )
+
+export default Layout

@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import ReactSwitch from "react-switch"
 
 export const Switch = (props) => <ReactSwitch {...props} />

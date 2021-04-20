@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Styled } from "theme-ui"
+import { Themed } from "theme-ui"
 
 /**
  * Shadow me to add your own bio content
@@ -7,7 +7,7 @@ import { Styled } from "theme-ui"
 
 const BioContent = () => (
   <Fragment>
-    Words by <Styled.a href="http://example.com/">Jane Doe</Styled.a>.
+    Words by <Themed.a href="http://example.com/">Jane Doe</Themed.a>.
     <br />
     Change me. This is all quite default.
   </Fragment>

@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 
 const PostTitle = (props) => (
   <h1 className="post-title" {...props}>

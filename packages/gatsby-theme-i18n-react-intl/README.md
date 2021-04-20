@@ -1,8 +1,10 @@
 # gatsby-theme-i18n-react-intl
 
-A Gatsby theme for providing localization support via [react-intl](https://formatjs.io/docs/react-intl). This theme sets up react-intl's context provider so that you can access your translations on every page.
+A Gatsby theme for providing localization support via [react-intl](https://formatjs.io/docs/react-intl). This theme sets up [react-intl's context provider](https://formatjs.io/docs/react-intl/components#intlprovider) so that you can access your translations on every page.
 
 ## Installation
+
+**Note:** This theme is designed to work as an add-on to [`gatsby-theme-i18n`](https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/) and will not work without it! Please follow its setup instructions before starting with these here!
 
 1. Install the theme and its peerDependencies.
 

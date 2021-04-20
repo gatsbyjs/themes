@@ -1,7 +1,6 @@
 module.exports = (options) => {
   const {
     mdxOtherwiseConfigured = false,
-    mdx: legacyConfigureMdxFlag = true,
     mdxLayouts = {},
     preset = `gatsby-theme-ui-preset`,
   } = options
@@ -13,17 +12,16 @@ module.exports = (options) => {
       siteUrl: `http://example.com/`,
     },
     plugins: [
-      !mdxOtherwiseConfigured &&
-        legacyConfigureMdxFlag && {
-          resolve: `gatsby-plugin-mdx`,
-          options: {
-            extensions: [`.md`, `.mdx`],
-            defaultLayouts: {
-              default: require.resolve(`./src/components/layout`),
-              ...mdxLayouts,
-            },
+      !mdxOtherwiseConfigured && {
+        resolve: `gatsby-plugin-mdx`,
+        options: {
+          extensions: [`.md`, `.mdx`],
+          defaultLayouts: {
+            default: require.resolve(`./src/components/layout`),
+            ...mdxLayouts,
           },
         },
+      },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -33,12 +31,6 @@ module.exports = (options) => {
       },
       `gatsby-plugin-redirects`,
       `gatsby-plugin-emotion`,
-      {
-        resolve: `gatsby-plugin-compile-es6-packages`,
-        options: {
-          modules: [`gatsby-theme-notes`],
-        },
-      },
       {
         resolve: `gatsby-plugin-theme-ui`,
         options: {

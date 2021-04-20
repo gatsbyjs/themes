@@ -1,12 +1,11 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
-import { Styled, css } from "theme-ui"
-
+import { Themed, css } from "theme-ui"
 import useOptions from "../use-options"
 import BreadcrumbDivider from "./breadcrumb-divider"
 import BreadcrumbHome from "./breadcrumb-home"
 
-export default ({ links }) => {
+const Breadcrumbs = ({ links }) => {
   const { homeText, breadcrumbSeparator } = useOptions()
 
   return (
@@ -21,13 +20,15 @@ export default ({ links }) => {
     >
       <BreadcrumbHome text={homeText} />
       {links.map((link) => (
-        <>
+        <React.Fragment key={link.url}>
           <BreadcrumbDivider text={breadcrumbSeparator} />
-          <Styled.a as={Link} to={link.url} key={link.url}>
+          <Themed.a as={Link} to={link.url}>
             {link.name}
-          </Styled.a>
-        </>
+          </Themed.a>
+        </React.Fragment>
       ))}
     </nav>
   )
 }
+
+export default Breadcrumbs

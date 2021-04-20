@@ -1,10 +1,10 @@
 ## Gatsby Theme Blog Dark Mode
 
-NOTE: This theme is designed to work as an add-on to `gatsby-theme-blog` and will not work without it!
-
 This theme enables a darkmode toggle in the header of your blog. It leverages `colors.mode.dark` in Theme UI which you can change by shadowing.
 
 ## Install instructions
+
+**Note:** This theme is designed to work as an add-on to `gatsby-theme-blog` and will not work without it!
 
 1. Install the dependencies
 
@@ -26,13 +26,17 @@ module.exports = {
 To shadow styles, create `src/gatsby-plugin-theme-ui/index.js`. Include an object with the styles you'd prefer.
 
 ```javascript
+const theme = {
   colors: {
-      modes: {
-        dark: {
-            text: tomato,
-        },
+    modes: {
+      dark: {
+        text: tomato,
+      },
     },
   },
+}
+
+export default theme
 ```
 
 If you'd like to override only some styles you'll want to deepmerge.
@@ -41,7 +45,7 @@ If you'd like to override only some styles you'll want to deepmerge.
 import { merge } from "theme-ui"
 import darkmode from "gatsby-theme-blog-darkmode/src/gatsby-plugin-theme-ui"
 
-export default merge(darkmode, {
+const theme = merge(darkmode, {
   colors: {
     modes: {
       dark: {
@@ -50,6 +54,8 @@ export default merge(darkmode, {
     },
   },
 })
+
+export default theme
 ```
 
 ## Migrating to `gatsby-theme-blog` 2.0

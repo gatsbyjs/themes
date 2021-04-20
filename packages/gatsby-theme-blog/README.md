@@ -52,7 +52,7 @@ module.exports = {
 
 4. Add an image with the file name `avatar` (can be jpg or png) inside the `/assets` directory to include a small image next to the footer on every post page.
 
-> Note that if you've changed the default `assetPath` in the configuration, you'll want to add your asset files in the directory specified by that path.
+   > Note that if you've changed the default `assetPath` in the configuration, you'll want to add your asset files in the directory specified by that path.
 
 5. Run your site using `gatsby develop` and navigate to your blog posts. If you used the above configuration, your URL will be `http://localhost:8000/blog`
 
@@ -127,18 +127,20 @@ module.exports = {
 
 The following are the defined blog post fields based on the node interface in the schema
 
-| Field       | Type     |
-| ----------- | -------- |
-| id          | String   |
-| title       | String   |
-| body        | String   |
-| slug        | String   |
-| date        | Date     |
-| tags        | String[] |
-| excerpt     | String   |
-| image       | String   |
-| imageAlt    | String   |
-| socialImage | String   |
+| Field            | Type     |
+| ---------------- | -------- |
+| id               | String   |
+| title            | String   |
+| body             | String   |
+| slug             | String   |
+| date             | Date     |
+| tags             | String[] |
+| excerpt          | String   |
+| image            | String   |
+| imageAlt         | String   |
+| imageCaptionText | String   |
+| imageCaptionLink | String   |
+| socialImage      | String   |
 
 ### Image Behavior
 
@@ -212,88 +214,10 @@ You can highlight code snippets using `// highlight line` or a combination of `/
 
 To update the styling for these highlights override the `.highlight` styles inside your prism theme.
 
-### Accessibility and Skip-nav
+### Accessibility and skip-nav
 
-This theme comes equipt with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
+This theme comes equipped with [skip-nav](https://reacttraining.com/reach-ui/skip-nav/). Note that if you override `header.js` you'll need to add the `SkipNavLink` component yourself. Additionally, if you override `layout.js` you'll need to include `SkipNavContent` manually.
 
-## Migration to 2.0
+## Migration
 
-The 2.0 release includes breaking changes. Note that many of the changes are related to the default styling in the blog theme. If you have no interest in additional flexibility with styles the 1.6 release may be sufficient as it includes new features without the breaking changes.
-
-Before upgrading to 2.0 you'll want to update your core `gatsby` version as well.
-
-**Change in data structure** - Instead of querying for the `node` object inside the `edges` array, all queries now look for `nodes`. If you're shadowing files and accessing data directly you may need to account for this.
-
-**Removal of darkmode toggle** - This theme no longer comes with a darkmode toggle. If you'd like to use the old one it is now available as a parallel theme you can install, [`gatsby-theme-blog-darkmode`](https://www.gatsbyjs.com/plugins/gatsby-theme-blog-darkmode/). Please see the README for further instructions.
-
-### Style specific migration notes
-
-With the new version of `gatsby-plugin-theme-ui` there are a number of changes to the way styles are passed and how they compose.
-
-**Change in shadow structure** - When shadowing files in `gatsby-plugin-theme-ui` the directory can no longer be nested inside the `gatsby-theme-blog` directory. It needs to be at the root level. Additionally, all content needs to be shadowed via `index.js`. You can make use of files like `colors.js` but they will not shadow unless explicitly exported from `index.js`.
-
-**Default deepmerge** - Any shadowed styles will deepmerge with the `gatsby-theme-blog` built-in styles automatically.
-
-If your previous code look like this:
-
-```javascript
-import merge from "deepmerge"
-import defaultThemeColors from "gatsby-theme-blog/src/gatsby-plugin-theme-ui/colors"
-
-const darkBlue = `#007acc`
-const lightBlue = `#66E0FF`
-const blueGray = `#282c35`
-
-export default merge(defaultThemeColors, {
-  text: blueGray,
-  primary: darkBlue,
-  heading: blueGray,
-})
-```
-
-It should now look like this. Noting that the merge still occurs by default.
-
-```javascript
-const darkBlue = `#007acc`
-const lightBlue = `#66E0FF`
-const blueGray = `#282c35`
-
-export default {
-  text: blueGray,
-  primary: darkBlue,
-  heading: blueGray,
-}
-```
-
-If you did not merge in the official theme styles and instead overrode them you can still do so. You'll want to remove the preset by passing the option in `gatsby-config.js`
-
-```javascript
-module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-theme-blog`,
-      options: {
-        preset: false,
-      },
-    },
-  ],
-}
-```
-
-**No built in Typography.js** - Typography.js is no longer part of the default styling. If you'd like to add it locally follow the [Theme UI docs](https://theme-ui.com/packages/typography/#extending-the-typographyjs-theme) or note the code snippet below. The original theme used `typography-theme-wordpress-2016` and also imported `typeface-montserrat` and `typeface-merriweather`.
-
-Another thing to keep in mind if you're pulling in typography for local shadowing is that the order of merging is different. The most common issue is that the spacing underneath code blocks is off. To fix that, include the following code in `src/gatsby-plugin-theme-ui/index.js`.
-
-```javascript
-import { toTheme } from "@theme-ui/typography"
-import wp2016 from "typography-theme-wordpress-2016"
-import { merge } from "theme-ui"
-
-export default merge(toTheme(wp2016), {
-  styles: {
-    pre: {
-      margin: `0 0 2 0`,
-    },
-  },
-})
-```
+For migration guides please see the [dedicated migration guide](https://github.com/gatsbyjs/themes/blob/master/MIGRATING.md).

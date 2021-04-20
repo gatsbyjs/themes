@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import { Themed, css } from "theme-ui"
 
 const Footer = ({ socialLinks }) => (
@@ -11,6 +12,10 @@ const Footer = ({ socialLinks }) => (
     © {new Date().getFullYear()}, Powered by
     {` `}
     <Themed.a href="https://www.gatsbyjs.com">Gatsby</Themed.a>
+    {` `}&bull;{` `}
+    <Themed.a as={Link} to="/notes">
+      Notes
+    </Themed.a>
     {` `}&bull;{` `}
     {socialLinks
       ? socialLinks.map((platform, i, arr) => (

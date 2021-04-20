@@ -1,15 +1,16 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
-import { Styled } from "theme-ui"
-
+import { Themed } from "theme-ui"
 import useOptions from "../use-options"
 
-export default ({ text }) => {
+const BreadcrumbHome = ({ text }) => {
   const { basePath } = useOptions()
 
   return (
-    <Styled.a as={Link} to={basePath}>
+    <Themed.a as={Link} to={basePath}>
       {text}
-    </Styled.a>
+    </Themed.a>
   )
 }
+
+export default BreadcrumbHome

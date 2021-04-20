@@ -1,8 +1,7 @@
-import React from "react"
-
+import * as React from "react"
 import Notes from "../components/notes"
 
-export default ({
+const NotesTemplate = ({
   pageContext: { groupedNotes, urls, breadcrumbs, siteTitle },
   ...props
 }) => (
@@ -14,3 +13,5 @@ export default ({
     {...props}
   />
 )
+
+export default NotesTemplate

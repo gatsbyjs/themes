@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-ui-preset",
-  "version": "1.0.5",
-  "description": "A preset for theme-ui styles",
+  "version": "2.0.0",
+  "description": "A preset for Theme UI styles used in Gatsby projects",
   "main": "src/index.js",
   "keywords": [
     "gatsby",
@@ -15,19 +15,7 @@
     "directory": "packages/gatsby-theme-ui-preset"
   },
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-ui-preset#readme",
-  "dependencies": {
-    "theme-ui": "0.4.0-alpha.3"
-  },
-  "devDependencies": {
-    "prettier": "2.0.5",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.13.0"
   }
 }
