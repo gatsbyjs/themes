@@ -20,7 +20,11 @@ const SEO = ({ location, pageContext }) => {
   return (
     <Helmet>
       <html lang={pageContext.hrefLang} />
-      <link rel="alternate" hrefLang="x-default" href={defaultSiteUrl} />
+      <link rel="alternate" hrefLang="x-default" href={`${defaultSiteUrl}${
+        pageContext.originalPath === withPrefix(`/`)
+          ? ``
+          : pageContext.originalPath
+      }`} />
       <link
         rel="alternate"
         hrefLang={pageContext.hrefLang}
