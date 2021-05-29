@@ -122,8 +122,8 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 
   const { defaultLang } = withDefaults(themeOptions)
 
-  if (node.internal.type === `Mdx`) {
-    const name = path.basename(node.fileAbsolutePath, `.mdx`)
+  if ([`Mdx`, `MarkdownRemark`].includes(node.internal.type)) {
+    const { name } = path.parse(node.fileAbsolutePath)
 
     const isDefault = name === `index`
 
