@@ -125,9 +125,8 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
   if (node.internal.type === `Mdx`) {
     const name = path.basename(node.fileAbsolutePath, `.mdx`)
 
-    const isDefault = name === `index`
-
-    const lang = isDefault ? defaultLang : name.split(`.`)[1]
+    const lang = name === `index` ? defaultLang : name.split(`.`)[1]
+    const isDefault = lang === defaultLang
 
     createNodeField({ node, name: `locale`, value: lang })
     createNodeField({ node, name: `isDefault`, value: isDefault })
