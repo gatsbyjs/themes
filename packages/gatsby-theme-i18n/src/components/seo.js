@@ -2,6 +2,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql, withPrefix } from "gatsby"
 import { useLocalization } from "../hooks/use-localization"
+import { isLocalizedPage } from "../helpers"
 
 const SEO = ({ location, pageContext }) => {
   const { locale, config, defaultLang } = useLocalization()
@@ -31,7 +32,7 @@ const SEO = ({ location, pageContext }) => {
       {config.map((l) => {
         let href
 
-        if (l.code === locale) return null
+        if (l.code === locale || !isLocalizedPage(l, pageContext.originalPath)) return null
 
         if (l.code === defaultLang) {
           href = `${defaultSiteUrl}${
@@ -59,7 +60,7 @@ const SEO = ({ location, pageContext }) => {
         content={pageContext.hrefLang.replace(`-`, `_`)}
       />
       {config.map((l) => {
-        if (l.code === locale) return null
+        if (l.code === locale || !isLocalizedPage(l, pageContext.originalPath)) return null
         return (
           <meta
             key={l.code}

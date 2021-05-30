@@ -4,7 +4,7 @@ import { localizedPath } from "../helpers"
 import { useLocalization } from "../hooks/use-localization"
 
 export const LocalizedLink = ({ to, language, ...props }) => {
-  const { defaultLang, prefixDefault, locale } = useLocalization()
+  const { defaultLang, prefixDefault, locale, config } = useLocalization()
   const linkLocale = language || locale
 
   return (
@@ -15,6 +15,7 @@ export const LocalizedLink = ({ to, language, ...props }) => {
         prefixDefault,
         locale: linkLocale,
         path: to,
+        config,
       })}
     />
   )

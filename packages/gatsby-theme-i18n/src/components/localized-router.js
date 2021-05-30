@@ -8,12 +8,14 @@ export const LocalizedRouter = ({ basePath, children, ...props }) => {
     locale,
     defaultLang,
     prefixDefault,
+    config,
   } = useLocalization()
   const path = localizedPath({
     defaultLang,
     prefixDefault,
     locale,
     path: basePath,
+    config,
   })
 
   return (

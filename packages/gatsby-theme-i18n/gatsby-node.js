@@ -6,6 +6,7 @@ const {
   localizedPath,
   getLanguages,
   getDefaultLanguage,
+  isLocalizedPage,
 } = require(`./src/helpers`)
 
 function writeFile(filePath, data, reporter) {
@@ -82,6 +83,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       code: String
       hrefLang: String
       dateFormat: String
+      pages: [String]
       langDir: String
       localName: String
       name: String
@@ -158,6 +160,9 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
   })
 
   languages.forEach((locale) => {
+
+    if (!isLocalizedPage(locale, originalPath)) return null
+
     const newPage = {
       ...page,
       path: localizedPath({

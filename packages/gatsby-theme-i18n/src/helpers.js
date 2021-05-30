@@ -2,7 +2,15 @@ function isDefaultLang(locale, defaultLang) {
   return locale === defaultLang
 }
 
-function localizedPath({ defaultLang, prefixDefault, locale, path }) {
+function isLocalizedPage({ pages }, path) {
+  if (pages && !pages.find((rule) => path.match(new RegExp(rule)))) {
+    return false
+  } else {
+    return true
+  }
+}
+
+function localizedPath({ defaultLang, prefixDefault, locale, path, config }) {
   // The default language isn't prefixed
   if (isDefaultLang(locale, defaultLang) && !prefixDefault) {
     return path
@@ -18,6 +26,13 @@ function localizedPath({ defaultLang, prefixDefault, locale, path }) {
   }
 
   // If it's another language, prefix with the locale
+  // falling back to defaultLang if path is not localized for locale (and config is provided)
+  if (config) {
+    const lang = config.find((lang) => lang.code === locale)
+    if (!isLocalizedPage(lang, path)) {
+      return prefixDefault ? `/${defaultLang}${path}` : path
+    }
+  }
   return `/${locale}${path}`
 }
 
@@ -53,4 +68,5 @@ module.exports = {
   localizedPath,
   getLanguages,
   getDefaultLanguage,
+  isLocalizedPage,
 }

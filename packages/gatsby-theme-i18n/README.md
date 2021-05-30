@@ -36,6 +36,7 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
    - `localName`: The local name of the locale
    - `langDir`: The direction of language (e.g. "ltr", "rtl")
    - `dateFormat`: The tokens that [Moment.js](https://momentjs.com/docs/#/parsing/string-format/) accepts for date formatting. This can be used for dates on GraphQL queries
+   - `pages`: Optional array of RegExp strings. If set, generates localized pages only when matching one of the RegExps (e.g. `["^\\/$", "^\\/about\\/?$"]` will generate localised version of "/" and "/about" pages only)
 
    Example config of English and German:
 
@@ -55,7 +56,8 @@ A Gatsby theme for providing internationalization support to your Gatsby site by
        "name": "German",
        "localName": "Deutsch",
        "langDir": "ltr",
-       "dateFormat": "DD.MM.YYYY"
+       "dateFormat": "DD.MM.YYYY",
+       "pages": ["^\\/$", "^\\/about\\/?$"]
      }
    ]
    ```
