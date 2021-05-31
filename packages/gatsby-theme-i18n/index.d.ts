@@ -28,7 +28,7 @@ export function localizedPath({ defaultLang, prefixDefault, locale, path, config
   prefixDefault: any;
   locale: any;
   path: any;
-  config: any;
+  config?: any;
 }): any;
 export function useLocalization(): {
   locale: string;
