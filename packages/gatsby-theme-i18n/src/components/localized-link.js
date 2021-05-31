@@ -15,7 +15,7 @@ export const LocalizedLink = ({ to, language, ...props }) => {
         prefixDefault,
         locale: linkLocale,
         path: to,
-        config,
+        config: language ? null : config,
       })}
     />
   )
