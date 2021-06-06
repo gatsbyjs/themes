@@ -19,6 +19,7 @@ const useLocalization = () => {
           langDir
           localName
           name
+          pages
         }
       }
     }
