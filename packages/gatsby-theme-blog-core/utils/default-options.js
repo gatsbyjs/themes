@@ -5,7 +5,7 @@ module.exports = (themeOptions) => {
   const excerptLength = themeOptions.excerptLength || 140
   const imageMaxWidth = themeOptions.imageMaxWidth || 1380
   const filter = themeOptions.filter || {}
-  const limit = themeOptions.limit || 1000
+  const limit = themeOptions.limit !== undefined ? themeOptions.limit : 1000
   return {
     basePath,
     contentPath,
