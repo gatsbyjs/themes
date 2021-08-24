@@ -15,7 +15,7 @@ export function MdxLink({ href, children, ...props }: {
 export function LocalizedLink({ to, language, ...props }: {
   [x: string]: any;
   to: any;
-  language: any;
+  language?: any;
 }): JSX.Element;
 export function LocalizedRouter({ basePath, children, ...props }: {
   [x: string]: any;
