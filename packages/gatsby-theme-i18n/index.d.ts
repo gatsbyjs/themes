@@ -23,12 +23,6 @@ export function LocalizedRouter({ basePath, children, ...props }: {
   children: any;
 }): JSX.Element;
 export function LocalesList(): JSX.Element;
-export function localizedPath({ defaultLang, prefixDefault, locale, path }: {
-  defaultLang: any;
-  prefixDefault: any;
-  locale: any;
-  path: any;
-}): any;
 export function useLocalization(): {
   locale: string;
   defaultLang: any;
