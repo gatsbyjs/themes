@@ -20,33 +20,34 @@ const LinkIcon = (props) => (
   </svg>
 )
 
-const heading = (Tag) => (props) => (
-  <Tag
-    {...props}
-    css={css({
-      a: {
-        visibility: `hidden`,
-      },
-      ":hover a": {
-        visibility: `visible`,
-      },
-      pointerEvents: `painted`,
-    })}
-  >
-    <a
-      href={`#${props.id}`}
+const heading = (Tag) => (props) =>
+  (
+    <Tag
+      {...props}
       css={css({
-        ml: `-20px`,
-        pr: `4px`,
-        color: `primary`,
+        a: {
+          visibility: `hidden`,
+        },
+        ":hover a": {
+          visibility: `visible`,
+        },
+        pointerEvents: `painted`,
       })}
-      aria-label={props.children}
     >
-      <LinkIcon />
-    </a>
-    {props.children}
-  </Tag>
-)
+      <a
+        href={`#${props.id}`}
+        css={css({
+          ml: `-20px`,
+          pr: `4px`,
+          color: `primary`,
+        })}
+        aria-label={props.children}
+      >
+        <LinkIcon />
+      </a>
+      {props.children}
+    </Tag>
+  )
 
 const headings = {
   h1: heading(`h1`),

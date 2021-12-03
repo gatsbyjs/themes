@@ -4,7 +4,7 @@ import Note from "../components/note"
 export default Note
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     note: mdx(id: { eq: $id }) {
       id
       body
