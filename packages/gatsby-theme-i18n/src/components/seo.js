@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, withPrefix } from "gatsby"
 import { useLocalization } from "../hooks/use-localization"
 
 const SEO = ({ location, pageContext }) => {
-  const { locale, config, defaultLang } = useLocalization()
+  const { locale, config, prefixDefault, defaultLang } = useLocalization()
   const data = useStaticQuery(graphql`
     query LocalizationSEOQuery {
       site {
@@ -33,7 +33,7 @@ const SEO = ({ location, pageContext }) => {
 
         if (l.code === locale) return null
 
-        if (l.code === defaultLang) {
+        if (l.code === defaultLang && !prefixDefault) {
           href = `${defaultSiteUrl}${
             pageContext.originalPath === withPrefix(`/`)
               ? ``
