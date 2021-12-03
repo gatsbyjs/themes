@@ -122,7 +122,11 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
 
   const { defaultLang } = withDefaults(themeOptions)
 
-  if (node.internal.type === `Mdx`) {
+  if (
+    node.internal.type === `Mdx` &&
+    typeof node.fileAbsolutePath === `string` &&
+    path.extname(node.fileAbsolutePath) === `.mdx`
+  ) {
     const name = path.basename(node.fileAbsolutePath, `.mdx`)
 
     const isDefault = name === `index`
