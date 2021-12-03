@@ -1,19 +1,22 @@
 module.exports = {
-  parser: `babel-eslint`,
+  parser: `@babel/eslint-parser`,
   extends: [
     `google`,
     `eslint:recommended`,
-    `plugin:flowtype/recommended`,
     `plugin:react/recommended`,
     `prettier`,
   ],
-  plugins: [`flowtype`, `prettier`, `react`, `filenames`],
+  plugins: [`prettier`, `react`, `filenames`],
   parserOptions: {
     ecmaVersion: 2016,
     sourceType: `module`,
     ecmaFeatures: {
       jsx: true,
     },
+    babelOptions: {
+      presets: [`@babel/preset-react`],
+    },
+    requireConfigFile: false,
   },
   env: {
     browser: true,

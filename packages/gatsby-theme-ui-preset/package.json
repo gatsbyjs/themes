@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-ui-preset#readme",
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=14.15.0"
   }
 }

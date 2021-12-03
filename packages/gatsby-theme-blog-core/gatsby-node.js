@@ -29,22 +29,18 @@ exports.onPreBootstrap = ({ store }, themeOptions) => {
   })
 }
 
-const mdxResolverPassthrough = (fieldName) => async (
-  source,
-  args,
-  context,
-  info
-) => {
-  const type = info.schema.getType(`Mdx`)
-  const mdxNode = context.nodeModel.getNodeById({
-    id: source.parent,
-  })
-  const resolver = type.getFields()[fieldName].resolve
-  const result = await resolver(mdxNode, args, context, {
-    fieldName,
-  })
-  return result
-}
+const mdxResolverPassthrough =
+  (fieldName) => async (source, args, context, info) => {
+    const type = info.schema.getType(`Mdx`)
+    const mdxNode = context.nodeModel.getNodeById({
+      id: source.parent,
+    })
+    const resolver = type.getFields()[fieldName].resolve
+    const result = await resolver(mdxNode, args, context, {
+      fieldName,
+    })
+    return result
+  }
 
 exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   const { excerptLength } = withDefaults(themeOptions)
@@ -272,7 +268,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(
     `
-      query($limit: Int!, $filter: BlogPostFilterInput) {
+      query ($limit: Int!, $filter: BlogPostFilterInput) {
         allBlogPost(
           sort: { fields: [date, title], order: DESC }
           filter: $filter

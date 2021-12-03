@@ -6,11 +6,11 @@
   "description": "A Gatsby theme for providing localization support via react-i18next. This theme sets up react-i18next's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
   "license": "MIT",
   "devDependencies": {
-    "i18next": "^20.2.1",
-    "react-i18next": "^11.8.12"
+    "i18next": "^20.6.1",
+    "react-i18next": "^11.14.3"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.0.0",
     "i18next": "^20.2.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n-react-i18next#readme",
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=14.15.0"
   }
 }
