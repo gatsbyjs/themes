@@ -13,24 +13,24 @@
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-blog-core#readme",
   "peerDependencies": {
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
-    "gatsby-core-utils": "^2.2.0",
-    "gatsby-plugin-image": "^1.2.1",
-    "gatsby-plugin-mdx": "^2.2.0",
-    "gatsby-plugin-sharp": "^3.2.1",
-    "gatsby-remark-copy-linked-files": "^3.2.0",
-    "gatsby-remark-images": "^4.2.0",
-    "gatsby-remark-smartypants": "^3.2.0",
-    "gatsby-source-filesystem": "^3.2.0",
-    "gatsby-transformer-sharp": "^3.2.0",
+    "gatsby-core-utils": "^3.0.0",
+    "gatsby-plugin-image": "^2.0.0",
+    "gatsby-plugin-mdx": "^3.0.0",
+    "gatsby-plugin-sharp": "^4.0.0",
+    "gatsby-remark-copy-linked-files": "^5.0.0",
+    "gatsby-remark-images": "^6.0.0",
+    "gatsby-remark-smartypants": "^5.0.0",
+    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-transformer-sharp": "^4.0.0",
     "remark-slug": "^5.1.2"
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=14.15.0"
   }
 }

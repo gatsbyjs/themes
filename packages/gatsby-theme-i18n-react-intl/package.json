@@ -9,7 +9,7 @@
     "react-intl": "^5.15.7"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-intl": "^5.15.7"
@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n-react-intl#readme",
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=14.15.0"
   }
 }
