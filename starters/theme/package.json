@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-theme",
   "private": true,
-  "version": "0.0.9",
+  "version": "1.0.0",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "gatsby": "^4.3.0",
-    "gatsby-theme-blog": "^3.0.0",
-    "gatsby-theme-blog-darkmode": "^3.0.0",
-    "gatsby-theme-notes": "^3.0.0",
+    "gatsby-theme-blog": "^4.0.0",
+    "gatsby-theme-blog-darkmode": "^4.0.0",
+    "gatsby-theme-notes": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

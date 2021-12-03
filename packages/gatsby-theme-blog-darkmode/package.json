@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-blog-darkmode",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A Gatsby blog theme for a dark/light mode",
   "main": "index.js",
   "keywords": [

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-blog-core",
   "description": "The core theme for gatsby-theme-blog",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "main": "index.js",
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT",

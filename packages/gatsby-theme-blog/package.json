@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-blog",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A Gatsby theme for miscellaneous blogging with a dark/light mode",
   "main": "index.js",
   "keywords": [
@@ -25,8 +25,8 @@
     "gatsby-plugin-react-helmet": "^5.3.0",
     "gatsby-plugin-theme-ui": "0.7.0",
     "gatsby-plugin-twitter": "^4.3.0",
-    "gatsby-theme-blog-core": "^3.0.0",
-    "gatsby-theme-ui-preset": "^2.0.0",
+    "gatsby-theme-blog-core": "^4.0.0",
+    "gatsby-theme-ui-preset": "^3.0.0",
     "mdx-utils": "0.2.0",
     "react-helmet": "^6.1.0",
     "theme-ui": "0.7.0"

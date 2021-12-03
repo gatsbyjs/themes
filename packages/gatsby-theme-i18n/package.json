@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-i18n",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "index.js",
   "types": "index.d.ts",
   "author": "LekoArts <lekoarts@gmail.com>",
