@@ -4,7 +4,7 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://gatsby-theme-i18n.netlify.app`,
+    siteUrl: ``,
     title: "gatsby-theme-i18n",
     description: `Default example for i18n`,
     author: `LekoArts`,
