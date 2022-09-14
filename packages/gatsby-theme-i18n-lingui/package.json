@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-i18n-lingui",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "main": "index.js",
   "author": "LekoArts <lekoarts@gmail.com>",
   "description": "A Gatsby theme for providing localization support via Lingui. This theme sets up Lingui's context provider so that you can access your translations on every page. Works best together with gatsby-theme-i18n.",
@@ -10,11 +10,11 @@
     "@lingui/react": "^3.13.0"
   },
   "peerDependencies": {
-    "@lingui/core": "^3.8.9",
-    "@lingui/react": "^3.8.9",
+    "@lingui/core": "^3.13.0",
+    "@lingui/react": "^3.13.0",
     "gatsby": "^4.0.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "keywords": [
     "i18n",
