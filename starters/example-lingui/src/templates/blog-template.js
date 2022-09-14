@@ -1,21 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Trans } from "@lingui/macro"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogTemplate = ({ data, pageContext }) => {
+const BlogTemplate = ({ data, pageContext, children }) => {
   return (
     <Layout>
-      <Seo title={data.mdx.frontmatter.title} />
+      <Seo title={data.mdx?.frontmatter?.title} />
       <h1>
         <Trans>Data</Trans>
       </h1>
       <div>
-        {data.mdx ? (
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        ) : (
+        {children || (
           <div>
             <Trans>This page hasn't been translated yet</Trans>
           </div>
@@ -32,10 +29,10 @@ const BlogTemplate = ({ data, pageContext }) => {
 export default BlogTemplate
 
 export const query = graphql`
-  query($locale: String!, $slug: String!) {
+  query{
     mdx(
-      fields: { locale: { eq: $locale } }
-      frontmatter: { slug: { eq: $slug } }
+      fields: { locale: { eq: "en" } }
+      frontmatter: { slug: { eq: "first-post" } }
     ) {
       frontmatter {
         slug

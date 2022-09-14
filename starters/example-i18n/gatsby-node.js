@@ -11,6 +11,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -27,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   blogPosts.forEach(({ childMdx: node }) => {
     createPage({
       path: node.frontmatter.slug,
-      component: blogTemplate,
+      component: `${blogTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug: node.frontmatter.slug,
       },
