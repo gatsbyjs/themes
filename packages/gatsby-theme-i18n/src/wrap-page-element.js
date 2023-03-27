@@ -1,10 +1,10 @@
 import * as React from "react"
 import { LocaleProvider } from "./context"
-import { SEO } from "./components/seo"
+import { Head } from "./components/head"
 
 const wrapPageElement = ({ element, props }) => (
   <LocaleProvider pageContext={props.pageContext}>
-    <SEO location={props.location} pageContext={props.pageContext} />
+    <Head location={props.location} pageContext={props.pageContext} />
     {element}
   </LocaleProvider>
 )
