@@ -1,9 +1,8 @@
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql, withPrefix } from "gatsby"
 import { useLocalization } from "../hooks/use-localization"
 
-const SEO = ({ location, pageContext }) => {
+const Head = ({ location, pageContext }) => {
   const { locale, config, defaultLang } = useLocalization()
   const data = useStaticQuery(graphql`
     query LocalizationSEOQuery {
@@ -18,7 +17,7 @@ const SEO = ({ location, pageContext }) => {
   const { pathname } = location
 
   return (
-    <Helmet>
+    <>
       <html lang={pageContext.hrefLang} />
       <link rel="alternate" hrefLang="x-default" href={defaultSiteUrl} />
       <link
@@ -68,8 +67,8 @@ const SEO = ({ location, pageContext }) => {
           />
         )
       })}
-    </Helmet>
+    </>
   )
 }
 
-export { SEO }
+export { Head }
