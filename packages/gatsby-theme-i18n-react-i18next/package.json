@@ -7,7 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "i18next": "^20.6.1",
-    "react-i18next": "^11.14.3"
+    "react-i18next": "^11.18.6"
   },
   "peerDependencies": {
     "gatsby": "^4.0.0",
