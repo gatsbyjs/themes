@@ -26,16 +26,16 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
-    "gatsby-core-utils": "^3.3.0",
-    "gatsby-plugin-emotion": "^7.3.0",
-    "gatsby-plugin-mdx": "^3.3.0",
+    "gatsby-core-utils": "^3.25.0",
+    "gatsby-plugin-emotion": "^7.25.0",
+    "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-redirects": "^1.0.0",
     "gatsby-plugin-theme-ui": "0.7.0",
-    "gatsby-source-filesystem": "^4.3.0",
+    "gatsby-source-filesystem": "^4.25.0",
     "gatsby-theme-ui-preset": "^3.0.0",
     "is-present": "^1.0.0",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "theme-ui": "0.7.0"
   },
   "engines": {
