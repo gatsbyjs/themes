@@ -1,5 +1,9 @@
 name: End-to-end tests
 on: [push]
+
+permissions:
+  contents: read
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
