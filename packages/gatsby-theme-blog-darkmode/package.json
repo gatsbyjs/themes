@@ -19,7 +19,7 @@
   "homepage": "https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-blog-darkmode#readme",
   "dependencies": {
     "@reach/skip-nav": "^0.16.0",
-    "react-switch": "^6.0.0"
+    "react-switch": "^6.1.0"
   },
   "peerDependencies": {
     "gatsby": "^4.0.0",
